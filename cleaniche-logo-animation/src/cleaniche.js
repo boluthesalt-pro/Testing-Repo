@@ -9,6 +9,8 @@
   const C = {
     teal: '#067593', orange: '#FF621D', light: '#AEEAFF',
     grey: '#B9C7C9', tan: '#C1B995',
+    ink: '#032E36',      // the supplied artwork's own logo fill
+    navy: '#0D2B2F',
   };
   const TAGLINE = 'CLEAN SPACES. CLEAR MINDSETS.';
   const DURATION = 10;
@@ -180,17 +182,17 @@
     function background(t) {
       ctx.globalCompositeOperation = 'source-over';
       ctx.filter = 'none';
-      ctx.fillStyle = '#030709'; ctx.fillRect(0, 0, W, H);
-      // faint teal depth from the start, deepening into a dark-blue atmosphere from 6.5 s
-      const atm = 0.35 + 0.65 * easeInOutSine(prog(t, 6.5, 7.6));
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, W, H);
+      // pure white at the start; a whisper of cool light-blue air gathers behind the logo from 6.5 s
+      const atm = 0.25 + 0.75 * easeInOutSine(prog(t, 6.5, 7.6));
       const cx = W / 2, cy = H / 2 - (portrait ? 0.02 * H : 0.03 * H);
       const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.hypot(W, H) * 0.6);
-      g.addColorStop(0, `rgba(10,42,51,${0.85 * atm})`);
-      g.addColorStop(0.55, `rgba(6,26,33,${0.55 * atm})`);
-      g.addColorStop(1, 'rgba(3,7,9,0)');
+      g.addColorStop(0, `rgba(174,234,255,${0.13 * atm})`);
+      g.addColorStop(0.55, `rgba(174,234,255,${0.06 * atm})`);
+      g.addColorStop(1, 'rgba(174,234,255,0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
       const v = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * 0.35, W / 2, H / 2, Math.hypot(W, H) * 0.62);
-      v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,0.55)');
+      v.addColorStop(0, 'rgba(185,199,201,0)'); v.addColorStop(1, 'rgba(185,199,201,0.06)');
       ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
     }
 
@@ -219,14 +221,14 @@
       const inv = 1 / (s * P.k);
       for (let i = 0; i < n; i++) {
         const f = (i + 1) / n;                      // 0 at tail → 1 at head
-        c.strokeStyle = mix(C.teal, C.light, tint * Math.pow(f, 3), Math.pow(f, 1.6));
+        c.strokeStyle = mix(C.teal, C.ink, tint * Math.pow(f, 2), Math.pow(f, 1.6));
         c.lineWidth = widthPx * (0.15 + 0.85 * Math.pow(f, 1.2)) * inv;
         c.beginPath(); c.moveTo(pts[i][0], pts[i][1]); c.lineTo(pts[i + 1][0], pts[i + 1][1]); c.stroke();
       }
       // fine light-blue filament riding the core
       for (let i = Math.floor(n * 0.45); i < n; i++) {
         const f = (i + 1) / n;
-        c.strokeStyle = rgba(C.light, 0.55 * Math.pow((f - 0.45) / 0.55, 2));
+        c.strokeStyle = rgba(C.teal, 0.5 * Math.pow((f - 0.45) / 0.55, 2));
         c.lineWidth = widthPx * 0.3 * inv;
         c.beginPath(); c.moveTo(pts[i][0], pts[i][1]); c.lineTo(pts[i + 1][0], pts[i + 1][1]); c.stroke();
       }
@@ -236,10 +238,10 @@
     function drawHead(c, x, y, rPx, alpha, core, halo) {
       if (alpha <= 0) return;
       const g = c.createRadialGradient(x, y, 0, x, y, rPx * 9);
-      g.addColorStop(0, rgba(halo, 0.55 * alpha)); g.addColorStop(0.25, rgba(halo, 0.16 * alpha)); g.addColorStop(1, rgba(halo, 0));
+      g.addColorStop(0, rgba(halo, 0.32 * alpha)); g.addColorStop(0.25, rgba(halo, 0.1 * alpha)); g.addColorStop(1, rgba(halo, 0));
       c.fillStyle = g; c.beginPath(); c.arc(x, y, rPx * 9, 0, 7); c.fill();
       const g2 = c.createRadialGradient(x, y, 0, x, y, rPx * 2.2);
-      g2.addColorStop(0, `rgba(240,252,255,${alpha})`); g2.addColorStop(0.45, rgba(core, 0.9 * alpha)); g2.addColorStop(1, rgba(core, 0));
+      g2.addColorStop(0, rgba(core, alpha)); g2.addColorStop(0.45, rgba(core, 0.85 * alpha)); g2.addColorStop(1, rgba(core, 0));
       c.fillStyle = g2; c.beginPath(); c.arc(x, y, rPx * 2.2, 0, 7); c.fill();
     }
     const project = (P, pt) => [P.x + (pt[0] - SYM_C.x) * s * P.k, P.y + (pt[1] - SYM_C.y) * s * P.k];
@@ -256,7 +258,7 @@
       strokeRange(route1, revealFrom1, s1(t));
       strokeRange(route2, revealFrom2, s2(t));
       sy.globalCompositeOperation = 'source-in';
-      sy.fillStyle = C.teal; sy.fill(symPath);
+      sy.fillStyle = C.ink; sy.fill(symPath);
       sy.restore(); sy.globalCompositeOperation = 'source-over';
 
       const u = prog(t, 2.2, 2.98);
@@ -264,7 +266,7 @@
       ctx.globalAlpha = 0.55 + 0.45 * smooth(u);
       ctx.filter = `blur(${(1 - smooth(u)) * 3.5 * px}px)`;
       ctx.drawImage(symC, 0, 0);
-      ctx.filter = `blur(${10 * px}px)`; ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 0.35 * (1 - u * 0.6);
+      ctx.filter = `blur(${10 * px}px)`; ctx.globalAlpha = 0.16 * (1 - u * 0.7);
       ctx.drawImage(symC, 0, 0);
       ctx.restore();
 
@@ -275,16 +277,16 @@
         const a = Math.max(from, sv - 140), pts = route.slice(a, sv, 3), n = pts.length - 1;
         for (let i = 0; i < n; i++) {
           const f = (i + 1) / n;
-          fx.strokeStyle = rgba(C.light, 0.5 * f * f); fx.lineWidth = 30;
+          fx.strokeStyle = rgba(C.teal, 0.9 * f * f); fx.lineWidth = 30;
           fx.beginPath(); fx.moveTo(pts[i][0], pts[i][1]); fx.lineTo(pts[i + 1][0], pts[i + 1][1]); fx.stroke();
         }
       };
       if (t < 2.97) { glowRange(route1, revealFrom1, s1(t)); glowRange(route2, revealFrom2, s2(t)); }
-      fx.globalCompositeOperation = 'source-in'; fx.fillStyle = rgba(C.light, 1); fx.fill(symPath);
+      fx.globalCompositeOperation = 'source-in'; fx.fillStyle = rgba(C.teal, 1); fx.fill(symPath);
       fx.restore(); fx.globalCompositeOperation = 'source-over';
-      ctx.save(); ctx.globalCompositeOperation = 'lighter';
-      ctx.filter = `blur(${6 * px}px)`; ctx.globalAlpha = 0.65; ctx.drawImage(fxC, 0, 0);
-      ctx.filter = 'none'; ctx.globalAlpha = 0.35; ctx.drawImage(fxC, 0, 0);
+      ctx.save();
+      ctx.filter = `blur(${8 * px}px)`; ctx.globalAlpha = 0.35; ctx.drawImage(fxC, 0, 0);
+      ctx.filter = 'none'; ctx.globalAlpha = 0.85; ctx.drawImage(fxC, 0, 0);
       ctx.restore();
     }
 
@@ -312,19 +314,17 @@
       }
       fx.restore();
       ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      ctx.filter = `blur(${9 * px}px)`; ctx.globalAlpha = 0.9; ctx.drawImage(fxC, 0, 0);
-      ctx.filter = 'none'; ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(fxC, 0, 0);
-      ctx.globalCompositeOperation = 'lighter';
+      ctx.filter = `blur(${9 * px}px)`; ctx.globalAlpha = 0.3; ctx.drawImage(fxC, 0, 0);
+      ctx.filter = 'none'; ctx.globalAlpha = 1; ctx.drawImage(fxC, 0, 0);
       ctx.setTransform(1, 0, 0, 1, 0, 0); camera(ctx, t);
-      for (const [[x, y], r, a] of heads) drawHead(ctx, x, y, r, a, C.teal, C.light);
+      for (const [[x, y], r, a] of heads) drawHead(ctx, x, y, r, a, C.ink, C.teal);
       ctx.restore();
     }
 
     // ---- finished logo layer (symbol + wordmark) with glint ----
     function drawLogo(t, P) {
       lg.setTransform(1, 0, 0, 1, 0, 0); lg.clearRect(0, 0, W, H);
-      lg.save(); camera(lg, t); symXf(lg, P); lg.fillStyle = C.teal; lg.fill(symPath); lg.restore();
+      lg.save(); camera(lg, t); symXf(lg, P); lg.fillStyle = C.ink; lg.fill(symPath); lg.restore();
 
       // wordmark: a stream of light leaves the symbol's tail and flows through the word; the letters
       // open out of that stream (from its centre line outwards) and condense from light-blue to teal.
@@ -339,7 +339,7 @@
         wm.translate(wx0, 0); wm.scale(lerp(0.95, 1, easeOutCubic(u)), 1); wm.translate(-wx0, 0);
         wm.translate(logoLeft - LOGO_BOX.x0 * s, logoTop - LOGO_BOX.y0 * s); wm.scale(s, s);
         const M = wm.getTransform();
-        wm.fillStyle = C.teal; wm.fill(wordPath);
+        wm.fillStyle = C.ink; wm.fill(wordPath);
         if (t < 5.6) {
           // lens-shaped opening around the stream line, widest well behind the front
           mk2.setTransform(1, 0, 0, 1, 0, 0); mk2.clearRect(0, 0, W, H);
@@ -359,7 +359,7 @@
           wm.globalCompositeOperation = 'source-atop';
           const g = wm.createLinearGradient(front - 520, 0, front, 0);
           const ga = 0.85 * (1 - smooth(prog(t, 5.15, 5.5)));
-          g.addColorStop(0, rgba(C.light, 0)); g.addColorStop(0.75, rgba(C.light, 0.35 * ga)); g.addColorStop(1, rgba(C.light, ga));
+          g.addColorStop(0, rgba(C.teal, 0)); g.addColorStop(0.75, rgba(C.teal, 0.45 * ga)); g.addColorStop(1, rgba(C.teal, ga));
           wm.fillStyle = g; wm.fillRect(WORD_X0 - 60, 0, LOGO_BOX.x1 - WORD_X0 + 120, 405);
           wm.globalCompositeOperation = 'source-over';
         }
@@ -375,14 +375,14 @@
         if (sa > 0) {
           const back = Math.min(sv - wmStream.s(t - 0.35), 520);
           const pts = wmStream.route.slice(sv - back, sv, 4).map(q => { const r = M.transformPoint(new DOMPoint(q[0], q[1])); return [r.x, r.y]; });
-          lg.save(); lg.globalCompositeOperation = 'lighter'; lg.lineCap = 'round';
+          lg.save(); lg.lineCap = 'round';
           for (let i = 0; i < pts.length - 1; i++) {
             const f = (i + 1) / (pts.length - 1);
-            lg.strokeStyle = mix(C.teal, C.light, f * f, sa * Math.pow(f, 1.4));
+            lg.strokeStyle = mix(C.teal, C.ink, f * f, sa * Math.pow(f, 1.4));
             lg.lineWidth = 2.6 * px * (0.2 + 0.8 * f);
             lg.beginPath(); lg.moveTo(pts[i][0], pts[i][1]); lg.lineTo(pts[i + 1][0], pts[i + 1][1]); lg.stroke();
           }
-          if (pts.length) { const [hx, hy] = pts[pts.length - 1]; drawHead(lg, hx, hy, 2.6 * px, sa, C.teal, C.light); }
+          if (pts.length) { const [hx, hy] = pts[pts.length - 1]; drawHead(lg, hx, hy, 2.6 * px, sa, C.ink, C.teal); }
           lg.restore();
         }
       }
@@ -404,7 +404,7 @@
 
       ctx.save();
       // very soft light-blue presence behind the symbol (6.5 s →)
-      const ga = 0.075 * smooth(prog(t, 6.5, 7.5));
+      const ga = 0.22 * smooth(prog(t, 6.5, 7.5));
       if (ga > 0) {
         camera(ctx, t);
         const r = SYM_RING.rx * s * 1.9;
@@ -413,8 +413,9 @@
         ctx.fillStyle = g; ctx.fillRect(P.x - r, P.y - r, 2 * r, 2 * r);
         ctx.setTransform(1, 0, 0, 1, 0, 0);
       }
-      ctx.globalCompositeOperation = 'lighter'; ctx.filter = `blur(${14 * px}px)`; ctx.globalAlpha = 0.22;
-      ctx.drawImage(logoC, 0, 0);
+      // soft, low contact shadow for depth on white
+      ctx.filter = `blur(${16 * px}px)`; ctx.globalAlpha = 0.09;
+      ctx.drawImage(logoC, 0, 10 * px);
       ctx.restore();
       ctx.drawImage(logoC, 0, 0);
     }
@@ -427,7 +428,7 @@
       ctx.strokeStyle = mix(C.teal, C.light, smooth(u), a);
       ctx.lineWidth = (2.2 - 1.2 * u) * px;
       ctx.beginPath(); ctx.ellipse(P.x, P.y, SYM_RING.rx * s * k, SYM_RING.ry * s * k, 0, 0, 7); ctx.stroke();
-      ctx.globalCompositeOperation = 'lighter'; ctx.filter = `blur(${5 * px}px)`; ctx.globalAlpha = 0.6; ctx.stroke();
+      ctx.filter = `blur(${5 * px}px)`; ctx.globalAlpha = 0.5; ctx.stroke();
       ctx.restore();
     }
 
@@ -437,7 +438,7 @@
       const sv = sp(t), back = Math.min(sv - sp(t - 0.16), 90);
       ctx.save(); camera(ctx, t);
       const pts = sparkRoute.slice(sv - back, sv, 2).map(q => project(P, q));
-      ctx.lineCap = 'round'; ctx.globalCompositeOperation = 'lighter';
+      ctx.lineCap = 'round';
       for (let i = 0; i < pts.length - 1; i++) {
         const f = (i + 1) / (pts.length - 1);
         ctx.strokeStyle = rgba(C.orange, 0.75 * a * f * f); ctx.lineWidth = 2.0 * px * (0.25 + 0.75 * f);
@@ -454,7 +455,7 @@
       const [ax, ay] = toScreen(LOGO_BOX.x0 - 60, 236), [bx] = toScreen(LOGO_BOX.x1 + 60, 0);
       const e = easeInOutSine(gu), x = lerp(ax, bx, e), a = Math.sin(Math.PI * gu);
       const prevX = lerp(ax, bx, easeInOutSine(Math.max(0, gu - 0.08)));
-      ctx.save(); camera(ctx, t); ctx.globalCompositeOperation = 'lighter';
+      ctx.save(); camera(ctx, t);
       const g = ctx.createLinearGradient(prevX, 0, x, 0);
       g.addColorStop(0, rgba(C.orange, 0)); g.addColorStop(1, rgba(C.orange, 0.5 * a));
       ctx.strokeStyle = g; ctx.lineWidth = 1.4 * px; ctx.lineCap = 'round';
@@ -471,7 +472,7 @@
       ctx.font = `500 ${tagSize}px Figtree`;
       ctx.letterSpacing = `${0.3 * tagSize}px`;
       const w = ctx.measureText(TAGLINE).width - 0.3 * tagSize;   // drop trailing tracking
-      ctx.fillStyle = rgba(C.grey, smooth(u));
+      ctx.fillStyle = rgba(C.navy, 0.82 * smooth(u));
       ctx.textBaseline = 'alphabetic';
       ctx.fillText(TAGLINE, (W - w) / 2, tagBaseline + 8 * px * (1 - e));
       ctx.restore();
