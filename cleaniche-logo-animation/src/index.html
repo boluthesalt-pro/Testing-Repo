@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cleaniche — The Flow of Clean</title>
+<style>
+  @font-face { font-family: 'Figtree'; src: url('../assets/figtree-latin-wght-normal.woff2') format('woff2'); font-weight: 300 900; }
+  html, body { margin: 0; background: #000; color: #B9C7C9; font: 14px Figtree, sans-serif; }
+  body.preview { display: grid; place-items: center; min-height: 100vh; gap: 12px; }
+  canvas { display: block; }
+  body.preview canvas { max-width: 96vw; max-height: 82vh; }
+  .bar { display: flex; gap: 10px; align-items: center; }
+  .bar input[type=range] { width: min(60vw, 640px); }
+  body.render .bar { display: none; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="bar">
+  <button id="play">Play</button>
+  <input id="scrub" type="range" min="0" max="10" step="0.001" value="0">
+  <span id="time">0.00 s</span>
+  <select id="size"><option value="1920x1080">1920×1080</option><option value="1080x1350">1080×1350</option></select>
+</div>
+<script src="data.js"></script>
+<script src="cleaniche.js"></script>
+<script>
+  const q = new URLSearchParams(location.search);
+  const canvas = document.getElementById('c');
+  let anim;
+  function setup(size) {
+    const [w, h] = size.split('x').map(Number);
+    canvas.width = w; canvas.height = h;
+    anim = Cleaniche.create(canvas, window.CLEANICHE_DATA);
+  }
+  window.ready = document.fonts.load('500 27px Figtree').then(() => {
+    setup(q.get('size') || '1920x1080');
+    window.renderFrame = t => anim.draw(t);
+    if (q.has('render')) { document.body.className = 'render'; return; }
+    document.body.className = 'preview';
+    const scrub = document.getElementById('scrub'), time = document.getElementById('time');
+    const sizeSel = document.getElementById('size'), play = document.getElementById('play');
+    sizeSel.value = q.get('size') || '1920x1080';
+    let t0 = null, raf = 0;
+    const show = t => { anim.draw(t); scrub.value = t; time.textContent = t.toFixed(2) + ' s'; };
+    const tick = now => { const t = (now - t0) / 1000; if (t >= 10) { show(10); play.textContent = 'Play'; return; } show(t); raf = requestAnimationFrame(tick); };
+    play.onclick = () => { cancelAnimationFrame(raf); t0 = performance.now(); play.textContent = 'Replay'; raf = requestAnimationFrame(tick); };
+    scrub.oninput = () => { cancelAnimationFrame(raf); show(+scrub.value); };
+    sizeSel.onchange = () => { setup(sizeSel.value); show(+scrub.value); };
+    show(0);
+  });
+</script>
+</body>
+</html>
