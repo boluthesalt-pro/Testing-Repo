@@ -1,11 +1,13 @@
 # Cleaniche — "The Flow of Clean" logo animation
 
-A 10-second brand logo animation, rendered at **1920×1080** (16:9) and **1080×1350** (4:5), 30 fps, H.264 with AAC stereo audio.
+A 10-second brand logo animation in **4K**: **3840×2160** (16:9) and **2160×2700** (4:5). There are also 1080 versions for quick sharing. All are 30 fps, H.264 with AAC stereo audio.
 
 | File | What it is |
 | --- | --- |
-| `out/cleaniche-logo-animation-1920x1080.mp4` | 16:9 master |
-| `out/cleaniche-logo-animation-1080x1350.mp4` | 4:5 social cut (layout re-composed for the taller frame) |
+| `out/cleaniche-logo-animation-3840x2160.mp4` | 16:9 4K master |
+| `out/cleaniche-logo-animation-2160x2700.mp4` | 4:5 4K master (layout re-composed for the taller frame) |
+| `out/cleaniche-logo-animation-1920x1080.mp4` | 16:9 at 1080p |
+| `out/cleaniche-logo-animation-1080x1350.mp4` | 4:5 at 1080 wide (Instagram feed size) |
 | `out/*-final-frame.png` | Final lockup still for each size |
 | `out/sound.wav` | The score on its own (48 kHz / 24-bit) |
 
@@ -20,8 +22,8 @@ A 10-second brand logo animation, rendered at **1920×1080** (16:9) and **1080×
 
 | Time | Beat | Picture | Sound |
 | --- | --- | --- | --- |
-| 0.0–1.0 | Stillness | Near-black field. A #067593 point fades in at the centre and drifts out on a hair-thin trail with #AEEAFF light. A 2.8% camera push-in runs until 9.3 s. | Warm Dsus2 pad fades in, then a single glass-droplet note (A5) |
-| 1.0–2.2 | The flow | The light speeds up into an organic spiral. A second, thinner line joins and follows. | Soft kalimba arpeggio that quickens with the light and circles the stereo field, over a breath of air |
+| 0.0–1.0 | Stillness | Near-black field. A #067593 point fades in at the centre and drifts out on a hair-thin trail with #AEEAFF light. A 2.8% camera push-in runs until 9.3 s. | Low atmospheric hum, then one clean tick at 0.5 s |
+| 1.0–2.2 | The flow | The light speeds up into an organic spiral. A second, thinner line joins and follows. | Airy whoosh circling the stereo field with the light. The calm score rises underneath and takes over by 2.8 s |
 | 2.2–3.2 | Symbol forms | The trails land on the symbol's real centreline. The outer ring condenses first, then both inner waves, then the outer arc closes. Blur and glow resolve to sharp at 2.9 s, followed by a 2.5% swell and settle. | Pad swells and opens, then a warm bloom: low D with soft D5/A5 bells |
 | 3.2–4.2 | Clean pulse | Logo scales 100→103→100%. One thin ripple grows from 0 to 130% while shifting #067593→#AEEAFF and fading from 33% to 0. | Singing-bowl tone |
 | 4.2–5.4 | Wordmark | The symbol glides into the lockup. A hair-thin stream of light leaves the symbol's tail and flows through the word. The letters open out from the stream's centre line, glow #AEEAFF, then cool to #067593, with width 95→100% and blur to sharp. | Harp-like pentatonic run, panned left→right with the stream |
@@ -35,7 +37,7 @@ A 10-second brand logo animation, rendered at **1920×1080** (16:9) and **1080×
 
 - `src/cleaniche.js` is a deterministic canvas renderer: `draw(t)` paints the frame at time *t*. All motion uses ease curves and monotone splines; nothing is keyframed linearly.
 - `src/routes.json` holds the centreline of the symbol's ribbon. It was extracted from the supplied artwork by skeletonising a 4× raster of the symbol (`tools/skel.py` → `tools/branches.py` → `tools/routes.py`). This is why the light trails follow the real logo geometry.
-- `tools/sound.py` synthesises the score (numpy + scipy). It is a calm D-major bed where every visual beat is a soft note rather than an effect. Every attack is 6 ms or longer, everything is low-passed, and the notes sit in a soft ping-pong echo and a long reverb.
+- `tools/sound.py` builds the soundtrack (numpy + scipy). The opening 0–2.8 s (hum, tick, whoosh) is the original first-cut audio, kept verbatim in `assets/intro-sound-v1.wav`. It crossfades into the synthesised score. It is a calm D-major bed where every visual beat is a soft note rather than an effect. Every attack is 6 ms or longer, everything is low-passed, and the notes sit in a soft ping-pong echo and a long reverb.
 - `tools/render.js` drives headless Chromium through Playwright, streams PNG frames into ffmpeg, and muxes in the audio.
 
 ### Preview / re-render
@@ -52,4 +54,4 @@ NODE_PATH=$(npm root -g) node tools/render.js --fps 24
 NODE_PATH=$(npm root -g) node tools/render.js --stills 2.9,6,9.9   # PNG stills for review
 ```
 
-For a 4K master, run `node tools/render.js --size 3840x2160`. Everything scales from the frame size.
+By default the render produces all four sizes. Everything scales from the frame size, so `--size 7680x4320` gives an 8K master.

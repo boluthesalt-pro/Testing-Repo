@@ -19,7 +19,7 @@ const OUT = path.join(ROOT, 'out');
 const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf('--' + name); return i >= 0 ? args[i + 1] : def; };
 const FPS = Number(opt('fps', 30));
-const SIZES = opt('size', '1920x1080,1080x1350').split(',');
+const SIZES = opt('size', '3840x2160,2160x2700,1920x1080,1080x1350').split(',');
 const STILLS = opt('stills', null);
 const DURATION = 10;
 
@@ -70,7 +70,7 @@ async function renderSize(browser, port, size) {
   const wav = path.join(OUT, 'sound.wav');
   const ff = ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-'];
   if (fs.existsSync(wav)) ff.push('-i', wav, '-c:a', 'aac', '-b:a', '256k', '-shortest');
-  ff.push('-c:v', 'libx264', '-preset', 'slow', '-crf', '14', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
+  ff.push('-c:v', 'libx264', '-preset', w * h > 4e6 ? 'medium' : 'slow', '-crf', w * h > 4e6 ? '16' : '14', '-pix_fmt', 'yuv420p', '-profile:v', 'high',
     '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-movflags', '+faststart',
     '-r', String(FPS), path.join(OUT, name + '.mp4'));
   const enc = spawn('ffmpeg', ff, { stdio: ['pipe', 'inherit', 'inherit'] });

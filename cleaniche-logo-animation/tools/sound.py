@@ -5,9 +5,9 @@ A calm, airy, musical bed in D major (Lydian colour) where every visual beat is 
 not an effect. No hard transients: every attack is ≥ 6 ms, everything is low-passed and
 sits in a long, soft reverb.
 
-  0.00  warm pad fades in (Dsus2), breath of air
-  0.45  one glass droplet (A5) — the point of light appears
-  1.05  kalimba arpeggio that quickens with the light and circles the stereo field
+  0.00  opening from the first cut, verbatim (assets/intro-sound-v1.wav): low atmospheric hum,
+        one clean tick at 0.5, airy whoosh circling the stereo field 1.0 → 2.4
+  1.60  the score's pad and air rise underneath and take over by 2.8
   2.20  pad swells and opens as the trails condense
   2.90  warm bloom on D (low D + soft bell D5/A5) — the symbol lands
   3.22  singing-bowl tone — the clean pulse
@@ -108,13 +108,6 @@ air_env *= 1 + 0.5 * np.exp(-((t - 4.75) / 0.35) ** 2)        # a breath under t
 dry += air / np.abs(air).max() * air_env * 0.045
 
 # --- notes on picture -----------------------------------------------------------------
-place(pl, pluck(hz('A5'), tau=0.9, bright=0.15), 0.45, 0.16, 0.0)              # droplet: point appears
-
-arp = [(1.05, 'D5', -0.5), (1.42, 'F#5', 0.3), (1.70, 'A5', 0.55), (1.92, 'E5', -0.2),
-       (2.09, 'C#6', -0.55), (2.23, 'A5', 0.1), (2.35, 'E6', 0.5)]                # quickens with the light
-for i, (at, nt, pan) in enumerate(arp):
-    place(pl, pluck(hz(nt), tau=0.5, bright=0.3), at, 0.10 + 0.01 * i, pan)
-
 n = int(2.4 * SR); x = np.arange(n) / SR                                       # warm landing bloom on D
 low = np.sin(2 * np.pi * hz('D2') * x) + 0.4 * np.sin(2 * np.pi * hz('D3') * x)
 low *= np.clip(x / 0.06, 0, 1) * np.exp(-x / 0.75)
@@ -169,6 +162,23 @@ out *= fade
 out = hp(out, 30)
 out = lp(out, 11000)
 out *= 10 ** (-1.5 / 20) / np.abs(out).max()
+
+# --- opening: the original hum / clean tick / airy whoosh (assets/intro-sound-v1.wav, verbatim),
+#     handing over to the score just before the symbol lands --------------------------------
+def read_wav24(path):
+    with wave.open(path) as w:
+        raw = np.frombuffer(w.readframes(w.getnframes()), np.uint8).reshape(-1, 3)
+        ch = w.getnchannels()
+    v = raw[:, 0].astype(np.int32) | (raw[:, 1].astype(np.int32) << 8) | (raw[:, 2].astype(np.int32) << 16)
+    return (np.where(v >= 2 ** 23, v - 2 ** 24, v) / 2 ** 23).reshape(-1, ch).T
+
+def ramp(a, b): u = np.clip((t - a) / (b - a), 0, 1); return u * u * (3 - 2 * u)
+
+intro = np.zeros((2, N))
+iv = read_wav24(os.path.join(os.path.dirname(__file__), '..', 'assets', 'intro-sound-v1.wav'))
+intro[:, :iv.shape[1]] = iv[:, :N]
+out = intro * (1 - ramp(2.35, 2.8)) + 0.7 * out * ramp(1.6, 2.6)   # score level-matched to the opening
+out *= min(1.0, 10 ** (-1.0 / 20) / np.abs(out).max())
 
 os.makedirs(os.path.join(os.path.dirname(__file__), '..', 'out'), exist_ok=True)
 path = os.path.join(os.path.dirname(__file__), '..', 'out', 'sound.wav')
