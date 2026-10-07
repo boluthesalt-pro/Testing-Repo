@@ -5,6 +5,7 @@
 //   node tools/render.js --size 1080x1350      # one format
 //   node tools/render.js --stills 1,2.5,9.9    # PNG stills only → out/stills/
 //   node tools/render.js --fps 24
+//   node tools/render.js --theme blue          # white logo on brand-teal background
 //   node tools/render.js --blur 1               # disable motion blur (faster previews)
 //
 // Requires: playwright (global install is fine — run with NODE_PATH=$(npm root -g)), ffmpeg on PATH.
@@ -21,6 +22,7 @@ const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf('--' + name); return i >= 0 ? args[i + 1] : def; };
 const FPS = Number(opt('fps', 30));
 const SIZES = opt('size', '3840x2160,2160x2700,1920x1080,1080x1350').split(',');
+const THEME = opt('theme', 'white');               // 'white' (teal on white) or 'blue' (white on teal)
 const STILLS = opt('stills', null);
 const SUB = Number(opt('blur', 6));              // motion-blur sub-frames per frame (1 = off)
 const DURATION = 10;
@@ -58,7 +60,7 @@ async function renderSize(browser, port, size) {
   const [w, h] = size.split('x').map(Number);
   const page = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
   page.on('pageerror', e => { console.error('page error:', e); process.exit(1); });
-  await page.goto(`http://127.0.0.1:${port}/src/index.html?render&size=${size}`);
+  await page.goto(`http://127.0.0.1:${port}/src/index.html?render&size=${size}&theme=${THEME}`);
   await page.evaluate(() => window.ready);
 
   if (STILLS) {
@@ -70,7 +72,7 @@ async function renderSize(browser, port, size) {
     return page.close();
   }
 
-  const name = `cleaniche-logo-animation-${size}`;
+  const name = `cleaniche-logo-animation-${size}${THEME === 'white' ? '' : '-' + THEME}`;
   const wav = path.join(OUT, 'sound.wav');
   const ff = ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-'];
   if (fs.existsSync(wav)) ff.push('-i', wav, '-c:a', 'aac', '-b:a', '256k', '-shortest');

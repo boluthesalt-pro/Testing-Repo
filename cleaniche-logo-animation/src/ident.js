@@ -11,7 +11,12 @@
 (function (global) {
   'use strict';
 
-  const C = { teal: '#067593', tealFresh: '#0C89AB', orange: '#FF621D', navy: '#0D2B2F', white: '#FFFFFF' };
+  const BRAND = { teal: '#067593', tealFresh: '#0C89AB', orange: '#FF621D', navy: '#0D2B2F', white: '#FFFFFF', light: '#AEEAFF' };
+  // Themes: 'white' = teal mark on white; 'blue' = white mark on brand-teal ground.
+  const THEMES = {
+    white: { bg: BRAND.white, mark: BRAND.teal, fresh: BRAND.tealFresh, freshA: 0.85, tag: BRAND.navy, tagA: 1, dot: BRAND.orange },
+    blue: { bg: BRAND.teal, mark: BRAND.white, fresh: BRAND.light, freshA: 0.32, tag: BRAND.white, tagA: 0.92, dot: BRAND.orange },
+  };
   const TAGLINE = [['Clean', 'spaces.'], ['Clear', 'mindset']];   // the last full stop is drawn as the orange dot
   const DURATION = 10;
   const LOGO_BOX = { x0: 102, y0: 38.5, x1: 2127.1, y1: 367.9 };
@@ -78,7 +83,8 @@
   }
   const concat = (...rs) => rs.reduce((acc, r) => acc.concat(acc.length ? r.slice(1) : r), []);
 
-  function create(canvas, data) {
+  function create(canvas, data, opts = {}) {
+    const C = THEMES[opts.theme] || THEMES.white;
     const ctx = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
     const px = Math.min(W, H) / 1080;
@@ -189,13 +195,13 @@
 
     function drawSymbol(t, cam) {
       if (t >= 4.1) {                                   // complete: the supplied path, untouched
-        ctx.save(); applyCam(ctx, cam, t); ctx.fillStyle = C.teal; ctx.fill(symPath); ctx.restore();
+        ctx.save(); applyCam(ctx, cam, t); ctx.fillStyle = C.mark; ctx.fill(symPath); ctx.restore();
         return;
       }
       const h = head(t), b = branchAt(t);
       rib.setTransform(1, 0, 0, 1, 0, 0); rib.clearRect(0, 0, W, H);
       rib.save(); applyCam(rib, cam, t);
-      rib.fillStyle = C.teal; rib.fill(symPath);
+      rib.fillStyle = C.mark; rib.fill(symPath);
       const M = rib.getTransform();
       rib.setTransform(1, 0, 0, 1, 0, 0);
       rib.globalCompositeOperation = 'destination-in';
@@ -206,7 +212,7 @@
       const fresh = (route, sv) => {
         const [hx, hy] = route.at(sv), r = 130;
         const g = rib.createRadialGradient(hx, hy, 0, hx, hy, r);
-        g.addColorStop(0, rgba(C.tealFresh, 0.85)); g.addColorStop(0.5, rgba(C.tealFresh, 0.35)); g.addColorStop(1, rgba(C.tealFresh, 0));
+        g.addColorStop(0, rgba(C.fresh, C.freshA)); g.addColorStop(0.5, rgba(C.fresh, C.freshA * 0.4)); g.addColorStop(1, rgba(C.fresh, 0));
         rib.fillStyle = g; rib.fillRect(hx - r, hy - r, 2 * r, 2 * r);
       };
       fresh(main, h); if (b > 0 && b < branch.len) fresh(branch, b);
@@ -226,7 +232,7 @@
       // logo-space transform for the lockup, riding with the symbol's current position
       wm.translate(cam.ox - symFinal[0], cam.oy - symFinal[1]);
       wm.translate(logoLeft - LOGO_BOX.x0 * s, logoTop - LOGO_BOX.y0 * s); wm.scale(s, s);
-      wm.save(); wm.translate(off, 0); wm.fillStyle = C.teal; wm.fill(wordPath); wm.restore();
+      wm.save(); wm.translate(off, 0); wm.fillStyle = C.mark; wm.fill(wordPath); wm.restore();
       // emerges through a soft edge just right of the symbol
       // (the edge lives in the gap before the C, and is released as the word arrives)
       const e0 = SYM_RIGHT + 4, e1 = WORD_X0 - 2, rel = smooth(prog(t, 5.35, 5.8));
@@ -267,7 +273,7 @@
       ctx.translate(W / 2, H / 2); ctx.scale(k, k); ctx.translate(-W / 2, -H / 2);
       ctx.font = `500 ${tagSize}px Figtree`;
       ctx.letterSpacing = `${0.01 * tagSize}px`;
-      ctx.fillStyle = C.navy; ctx.textBaseline = 'alphabetic';
+      ctx.fillStyle = rgba(C.tag, C.tagA); ctx.textBaseline = 'alphabetic';
       const starts = [6.02, 6.12, 6.42, 6.52];
       tagLayout.words.forEach((o, i) => {
         const u = rise(prog(t, starts[i], starts[i] + 0.75));
@@ -281,7 +287,7 @@
       const du = prog(t, 7.0, 7.42);
       if (du > 0) {
         const sc = du < 0.45 ? smooth(du / 0.45) * 1.32 : 1 + 0.32 * Math.exp(-(du - 0.45) / 0.12) * Math.cos((du - 0.45) * 14);
-        ctx.fillStyle = C.orange;
+        ctx.fillStyle = C.dot;
         ctx.beginPath(); ctx.arc(tagLayout.dot.x, tagBaseline - tagLayout.dot.r * 1.02, tagLayout.dot.r * Math.max(0, sc), 0, Math.PI * 2); ctx.fill();
       }
       ctx.restore();
@@ -290,7 +296,7 @@
     function draw(t) {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.globalAlpha = 1; ctx.filter = 'none'; ctx.globalCompositeOperation = 'source-over';
-      ctx.fillStyle = C.white; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
       const cam = camera(t);
       drawSymbol(t, cam);
       drawWordmark(t, cam);

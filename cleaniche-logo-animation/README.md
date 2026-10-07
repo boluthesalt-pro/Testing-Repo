@@ -8,6 +8,8 @@ A 10-second logo ident with an original sound design and a 3-note sonic logo.
 | `out/cleaniche-logo-animation-2160x2700.mp4` | 4:5 · 4K master |
 | `out/cleaniche-logo-animation-1920x1080.mp4` | 16:9 · 1080p |
 | `out/cleaniche-logo-animation-1080x1350.mp4` | 4:5 · 1080 wide (Instagram feed) |
+| `out/cleaniche-logo-animation-2160x2700-blue.mp4` | 4:5 · 4K · **blue version**: white logo on brand teal |
+| `out/cleaniche-logo-animation-1080x1350-blue.mp4` | 4:5 · 1080 wide · blue version |
 | `out/*-final-frame.png` | End-frame stills |
 | `out/sound.wav` | Sound design on its own (48 kHz / 24-bit) |
 
@@ -41,7 +43,8 @@ The ident is built on principles that separate strong idents from template revea
 ## Brand
 
 - **Logo:** drawn only from the supplied path data (`assets/cleaniche-logo-outlined.svg`). It is never redrawn or distorted, and is shown complete and exact from 4.1 s on.
-- **Colours:** brand teal **#067593** for the mark, on white. Dark Navy **#0D2B2F** for the tagline. One orange **#FF621D** full stop.
+- **Colours (white version):** brand teal **#067593** for the mark, on white. Dark Navy **#0D2B2F** for the tagline. One orange **#FF621D** full stop.
+- **Colours (blue version, `--theme blue`):** a white mark and white tagline on a brand teal **#067593** ground, with the same single orange full stop.
 - **Type:** the tagline is Figtree Medium (`assets/figtree-latin-wght-normal.woff2`, SIL OFL), set in sentence case: *Clean spaces. Clear mindset.*
 
 ## How it's built

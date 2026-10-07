@@ -34,7 +34,7 @@
   function setup(size) {
     const [w, h] = size.split('x').map(Number);
     out.width = work.width = w; out.height = h; work.height = h;
-    anim = CleanicheIdent.create(work, window.CLEANICHE_DATA);
+    anim = CleanicheIdent.create(work, window.CLEANICHE_DATA, { theme: q.get('theme') || 'white' });
   }
   // Motion blur: average `sub` renders spread across a 180° shutter (half a frame) centred on t.
   function frame(t, fps = 30, sub = 1) {
