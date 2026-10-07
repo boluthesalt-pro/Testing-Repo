@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""Synthesises the 10 s Cleaniche sound design → out/sound.wav (48 kHz, 24-bit stereo).
+"""Synthesises the 10 s Cleaniche score → out/sound.wav (48 kHz, 24-bit stereo).
 
-Cue sheet (seconds) — matches the animation timeline:
-  0.00  low atmospheric hum (bed, fades by 9.7)
-  0.50  delicate clean tick              (point of light starts moving)
-  1.00  soft airy whoosh, panned with the circular flow → 2.4
-  2.90  subtle, deep, clean impact       (symbol lands)
-  3.22  soft glass-like tonal resonance  (clean pulse)
-  4.20  near-imperceptible tonal swell   (wordmark)
-  5.45  clean bright tick                (orange spark)
-  8.80  delicate high "ting"             (final glint)
-  9.30  clean resolve → silence from ~9.8
+A calm, airy, musical bed in D major (Lydian colour) where every visual beat is a soft note,
+not an effect. No hard transients: every attack is ≥ 6 ms, everything is low-passed and
+sits in a long, soft reverb.
+
+  0.00  warm pad fades in (Dsus2), breath of air
+  0.45  one glass droplet (A5) — the point of light appears
+  1.05  kalimba arpeggio that quickens with the light and circles the stereo field
+  2.20  pad swells and opens as the trails condense
+  2.90  warm bloom on D (low D + soft bell D5/A5) — the symbol lands
+  3.22  singing-bowl tone — the clean pulse
+  4.25  harp-like pentatonic run, panned left→right with the wordmark stream
+  5.45  two soft high notes, panned with the orange spark
+  6.50  pad moves to Gmaj9 — the logo breathes
+  7.50  soft low dyad under the tagline
+  8.80  gentle chime — final glint
+  9.25  resolve to D(add9) → silence from ~9.8
 Requires numpy + scipy.
 """
 import os, wave
@@ -20,122 +26,154 @@ from scipy import signal
 SR, DUR = 48000, 10.0
 N = int(SR * DUR)
 t = np.arange(N) / SR
-rng = np.random.default_rng(7)
-L = np.zeros(N); R = np.zeros(N)
+rng = np.random.default_rng(11)
+dry = np.zeros((2, N))    # pad / air bus
+pl = np.zeros((2, N))     # plucked-note bus (gets echo)
 
 
-def env_adsr(n, a, d_tau, start_level=0.0):
-    """attack (s) then exponential decay with time-constant d_tau (s)."""
-    x = np.arange(n) / SR
-    att = np.clip(x / max(a, 1e-4), 0, 1)
-    att = np.sin(att * np.pi / 2) ** 2
-    return att * np.exp(-np.maximum(x - a, 0) / d_tau)
-
-
-def place(sig, at, gain=1.0, pan=0.0):
-    """mix mono `sig` at time `at` with constant-power pan (-1..1)."""
-    i = int(at * SR); n = min(len(sig), N - i)
-    if n <= 0: return
-    th = (pan + 1) * np.pi / 4
-    L[i:i + n] += sig[:n] * gain * np.cos(th)
-    R[i:i + n] += sig[:n] * gain * np.sin(th)
-
-
-def tone(freqs, dur, a, tau, amps=None, detune=0.0):
-    n = int(dur * SR); x = np.arange(n) / SR
-    amps = amps or [1.0] * len(freqs)
-    out = np.zeros(n)
-    for f, g in zip(freqs, amps):
-        out += g * np.sin(2 * np.pi * f * (1 + detune * rng.uniform(-1, 1)) * x + rng.uniform(0, 6.28))
-    return out * env_adsr(n, a, tau)
+def hz(note):
+    names = {'C': 0, 'C#': 1, 'D': 2, 'D#': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'A': 9, 'A#': 10, 'B': 11}
+    return 440 * 2 ** ((names[note[:-1]] + 12 * (int(note[-1]) + 1) - 69) / 12)
 
 
 def lp(x, fc, order=2): return signal.sosfilt(signal.butter(order, fc, 'low', fs=SR, output='sos'), x)
 def hp(x, fc, order=2): return signal.sosfilt(signal.butter(order, fc, 'high', fs=SR, output='sos'), x)
-def bp(x, lo, hi, order=2): return signal.sosfilt(signal.butter(order, [lo, hi], 'band', fs=SR, output='sos'), x)
 
 
-# --- atmospheric hum bed -----------------------------------------------------------
-bed_env = np.clip(t / 0.9, 0, 1) ** 2 * (1 - np.clip((t - 9.15) / 0.55, 0, 1)) ** 2
-bed_env *= 1 - 0.45 * np.clip((t - 3.0) / 2.0, 0, 1)          # settles under the logo
-lfo = 1 + 0.12 * np.sin(2 * np.pi * 0.23 * t)
-hum = (np.sin(2 * np.pi * 49 * t) + 0.5 * np.sin(2 * np.pi * 73.5 * t + 1) + 0.25 * np.sin(2 * np.pi * 98.2 * t + 2)) * lfo
-air = lp(rng.standard_normal(N), 380, 4) * 1.4
-place(hum * bed_env * 0.065 + air * bed_env * 0.045, 0, pan=-0.05)
-place(lp(rng.standard_normal(N), 360, 4) * bed_env * 0.07, 0, pan=0.25)  # decorrelated air on the right
+def place(bus, sig, at, gain=1.0, pan=0.0):
+    i = int(at * SR); n = min(len(sig), N - i)
+    if n <= 0: return
+    pan = np.broadcast_to(np.asarray(pan, float), (len(sig),))[:n]
+    th = (pan + 1) * np.pi / 4
+    bus[0, i:i + n] += sig[:n] * gain * np.cos(th)
+    bus[1, i:i + n] += sig[:n] * gain * np.sin(th)
 
-# --- delicate clean tick -------------------------------------------------------------
-def tick(freq, bright=1.0):
-    n = int(0.25 * SR)
-    click = hp(rng.standard_normal(n), 3500) * env_adsr(n, 0.0004, 0.004 / bright)
-    ping = tone([freq, freq * 2.76], 0.25, 0.0008, 0.035, [1, 0.3])
-    return click * 0.5 + ping
-place(tick(2600), 0.50, 0.16, pan=0.0)
 
-# --- airy whoosh following the circular flow ------------------------------------------
-w0, w1 = 0.95, 2.45
-n = int((w1 - w0) * SR); x = np.arange(n) / SR; u = x / (w1 - w0)
-noise = rng.standard_normal(n)
-f, tt, Z = signal.stft(noise, SR, nperseg=1024)
-uu = tt / (w1 - w0)
-centre = 350 + 2600 * np.clip(uu / 0.85, 0, 1) ** 1.6                 # opens up as the light accelerates
-mask = np.exp(-0.5 * (np.log(f[:, None] + 1) - np.log(centre[None, :])) ** 2 / 0.45 ** 2)
-_, wh = signal.istft(Z * mask, SR, nperseg=1024); wh = wh[:n]
-wenv = np.sin(np.pi * np.clip(u, 0, 1)) ** 1.5 * (0.35 + 0.65 * np.clip(u / 0.8, 0, 1))
-wh = wh * wenv / (np.abs(wh).max() + 1e-9)
-pan = 0.55 * np.sin(2 * np.pi * (1.4 * u ** 1.3) + np.pi)            # travels around the stereo field
-i = int(w0 * SR)
-L[i:i + n] += wh * 0.30 * np.cos((pan + 1) * np.pi / 4)
-R[i:i + n] += wh * 0.30 * np.sin((pan + 1) * np.pi / 4)
+def pluck(freq, dur=2.2, attack=0.008, tau=0.55, bright=0.35):
+    """Soft kalimba / felt-bell: sine body, a quickly fading inharmonic tine partial, slow vibrato."""
+    n = int(dur * SR); x = np.arange(n) / SR
+    a = np.clip(x / attack, 0, 1); a = np.sin(a * np.pi / 2) ** 2
+    vib = 1 + 0.0012 * np.sin(2 * np.pi * 4.5 * x)
+    body = np.sin(2 * np.pi * freq * x * vib) * np.exp(-x / tau)
+    body += 0.18 * np.sin(2 * np.pi * 2 * freq * x) * np.exp(-x / (tau * 0.45))
+    tine = bright * np.sin(2 * np.pi * freq * 3.01 * x) * np.exp(-x / 0.07)
+    return lp((body + tine) * a, min(5200, freq * 4))
 
-# --- deep clean impact (symbol lands at 2.9) -------------------------------------------
-n = int(1.6 * SR); x = np.arange(n) / SR
-fsw = 42 + 30 * np.exp(-x / 0.06)
-body = np.sin(2 * np.pi * np.cumsum(fsw) / SR) * env_adsr(n, 0.004, 0.42)
-thump = lp(rng.standard_normal(n), 220, 4) * env_adsr(n, 0.002, 0.07) * 2.5
-place(body * 0.42 + thump * 0.18, 2.89)
 
-# --- glass-like tonal resonance (clean pulse at 3.22) ---------------------------------
-glass = tone([1046.5, 1568.0, 2093.0, 2637.0, 3151.0], 2.6, 0.012, 0.75, [1, 0.6, 0.38, 0.22, 0.12], detune=0.0015)
-place(glass, 3.22, 0.085, pan=-0.15)
-place(tone([1047.6, 1569.7], 2.6, 0.02, 0.9, [1, 0.5]), 3.235, 0.05, pan=0.3)   # gentle beating shimmer
+def bowl(freq, dur=3.2):
+    """Singing bowl: inharmonic partials with slow beating pairs, soft 40 ms onset."""
+    n = int(dur * SR); x = np.arange(n) / SR
+    out = np.zeros(n)
+    for ratio, g, tau in [(1.0, 1.0, 1.6), (2.71, 0.45, 1.0), (5.15, 0.16, 0.55)]:
+        for det in (-0.6, 0.6):
+            out += g * 0.5 * np.sin(2 * np.pi * (freq * ratio + det) * x + rng.uniform(0, 6.28)) * np.exp(-x / tau)
+    a = np.clip(x / 0.04, 0, 1)
+    return out * a
 
-# --- tonal swell under the wordmark (almost imperceptible) ----------------------------
-n = int(2.4 * SR); x = np.arange(n) / SR
-pad = sum(g * np.sin(2 * np.pi * fr * x) for fr, g in [(261.6, 1), (329.6, 0.7), (392.0, 0.6), (493.9, 0.35)])
-pad = lp(pad, 1800) * np.sin(np.pi * np.clip(x / 2.4, 0, 1)) ** 2
-place(pad, 4.15, 0.035, pan=0.1)
 
-# --- orange spark tick ----------------------------------------------------------------
-place(tick(4200, bright=1.4), 5.45, 0.13, pan=-0.2)
+# --- pad: detuned sines, chord changes cross-faded, brightness follows the picture ------
+CHORDS = [  # (start, end, notes)
+    (0.0, 3.3, ['D2', 'A2', 'E3', 'A3', 'D4']),               # Dsus2 — stillness / flow
+    (2.6, 6.9, ['D2', 'A2', 'F#3', 'C#4', 'E4']),             # Dmaj9 — the symbol lands
+    (6.3, 9.45, ['G2', 'D3', 'F#3', 'A3', 'B3', 'E4']),       # Gmaj9(13) — the logo breathes
+    (9.05, 10.0, ['D2', 'A2', 'D3', 'F#3', 'E4']),            # D(add9) — resolve
+]
+bright = np.interp(t, [0, 1.0, 2.2, 2.9, 3.6, 6.5, 7.5, 9.2, 10], [0.05, 0.12, 0.45, 0.75, 0.35, 0.3, 0.45, 0.35, 0.2])
+pad = np.zeros((2, N))
+for k, (a, b, notes) in enumerate(CHORDS):
+    e = np.clip((t - a) / 0.9, 0, 1) * np.clip((b - t) / 0.9, 0, 1)
+    e = np.sin(e * np.pi / 2) ** 2
+    for j, nt in enumerate(notes):
+        f = hz(nt)
+        for c, det in enumerate((-0.0022, 0.0, 0.0024)):
+            ph = rng.uniform(0, 6.28)
+            v = np.sin(2 * np.pi * f * (1 + det) * t + ph) + bright * 0.35 * np.sin(2 * np.pi * 2 * f * (1 + det) * t + ph)
+            side = (j % 2 * 2 - 1) * 0.35 + (c - 1) * 0.25
+            pad[0] += v * e * np.cos((side + 1) * np.pi / 4) / (len(notes) ** 0.5)
+            pad[1] += v * e * np.sin((side + 1) * np.pi / 4) / (len(notes) ** 0.5)
+pad_env = np.clip(t / 1.6, 0, 1) ** 2 * (1 - 0.25 * np.clip((t - 3.4) / 1.5, 0, 1))
+pad_env *= 1 + 0.35 * np.exp(-((t - 2.85) / 0.45) ** 2)       # swell into the landing
+pad *= pad_env * 0.075
+dry += np.stack([lp(pad[0], 1400), lp(pad[1], 1400)])
 
-# --- final glint "ting" ---------------------------------------------------------------
-ting = tone([3136.0, 4698.6, 6272.0], 1.2, 0.002, 0.28, [1, 0.35, 0.15])
-place(ting, 8.80, 0.10, pan=0.25)
+# --- air: slow breathing noise, opens with the flow -----------------------------------
+air = np.stack([rng.standard_normal(N), rng.standard_normal(N)])
+f, tt, Z = signal.stft(air, SR, nperseg=2048)
+cen = np.interp(tt, [0, 1.0, 2.2, 2.9, 4.0, 10], [500, 700, 2400, 1500, 800, 700])
+mask = np.exp(-0.5 * (np.log(f[:, None] + 1) - np.log(cen[None, :])) ** 2 / 0.6 ** 2)
+_, air = signal.istft(Z * mask[None], SR, nperseg=2048); air = air[:, :N]
+air_env = 0.25 + 0.75 * np.exp(-((t - 1.9) / 0.75) ** 2)
+air_env *= np.clip(t / 0.8, 0, 1) * (1 - np.clip((t - 8.8) / 0.8, 0, 1))
+air_env *= 1 + 0.5 * np.exp(-((t - 4.75) / 0.35) ** 2)        # a breath under the wordmark stream
+dry += air / np.abs(air).max() * air_env * 0.045
 
-# --- clean resolve then silence -------------------------------------------------------
-n = int(0.62 * SR); x = np.arange(n) / SR
-chord = sum(g * np.sin(2 * np.pi * fr * x) for fr, g in [(130.8, 1), (196.0, 0.7), (261.6, 0.55), (329.6, 0.35), (523.3, 0.12)])
-cenv = np.clip(x / 0.04, 0, 1) * np.cos(np.pi / 2 * np.clip(x / 0.62, 0, 1)) ** 2
-place(lp(chord, 2200) * cenv, 9.22, 0.12)
+# --- notes on picture -----------------------------------------------------------------
+place(pl, pluck(hz('A5'), tau=0.9, bright=0.15), 0.45, 0.16, 0.0)              # droplet: point appears
 
-# --- space: short airy reverb ---------------------------------------------------------
-def reverb(x, seed):
-    r = np.random.default_rng(seed); n = int(1.9 * SR); k = np.arange(n) / SR
-    ir = lp(r.standard_normal(n), 6000) * np.exp(-k / 0.42); ir[0] = 0
+arp = [(1.05, 'D5', -0.5), (1.42, 'F#5', 0.3), (1.70, 'A5', 0.55), (1.92, 'E5', -0.2),
+       (2.09, 'C#6', -0.55), (2.23, 'A5', 0.1), (2.35, 'E6', 0.5)]                # quickens with the light
+for i, (at, nt, pan) in enumerate(arp):
+    place(pl, pluck(hz(nt), tau=0.5, bright=0.3), at, 0.10 + 0.01 * i, pan)
+
+n = int(2.4 * SR); x = np.arange(n) / SR                                       # warm landing bloom on D
+low = np.sin(2 * np.pi * hz('D2') * x) + 0.4 * np.sin(2 * np.pi * hz('D3') * x)
+low *= np.clip(x / 0.06, 0, 1) * np.exp(-x / 0.75)
+place(dry, lp(low, 500), 2.88, 0.20)
+place(pl, pluck(hz('D5'), tau=1.0, bright=0.12, attack=0.012), 2.90, 0.11, -0.2)
+place(pl, pluck(hz('A5'), tau=0.9, bright=0.1, attack=0.012), 2.93, 0.08, 0.25)
+
+place(dry, bowl(hz('D5')), 3.22, 0.085, 0.0)                                   # clean pulse
+
+run = ['A4', 'B4', 'D5', 'E5', 'F#5', 'A5', 'B5', 'D6']                         # wordmark stream
+for i, nt in enumerate(run):
+    at = 4.28 + 0.88 * (1 - (1 - i / (len(run) - 1)) ** 1.6) * 0.92            # eases like the stream
+    place(pl, pluck(hz(nt), tau=0.45, bright=0.2, attack=0.006), at, 0.065, -0.7 + 1.4 * i / (len(run) - 1))
+
+place(pl, pluck(hz('F#6'), tau=0.5, bright=0.25), 5.46, 0.07, -0.35)           # orange spark
+place(pl, pluck(hz('A6'), tau=0.6, bright=0.2), 6.15, 0.05, 0.35)
+
+n = int(2.5 * SR); x = np.arange(n) / SR                                       # tagline: soft low dyad
+dy = (np.sin(2 * np.pi * hz('B2') * x) + 0.6 * np.sin(2 * np.pi * hz('F#3') * x))
+place(dry, lp(dy * np.sin(np.pi * np.clip(x / 2.5, 0, 1)) ** 2, 700), 7.45, 0.05)
+
+chime = pluck(hz('D7'), dur=1.6, tau=0.45, bright=0.1, attack=0.006)           # final glint
+chime += 0.4 * pluck(hz('A6'), dur=1.6, tau=0.5, bright=0.05, attack=0.01)
+place(pl, chime, 8.80, 0.06, 0.3)
+
+n = int(0.7 * SR); x = np.arange(n) / SR                                       # resolve
+res = sum(g * np.sin(2 * np.pi * hz(nt) * x) for nt, g in [('D3', 1), ('A3', 0.6), ('F#4', 0.35), ('E5', 0.2)])
+res *= np.clip(x / 0.05, 0, 1) * np.cos(np.pi / 2 * np.clip(x / 0.7, 0, 1)) ** 2
+place(dry, lp(res, 1800), 9.25, 0.09)
+
+# --- space: soft stereo echo on the notes, long gentle reverb on everything -----------------
+def echo(bus, d=0.36, fb=0.32, mix=0.35):
+    out = bus.copy(); k = int(d * SR); tap = bus.copy()
+    for _ in range(5):
+        tap = np.roll(lp(tap, 2600), k, axis=1); tap[:, :k] = 0; tap = tap[::-1] * fb   # ping-pong
+        out += tap * mix / fb
+    return out
+
+def reverb(x, seed, decay=0.85, length=3.2, pre=0.025):
+    r = np.random.default_rng(seed); n = int(length * SR); k = np.arange(n) / SR
+    ir = lp(r.standard_normal(n), 4500) * np.exp(-k / decay) * np.clip(k / 0.03, 0, 1)
+    ir = np.r_[np.zeros(int(pre * SR)), ir]
     return signal.fftconvolve(x, ir / np.sqrt((ir ** 2).sum()))[:len(x)]
-L2 = L + 0.32 * reverb(L, 1); R2 = R + 0.32 * reverb(R, 2)
-out = np.stack([L2, R2], 1)
-fade = np.ones(N); fade[int(9.78 * SR):] = 0                     # brief moment of true silence
-ramp = slice(int(9.70 * SR), int(9.78 * SR)); fade[ramp] = np.cos(np.linspace(0, np.pi / 2, ramp.stop - ramp.start)) ** 2
-out *= fade[:, None]
-out = hp(out.T, 25).T                                           # remove sub-sonic rumble
-out *= 10 ** (-1.0 / 20) / np.abs(out).max()                     # peak -1 dBFS
+
+mixb = dry + echo(pl)
+wet = np.stack([reverb(mixb[0], 3), reverb(mixb[1], 4)])
+out = mixb * 0.8 + wet * 0.55
+
+fade = np.ones(N); a, b = int(9.45 * SR), int(9.8 * SR)       # gentle tail-out, then true silence
+fade[a:b] = np.cos(np.linspace(0, np.pi / 2, b - a)) ** 2; fade[b:] = 0
+out *= fade
+out = hp(out, 30)
+out = lp(out, 11000)
+out *= 10 ** (-1.5 / 20) / np.abs(out).max()
 
 os.makedirs(os.path.join(os.path.dirname(__file__), '..', 'out'), exist_ok=True)
 path = os.path.join(os.path.dirname(__file__), '..', 'out', 'sound.wav')
-pcm = (np.clip(out, -1, 1) * (2 ** 23 - 1)).astype(np.int32)
-b = (pcm.reshape(-1, 1).view(np.uint8).reshape(-1, 4)[:, :3]).tobytes()   # 24-bit little-endian
+pcm = (np.clip(out.T, -1, 1) * (2 ** 23 - 1)).astype(np.int32)
+b = pcm.reshape(-1, 1).view(np.uint8).reshape(-1, 4)[:, :3].tobytes()   # 24-bit little-endian
 with wave.open(path, 'wb') as w:
     w.setnchannels(2); w.setsampwidth(3); w.setframerate(SR); w.writeframes(b)
 print('wrote', os.path.normpath(path))

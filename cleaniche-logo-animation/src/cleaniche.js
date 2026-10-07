@@ -10,7 +10,7 @@
     teal: '#067593', orange: '#FF621D', light: '#AEEAFF',
     grey: '#B9C7C9', tan: '#C1B995',
   };
-  const TAGLINE = 'YOUR SPACE, OUR SPARKLE';
+  const TAGLINE = 'CLEAN SPACES. CLEAR MINDSETS.';
   const DURATION = 10;
 
   // Logo-space geometry (units of the supplied 2386.11 x 404.74 artboard).
@@ -153,9 +153,19 @@
     const sparkRoute = new Route(R.lower.slice().reverse());   // the internal flowing curve
     const sp = pchip([[5.45, 0], [5.72, sparkRoute.len * 0.18], [6.02, sparkRoute.len * 0.72], [6.3, sparkRoute.len * 0.95], [6.45, sparkRoute.len]]);
 
+    // Wordmark stream: leaves the symbol's tail, settles onto the word's x-height centre line.
+    const WM_MID = 231;
+    const wmStream = (() => {
+      const yAt = x => x < 700 ? lerp(271, WM_MID, smooth(clamp((x - 585) / 115))) :
+        WM_MID + 9 * Math.sin((x - 700) / 150) * Math.exp(-(x - 700) / 700);
+      const pts = []; for (let x = 585; x <= LOGO_BOX.x1 + 90; x += 3) pts.push([x, yAt(x)]);
+      const route = new Route(pts);
+      return { yAt, route, s: pchip([[4.25, 0], [4.55, route.len * 0.2], [4.95, route.len * 0.8], [5.2, route.len]]) };
+    })();
+
     // Offscreen layers.
     const mk = () => { const c = document.createElement('canvas'); c.width = W; c.height = H; return [c, c.getContext('2d')]; };
-    const [fxC, fx] = mk(), [symC, sy] = mk(), [wmC, wm] = mk(), [logoC, lg] = mk();
+    const [fxC, fx] = mk(), [symC, sy] = mk(), [wmC, wm] = mk(), [logoC, lg] = mk(), [mk2C, mk2] = mk();
     // Static dither grain (kills gradient banding in the encode; doesn't flicker).
     const [grainC, gr] = mk();
     {
@@ -316,36 +326,65 @@
       lg.setTransform(1, 0, 0, 1, 0, 0); lg.clearRect(0, 0, W, H);
       lg.save(); camera(lg, t); symXf(lg, P); lg.fillStyle = C.teal; lg.fill(symPath); lg.restore();
 
-      // wordmark: emerges from the symbol side — width 95→100 %, blur → sharp, opacity, soft wipe
+      // wordmark: a stream of light leaves the symbol's tail and flows through the word; the letters
+      // open out of that stream (from its centre line outwards) and condense from light-blue to teal.
       if (t >= 4.2) {
         const u = prog(t, 4.2, 5.4);
+        const sv = wmStream.s(t), head = wmStream.route.at(sv);
+        const front = head[0] - 30 + 700 * easeOutCubic(prog(t, 5.0, 5.45)); // trails the head, then completes
         wm.setTransform(1, 0, 0, 1, 0, 0); wm.clearRect(0, 0, W, H);
         wm.save(); camera(wm, t);
         const [wx0] = toScreen(WORD_X0, 0);
         wm.translate(P.x - symFinal[0], P.y - symFinal[1]);   // rides with the symbol (glide + breathe)
         wm.translate(wx0, 0); wm.scale(lerp(0.95, 1, easeOutCubic(u)), 1); wm.translate(-wx0, 0);
         wm.translate(logoLeft - LOGO_BOX.x0 * s, logoTop - LOGO_BOX.y0 * s); wm.scale(s, s);
+        const M = wm.getTransform();
         wm.fillStyle = C.teal; wm.fill(wordPath);
-        // soft left→right wipe; the feather is wider than the word so it resolves as one piece
-        const front = lerp(-0.1, 1.75, easeInOutSine(prog(t, 4.2, 5.25)));
-        const x0 = WORD_X0, x1 = LOGO_BOX.x1, w = x1 - x0;
-        wm.globalCompositeOperation = 'destination-in';
-        const g = wm.createLinearGradient(x0 + (front - 0.7) * w, 0, x0 + front * w, 0);
-        g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
-        wm.fillStyle = g; wm.fillRect(x0 - 50, 0, w + 100, 405);
-        // thin fluid highlight travelling just behind the front
-        wm.globalCompositeOperation = 'source-atop';
-        const hx = x0 + (front - 0.42) * w, hw = 70;
-        const hg = wm.createLinearGradient(hx - hw, 0, hx + hw, 0);
-        const ha = 0.55 * (1 - smooth(prog(t, 5.0, 5.45)));
-        hg.addColorStop(0, rgba(C.light, 0)); hg.addColorStop(0.5, rgba(C.light, ha)); hg.addColorStop(1, rgba(C.light, 0));
-        wm.fillStyle = hg; wm.fillRect(x0 - 50, 0, w + 100, 405);
-        wm.restore(); wm.globalCompositeOperation = 'source-over';
+        if (t < 5.6) {
+          // lens-shaped opening around the stream line, widest well behind the front
+          mk2.setTransform(1, 0, 0, 1, 0, 0); mk2.clearRect(0, 0, W, H);
+          mk2.setTransform(M); mk2.filter = `blur(${9 * px}px)`; mk2.fillStyle = '#fff';
+          const top = [], bot = [];
+          for (let x = WORD_X0 - 30; x <= LOGO_BOX.x1 + 30; x += 6) {
+            const o = smooth(clamp((front - x) / 360));
+            const y = wmStream.yAt(x);
+            top.push([x, y - 215 * o]); bot.push([x, y + 130 * o]);
+          }
+          mk2.beginPath(); mk2.moveTo(top[0][0], top[0][1]);
+          for (const q of top) mk2.lineTo(q[0], q[1]);
+          for (const q of bot.reverse()) mk2.lineTo(q[0], q[1]);
+          mk2.closePath(); mk2.fill(); mk2.filter = 'none';
+          wm.save(); wm.setTransform(1, 0, 0, 1, 0, 0); wm.globalCompositeOperation = 'destination-in'; wm.drawImage(mk2C, 0, 0); wm.restore();
+          // freshly formed letters glow light-blue, then cool to teal behind the front
+          wm.globalCompositeOperation = 'source-atop';
+          const g = wm.createLinearGradient(front - 520, 0, front, 0);
+          const ga = 0.85 * (1 - smooth(prog(t, 5.15, 5.5)));
+          g.addColorStop(0, rgba(C.light, 0)); g.addColorStop(0.75, rgba(C.light, 0.35 * ga)); g.addColorStop(1, rgba(C.light, ga));
+          wm.fillStyle = g; wm.fillRect(WORD_X0 - 60, 0, LOGO_BOX.x1 - WORD_X0 + 120, 405);
+          wm.globalCompositeOperation = 'source-over';
+        }
+        wm.restore();
         lg.save();
-        lg.globalAlpha = smooth(prog(t, 4.2, 5.0));
-        lg.filter = `blur(${(1 - easeOutCubic(u)) * 9 * px}px)`;
+        lg.globalAlpha = smooth(prog(t, 4.25, 4.75));
+        lg.filter = `blur(${(1 - easeOutCubic(u)) * 5 * px}px)`;
         lg.drawImage(wmC, 0, 0);
         lg.restore();
+
+        // the stream itself: hair-thin light, teal core with a light-blue filament
+        const sa = smooth(prog(t, 4.25, 4.4)) * (1 - smooth(prog(t, 5.0, 5.32)));
+        if (sa > 0) {
+          const back = Math.min(sv - wmStream.s(t - 0.35), 520);
+          const pts = wmStream.route.slice(sv - back, sv, 4).map(q => { const r = M.transformPoint(new DOMPoint(q[0], q[1])); return [r.x, r.y]; });
+          lg.save(); lg.globalCompositeOperation = 'lighter'; lg.lineCap = 'round';
+          for (let i = 0; i < pts.length - 1; i++) {
+            const f = (i + 1) / (pts.length - 1);
+            lg.strokeStyle = mix(C.teal, C.light, f * f, sa * Math.pow(f, 1.4));
+            lg.lineWidth = 2.6 * px * (0.2 + 0.8 * f);
+            lg.beginPath(); lg.moveTo(pts[i][0], pts[i][1]); lg.lineTo(pts[i + 1][0], pts[i + 1][1]); lg.stroke();
+          }
+          if (pts.length) { const [hx, hy] = pts[pts.length - 1]; drawHead(lg, hx, hy, 2.6 * px, sa, C.teal, C.light); }
+          lg.restore();
+        }
       }
 
       // final glint — polished light reflection riding the orange point, clipped to the logo
@@ -430,8 +469,8 @@
       const e = easeOutCubic(u);
       ctx.save(); camera(ctx, t);
       ctx.font = `500 ${tagSize}px Figtree`;
-      ctx.letterSpacing = `${0.34 * tagSize}px`;
-      const w = ctx.measureText(TAGLINE).width - 0.34 * tagSize;   // drop trailing tracking
+      ctx.letterSpacing = `${0.3 * tagSize}px`;
+      const w = ctx.measureText(TAGLINE).width - 0.3 * tagSize;   // drop trailing tracking
       ctx.fillStyle = rgba(C.grey, smooth(u));
       ctx.textBaseline = 'alphabetic';
       ctx.fillText(TAGLINE, (W - w) / 2, tagBaseline + 8 * px * (1 - e));

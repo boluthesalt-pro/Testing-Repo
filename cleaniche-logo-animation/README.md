@@ -7,7 +7,7 @@ A 10-second brand logo animation, rendered at **1920×1080** (16:9) and **1080×
 | `out/cleaniche-logo-animation-1920x1080.mp4` | 16:9 master |
 | `out/cleaniche-logo-animation-1080x1350.mp4` | 4:5 social cut (layout re-composed for the taller frame) |
 | `out/*-final-frame.png` | Final lockup still for each size |
-| `out/sound.wav` | The sound design on its own (48 kHz / 24-bit) |
+| `out/sound.wav` | The score on its own (48 kHz / 24-bit) |
 
 ## Brand accuracy
 
@@ -20,22 +20,22 @@ A 10-second brand logo animation, rendered at **1920×1080** (16:9) and **1080×
 
 | Time | Beat | Picture | Sound |
 | --- | --- | --- | --- |
-| 0.0–1.0 | Stillness | Near-black field. A #067593 point fades in at the centre and drifts out on a hair-thin trail with #AEEAFF light. A 2.8% camera push-in runs until 9.3 s. | Low hum, one clean tick |
-| 1.0–2.2 | The flow | The light speeds up into an organic spiral. A second, thinner line joins and follows. | Airy whoosh that circles the stereo field |
-| 2.2–3.2 | Symbol forms | The trails land on the symbol's real centreline. The outer ring condenses first, then both inner waves, then the outer arc closes. Blur and glow resolve to sharp at 2.9 s, followed by a 2.5% swell and settle. | Deep clean impact |
-| 3.2–4.2 | Clean pulse | Logo scales 100→103→100%. One thin ripple grows from 0 to 130% while shifting #067593→#AEEAFF and fading from 33% to 0. | Glass resonance |
-| 4.2–5.4 | Wordmark | The symbol glides into the lockup while the wordmark unfurls from it: width 95→100%, blur to sharp, opacity up, with a fine #AEEAFF highlight. | Faint tonal swell |
-| 5.4–6.5 | Orange spark | A single #FF621D spark rides the inner flowing curve. It accelerates, slows and dissolves. | Bright tick |
-| 6.5–7.5 | Logo breathes | The logo rises 5 px and settles. A very soft #AEEAFF glow appears and the background deepens to dark blue. | — |
-| 7.5–8.5 | Tagline | YOUR SPACE, OUR SPARKLE rises 8 px while fading in. | — |
-| 8.5–9.3 | Final glint | A tiny orange light crosses left to right, with a polished reflection clipped to the logo. | High "ting" |
-| 9.3–10.0 | Lockup | Everything holds completely still. | Clean resolve, then silence from about 9.8 s |
+| 0.0–1.0 | Stillness | Near-black field. A #067593 point fades in at the centre and drifts out on a hair-thin trail with #AEEAFF light. A 2.8% camera push-in runs until 9.3 s. | Warm Dsus2 pad fades in, then a single glass-droplet note (A5) |
+| 1.0–2.2 | The flow | The light speeds up into an organic spiral. A second, thinner line joins and follows. | Soft kalimba arpeggio that quickens with the light and circles the stereo field, over a breath of air |
+| 2.2–3.2 | Symbol forms | The trails land on the symbol's real centreline. The outer ring condenses first, then both inner waves, then the outer arc closes. Blur and glow resolve to sharp at 2.9 s, followed by a 2.5% swell and settle. | Pad swells and opens, then a warm bloom: low D with soft D5/A5 bells |
+| 3.2–4.2 | Clean pulse | Logo scales 100→103→100%. One thin ripple grows from 0 to 130% while shifting #067593→#AEEAFF and fading from 33% to 0. | Singing-bowl tone |
+| 4.2–5.4 | Wordmark | The symbol glides into the lockup. A hair-thin stream of light leaves the symbol's tail and flows through the word. The letters open out from the stream's centre line, glow #AEEAFF, then cool to #067593, with width 95→100% and blur to sharp. | Harp-like pentatonic run, panned left→right with the stream |
+| 5.4–6.5 | Orange spark | A single #FF621D spark rides the inner flowing curve. It accelerates, slows and dissolves. | Two soft high notes, panned with the spark |
+| 6.5–7.5 | Logo breathes | The logo rises 5 px and settles. A very soft #AEEAFF glow appears and the background deepens to dark blue. | Pad drifts to Gmaj9 |
+| 7.5–8.5 | Tagline | CLEAN SPACES. CLEAR MINDSETS. rises 8 px while fading in. | Soft low dyad |
+| 8.5–9.3 | Final glint | A tiny orange light crosses left to right, with a polished reflection clipped to the logo. | Gentle high chime |
+| 9.3–10.0 | Lockup | Everything holds completely still. | Resolves to D(add9), then silence from about 9.8 s |
 
 ## How it's built
 
 - `src/cleaniche.js` is a deterministic canvas renderer: `draw(t)` paints the frame at time *t*. All motion uses ease curves and monotone splines; nothing is keyframed linearly.
 - `src/routes.json` holds the centreline of the symbol's ribbon. It was extracted from the supplied artwork by skeletonising a 4× raster of the symbol (`tools/skel.py` → `tools/branches.py` → `tools/routes.py`). This is why the light trails follow the real logo geometry.
-- `tools/sound.py` synthesises the sound design (numpy + scipy).
+- `tools/sound.py` synthesises the score (numpy + scipy). It is a calm D-major bed where every visual beat is a soft note rather than an effect. Every attack is 6 ms or longer, everything is low-passed, and the notes sit in a soft ping-pong echo and a long reverb.
 - `tools/render.js` drives headless Chromium through Playwright, streams PNG frames into ffmpeg, and muxes in the audio.
 
 ### Preview / re-render
