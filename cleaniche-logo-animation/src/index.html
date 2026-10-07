@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cleaniche — The Flow of Clean</title>
+<title>Cleaniche — One Clean Sweep</title>
 <style>
   @font-face { font-family: 'Figtree'; src: url('../assets/figtree-latin-wght-normal.woff2') format('woff2'); font-weight: 300 900; }
-  html, body { margin: 0; background: #000; color: #B9C7C9; font: 14px Figtree, sans-serif; }
+  html, body { margin: 0; background: #e9eef0; color: #0D2B2F; font: 14px Figtree, sans-serif; }
   body.preview { display: grid; place-items: center; min-height: 100vh; gap: 12px; }
   canvas { display: block; }
-  body.preview canvas { max-width: 96vw; max-height: 82vh; }
+  body.preview canvas { max-width: 96vw; max-height: 82vh; box-shadow: 0 1px 12px rgba(0,0,0,.08); }
   .bar { display: flex; gap: 10px; align-items: center; }
   .bar input[type=range] { width: min(60vw, 640px); }
   body.render .bar { display: none; }
@@ -21,32 +21,47 @@
   <button id="play">Play</button>
   <input id="scrub" type="range" min="0" max="10" step="0.001" value="0">
   <span id="time">0.00 s</span>
-  <select id="size"><option value="1920x1080">1920×1080</option><option value="1080x1350">1080×1350</option></select>
+  <select id="size"><option value="1920x1080">16:9</option><option value="1080x1350">4:5</option></select>
 </div>
+<audio id="snd" src="../out/sound.wav" preload="auto"></audio>
 <script src="data.js"></script>
-<script src="cleaniche.js"></script>
+<script src="ident.js"></script>
 <script>
   const q = new URLSearchParams(location.search);
-  const canvas = document.getElementById('c');
+  const out = document.getElementById('c'), octx = out.getContext('2d');
+  const work = document.createElement('canvas');
   let anim;
   function setup(size) {
     const [w, h] = size.split('x').map(Number);
-    canvas.width = w; canvas.height = h;
-    anim = Cleaniche.create(canvas, window.CLEANICHE_DATA);
+    out.width = work.width = w; out.height = h; work.height = h;
+    anim = CleanicheIdent.create(work, window.CLEANICHE_DATA);
   }
-  window.ready = document.fonts.load('500 27px Figtree').then(() => {
+  // Motion blur: average `sub` renders spread across a 180° shutter (half a frame) centred on t.
+  function frame(t, fps = 30, sub = 1) {
+    octx.globalAlpha = 1;
+    if (sub <= 1) { anim.draw(t); octx.drawImage(work, 0, 0); return; }
+    for (let i = 0; i < sub; i++) {
+      anim.draw(Math.max(0, t + ((i + 0.5) / sub - 0.5) * 0.5 / fps));
+      octx.globalAlpha = 1 / (i + 1);
+      octx.drawImage(work, 0, 0);
+    }
+    octx.globalAlpha = 1;
+  }
+  const revealImg = new Image();
+  revealImg.src = window.CLEANICHE_DATA.reveal.src;
+  window.ready = Promise.all([document.fonts.load('500 38px Figtree'), revealImg.decode()]).then(() => {
+    window.CLEANICHE_DATA.revealImage = revealImg;
     setup(q.get('size') || '1920x1080');
-    window.renderFrame = t => anim.draw(t);
+    window.renderFrame = (t, fps, sub) => frame(t, fps, sub);
     if (q.has('render')) { document.body.className = 'render'; return; }
     document.body.className = 'preview';
     const scrub = document.getElementById('scrub'), time = document.getElementById('time');
-    const sizeSel = document.getElementById('size'), play = document.getElementById('play');
-    sizeSel.value = q.get('size') || '1920x1080';
+    const sizeSel = document.getElementById('size'), play = document.getElementById('play'), snd = document.getElementById('snd');
     let t0 = null, raf = 0;
-    const show = t => { anim.draw(t); scrub.value = t; time.textContent = t.toFixed(2) + ' s'; };
+    const show = t => { frame(t); scrub.value = t; time.textContent = t.toFixed(2) + ' s'; };
     const tick = now => { const t = (now - t0) / 1000; if (t >= 10) { show(10); play.textContent = 'Play'; return; } show(t); raf = requestAnimationFrame(tick); };
-    play.onclick = () => { cancelAnimationFrame(raf); t0 = performance.now(); play.textContent = 'Replay'; raf = requestAnimationFrame(tick); };
-    scrub.oninput = () => { cancelAnimationFrame(raf); show(+scrub.value); };
+    play.onclick = () => { cancelAnimationFrame(raf); snd.currentTime = 0; snd.play().catch(() => {}); t0 = performance.now(); play.textContent = 'Replay'; raf = requestAnimationFrame(tick); };
+    scrub.oninput = () => { cancelAnimationFrame(raf); snd.pause(); show(+scrub.value); };
     sizeSel.onchange = () => { setup(sizeSel.value); show(+scrub.value); };
     show(0);
   });

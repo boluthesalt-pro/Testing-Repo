@@ -1,57 +1,62 @@
-# Cleaniche — "The Flow of Clean" logo animation
+# Cleaniche — "One Clean Sweep"
 
-A 10-second brand logo animation in **4K**: **3840×2160** (16:9) and **2160×2700** (4:5). There are also 1080 versions for quick sharing. All are 30 fps, H.264 with AAC stereo audio.
+A 10-second logo ident with an original sound design and a 3-note sonic logo.
 
-| File | What it is |
+| File | Format |
 | --- | --- |
-| `out/cleaniche-logo-animation-3840x2160.mp4` | 16:9 4K master |
-| `out/cleaniche-logo-animation-2160x2700.mp4` | 4:5 4K master (layout re-composed for the taller frame) |
-| `out/cleaniche-logo-animation-1920x1080.mp4` | 16:9 at 1080p |
-| `out/cleaniche-logo-animation-1080x1350.mp4` | 4:5 at 1080 wide (Instagram feed size) |
-| `out/*-final-frame.png` | Final lockup still for each size |
-| `out/sound.wav` | The score on its own (48 kHz / 24-bit) |
+| `out/cleaniche-logo-animation-3840x2160.mp4` | 16:9 · 4K master |
+| `out/cleaniche-logo-animation-2160x2700.mp4` | 4:5 · 4K master |
+| `out/cleaniche-logo-animation-1920x1080.mp4` | 16:9 · 1080p |
+| `out/cleaniche-logo-animation-1080x1350.mp4` | 4:5 · 1080 wide (Instagram feed) |
+| `out/*-final-frame.png` | End-frame stills |
+| `out/sound.wav` | Sound design on its own (48 kHz / 24-bit) |
 
-## Brand accuracy
+All videos are 30 fps, H.264 with AAC stereo audio, and have true motion blur (6 sub-frames per frame, 180° shutter).
 
-- The logo is drawn **only** from the supplied path data in `assets/cleaniche-logo-outlined.svg`. Nothing is redrawn, outlined again, or retyped. The animation uses uniform transforms (moves and scales that keep proportions), masks, light and opacity. The only non-uniform transform is the brief's 95%→100% wordmark width during its 1.2 s reveal. Every frame from 5.4 s onward shows the logo at its exact proportions.
-- The background is white. The logo is in the supplied artwork's own colour, **#032E36**, unchanged from the file. Brand teal **#067593** carries the motion: trails, the colour of freshly formed letters, and soft haze.
-- Orange **#FF621D** appears only twice: the spark along the inner curve (5.4–6.5 s) and the final glint (8.5–9.3 s).
-- The tagline is set in **Figtree** Medium (`assets/figtree-latin-wght-normal.woff2`, SIL OFL) in Dark Navy **#0D2B2F** at 82% opacity.
+## The idea
+
+The Cleaniche symbol is a single ribbon that spirals inward. The ident turns that into one gesture: **a single clean sweep**.
+
+We open on a pure white frame, an empty clean space. The ribbon's edge sweeps through the frame in extreme macro, and teal floods the screen. One continuous pull-back then shows that the sweep was drawing the mark all along. The ribbon goes around the ring and splits into the two inner waves, which rejoin to close the symbol. The mark lands with a soft spring, slides aside, and the wordmark emerges from behind it. The tagline rises word by word. Its final full stop is the only orange in the piece, and it lands on the last note of the sonic logo.
+
+The ident is built on principles that separate strong idents from template reveals:
+
+- The motion comes from the logo's own geometry, not from added effects. There are no particles, flares or splashes.
+- The timing has contrast: stillness, a decisive sweep, a long silky settle, then a real hold.
+- It reads with the sound off, and the end frame stands alone.
+- The sonic logo is short and simple (three notes) and lands on the key visual beat.
 
 ## Timeline
 
-| Time | Beat | Picture | Sound |
-| --- | --- | --- | --- |
-| 0.0–1.0 | Stillness | Clean white field. A tiny dark point with a soft #067593 halo fades in at the centre and drifts out on a hair-thin teal trail. A 2.8% camera push-in runs until 9.3 s. | Low atmospheric hum, then one clean tick at 0.5 s |
-| 1.0–2.2 | The flow | The light speeds up into an organic spiral. A second, thinner line joins and follows. | Airy whoosh circling the stereo field with the light. The calm score rises underneath and takes over by 2.8 s |
-| 2.2–3.2 | Symbol forms | The trails land on the symbol's real centreline. The outer ring condenses first, then both inner waves, then the outer arc closes. Blur and glow resolve to sharp at 2.9 s, followed by a 2.5% swell and settle. | Pad swells and opens, then a warm bloom: low D with soft D5/A5 bells |
-| 3.2–4.2 | Clean pulse | Logo scales 100→103→100%. One thin ripple grows from 0 to 130% while shifting #067593→#AEEAFF and fading from 33% to 0. | Singing-bowl tone |
-| 4.2–5.4 | Wordmark | The symbol glides into the lockup. A hair-thin stream of light leaves the symbol's tail and flows through the word. The letters open out from the stream's centre line, start in teal #067593, then settle to the logo colour #032E36, with width 95→100% and blur to sharp. | Harp-like pentatonic run, panned left→right with the stream |
-| 5.4–6.5 | Orange spark | A single #FF621D spark rides the inner flowing curve. It accelerates, slows and dissolves. | Two soft high notes, panned with the spark |
-| 6.5–7.5 | Logo breathes | The logo rises 5 px and settles. A whisper of cool #AEEAFF light gathers behind the logo, and a soft contact shadow adds depth. | Pad drifts to Gmaj9 |
-| 7.5–8.5 | Tagline | CLEAN SPACES. CLEAR MINDSETS. rises 8 px while fading in. | Soft low dyad |
-| 8.5–9.3 | Final glint | A tiny orange light crosses left to right, with a polished reflection clipped to the logo. | Gentle high chime |
-| 9.3–10.0 | Lockup | Everything holds completely still. | Resolves to D(add9), then silence from about 9.8 s |
+| Time | Picture | Sound |
+| --- | --- | --- |
+| 0.0–0.6 | White. A clean space. | Silence |
+| 0.6–1.0 | The ribbon's edge sweeps through in extreme macro, and teal floods the frame. | A close, soft swoosh with a gentle low body |
+| 1.0–4.1 | One continuous pull-back, from about 118× down to 1×. The ribbon draws the ring, splits at the inner arc into the two waves, and they rejoin to close the mark. The leading edge glows slightly brighter. | Air that opens up and travels around the stereo field with the ribbon, over a low drone and a rising D-major shimmer |
+| 4.1 | The mark lands with a ~3% spring past rest, then settles. | A warm bloom: felt sub, soft glass chord, riser cut clean |
+| 4.55–5.85 | The symbol slides into the lockup, and the wordmark emerges from behind it. | A short, silky air pass, left to right |
+| 5.6 · 6.1 · 7.0 | The wordmark settles. "Clean spaces." rises. "Clear mindset" rises, and the orange full stop drops in. | **Sonic logo**: glass-mallet A5 · E6 · D6, resolving on D |
+| 7.0–10.0 | Hold, with a slow 2% push that settles before the end. | A soft D(add9) resolve, then true silence from about 9.8 s |
+
+## Brand
+
+- **Logo:** drawn only from the supplied path data (`assets/cleaniche-logo-outlined.svg`). It is never redrawn or distorted, and is shown complete and exact from 4.1 s on.
+- **Colours:** brand teal **#067593** for the mark, on white. Dark Navy **#0D2B2F** for the tagline. One orange **#FF621D** full stop.
+- **Type:** the tagline is Figtree Medium (`assets/figtree-latin-wght-normal.woff2`, SIL OFL), set in sentence case: *Clean spaces. Clear mindset.*
 
 ## How it's built
 
-- `src/cleaniche.js` is a deterministic canvas renderer: `draw(t)` paints the frame at time *t*. All motion uses ease curves and monotone splines; nothing is keyframed linearly.
-- `src/routes.json` holds the centreline of the symbol's ribbon. It was extracted from the supplied artwork by skeletonising a 4× raster of the symbol (`tools/skel.py` → `tools/branches.py` → `tools/routes.py`). This is why the light trails follow the real logo geometry.
-- `tools/sound.py` builds the soundtrack (numpy + scipy). The opening 0–2.8 s (hum, tick, whoosh) is the original first-cut audio, kept verbatim in `assets/intro-sound-v1.wav`. It crossfades into the synthesised score. It is a calm D-major bed where every visual beat is a soft note rather than an effect. Every attack is 6 ms or longer, everything is low-passed, and the notes sit in a soft ping-pong echo and a long reverb.
-- `tools/render.js` drives headless Chromium through Playwright, streams PNG frames into ffmpeg, and muxes in the audio.
-
-### Preview / re-render
+- `src/ident.js` is a deterministic renderer: `draw(t)` paints the frame at time *t*. The camera, sweep and type use monotone splines and CSS-style cubic-bezier curves.
+- **The sweep reveal** uses `src/reveal.png`, a precomputed "sweep-order" field built by `tools/reveal.py` from the symbol's centreline (`src/routes.json`). A WebGL shader thresholds it each frame, so the exact supplied shape is revealed in sweep order. Junctions where the ribbon merges stay clean, and the front stays straight even at 118× zoom.
+- **The centreline** was extracted from the supplied artwork by `tools/skel.py` → `tools/branches.py` → `tools/routes.py`.
+- `tools/score.py` synthesises the sound: FM glass mallets, shaped noise, drones and a plate-style reverb (numpy + scipy).
+- `tools/render.js` drives headless Chromium through Playwright, averages sub-frames for motion blur, and pipes PNG frames into ffmpeg.
 
 ```bash
-# live preview with a scrubber
-npx serve .            # then open /src/index.html (src/data.js is generated by the render step)
-
-# re-render everything
-python3 tools/sound.py
-NODE_PATH=$(npm root -g) node tools/render.js                 # both sizes
-NODE_PATH=$(npm root -g) node tools/render.js --size 1080x1350
-NODE_PATH=$(npm root -g) node tools/render.js --fps 24
-NODE_PATH=$(npm root -g) node tools/render.js --stills 2.9,6,9.9   # PNG stills for review
+python3 tools/reveal.py          # only if routes.json changes
+python3 tools/score.py           # sound
+NODE_PATH=$(npm root -g) node tools/render.js                       # all four sizes
+NODE_PATH=$(npm root -g) node tools/render.js --size 7680x4320      # 8K, if ever needed
+NODE_PATH=$(npm root -g) node tools/render.js --stills 1,4.2,9.9 --blur 1   # quick review stills
+npx serve .   # then open /src/index.html for a live preview with sound
 ```
-
-By default the render produces all four sizes. Everything scales from the frame size, so `--size 7680x4320` gives an 8K master.
