@@ -27,7 +27,7 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import mm
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import Flowable, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 from xml.sax.saxutils import escape
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -339,6 +339,25 @@ def write_csv(name, rows):
         w.writerows(rows)
 
 
+class EmailField(Flowable):
+    """A fillable PDF text box for a personal email confirmed later in Hunter or Apollo."""
+
+    def __init__(self, name):
+        super().__init__()
+        self.name = name
+
+    def wrap(self, avail_width, avail_height):
+        self.width, self.height = avail_width, 10
+        return self.width, self.height
+
+    def draw(self):
+        self.canv.acroForm.textfield(
+            name=self.name, tooltip="Personal email (verified)", x=0, y=0,
+            width=self.width, height=self.height, fontName="Helvetica", fontSize=6.5,
+            borderWidth=0.4, borderColor=RULE, fillColor=colors.white, textColor=INK,
+            forceBorder=True, relative=True)
+
+
 def render_pdf(folder, title, table_rows, cov):
     path = os.path.join(ENGINE, folder, "prospects.pdf")
     doc = SimpleDocTemplate(path, pagesize=landscape(A4), leftMargin=12 * mm, rightMargin=12 * mm,
@@ -355,7 +374,7 @@ def render_pdf(folder, title, table_rows, cov):
         return Paragraph(text, style)
 
     data = [[p(h, head) for h in ("#", "Company", "Decision maker", "Role", "LinkedIn", "Source",
-                                    "Verified email", "Note")]]
+                                    "Verified email", "Personal email", "Note")]]
     style = [
         ("BACKGROUND", (0, 0), (-1, 0), RED),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -397,14 +416,15 @@ def render_pdf(folder, title, table_rows, cov):
             else:
                 src = escape(c[2]) or "&nbsp;"
             lic = li_cell(li, c[0], row["company"])
+            field = EmailField(f"email_{k[0]:02d}_{k[1]:02d}_{i}") if c[0] else ""
             if i == 0:
                 data.append([p(str(k[1])), p(company), p(name), p(escape(c[1]) or "&nbsp;"), p(lic), p(src),
-                             p(email_cell), p(escape(note), small)])
+                             p(email_cell), field, p(escape(note), small)])
             else:
-                data.append(["", "", p(name), p(escape(c[1])), p(lic), p(src), "", ""])
+                data.append(["", "", p(name), p(escape(c[1])), p(lic), p(src), "", field, ""])
         last = len(data) - 1
         if last > first:
-            for col in (0, 1, 6, 7):
+            for col in (0, 1, 6, 8):
                 style.append(("SPAN", (col, first), (col, last)))
         style.append(("LINEBELOW", (0, last), (-1, last), 0.4, RULE))
         if status in ("unmatched", "closed", "not_nigerian"):
@@ -413,7 +433,7 @@ def render_pdf(folder, title, table_rows, cov):
         elif status in ("duplicate", "unresearched") or rec.get("pending"):
             style.append(("BACKGROUND", (0, first), (-1, last), colors.HexColor("#F6F6F6")))
 
-    widths = [7 * mm, 40 * mm, 31 * mm, 40 * mm, 40 * mm, 23 * mm, 30 * mm, 62 * mm]
+    widths = [7 * mm, 38 * mm, 30 * mm, 36 * mm, 36 * mm, 20 * mm, 26 * mm, 34 * mm, 46 * mm]
     t = Table(data, colWidths=widths, repeatRows=1)
     t.setStyle(TableStyle(style))
 
@@ -426,7 +446,8 @@ def render_pdf(folder, title, table_rows, cov):
     legend = ("Only sourced data is shown. Blank means unconfirmed. Red in/ links open the person's own LinkedIn "
               "profile; Search runs a LinkedIn people search where no profile was confirmed. "
               "Rows tinted red could not be matched, have closed, or are not Nigerian. Grey rows are duplicates "
-              "or not yet researched. Personal emails are not listed because none were found in public sources.")
+              "or not yet researched. The Personal email boxes can be typed into: add an address only after Hunter or "
+              "Apollo marks it verified.")
 
     def on_page(canvas, d):
         canvas.saveState()
