@@ -1,0 +1,47 @@
+"""Make a self-contained copy of the supplied YANU logo.
+
+The supplied `Yanu/yanu logo.svg` draws the wordmark as paths, but the "R"
+inside the registered-trademark circle is live <text> set in Source Sans 3
+Bold (SourceSansRoman-Bold), so it falls back to whatever serif the renderer
+has if that font is missing. This script converts that one glyph to a path
+using the exact font, size and position from the original file. Every other
+element is copied through unchanged.
+
+    python3 tools/outline_logo.py
+"""
+import re
+from pathlib import Path
+
+from fontTools.pens.svgPathPen import SVGPathPen
+from fontTools.pens.transformPen import TransformPen
+from fontTools.ttLib import TTFont
+
+ROOT = Path(__file__).resolve().parent.parent
+SRC = ROOT.parent / "Yanu" / "yanu logo.svg"
+FONT = ROOT / "assets" / "source-sans-3-latin-700-normal.woff2"
+OUT = ROOT / "assets" / "yanu-logo.svg"
+
+svg = SRC.read_text()
+
+m = re.search(
+    r'<text class="cls-3" transform="translate\(([\d.]+) ([\d.]+)\)">'
+    r'<tspan x="0" y="0">(.)</tspan></text>',
+    svg,
+)
+tx, ty, char = float(m.group(1)), float(m.group(2)), m.group(3)
+size = float(re.search(r"font-size:\s*([\d.]+)px", svg).group(1))
+
+font = TTFont(FONT)
+glyph_set = font.getGlyphSet()
+glyph = font.getBestCmap()[ord(char)]
+s = size / font["head"].unitsPerEm
+
+pen = SVGPathPen(glyph_set, ntos=lambda v: f"{v:.3f}".rstrip("0").rstrip("."))
+glyph_set[glyph].draw(TransformPen(pen, (s, 0, 0, -s, tx, ty)))
+
+svg = svg.replace(m.group(0), f'<path class="cls-2" d="{pen.getCommands()}"/>')
+# The text style is no longer used.
+svg = svg.replace(".cls-2, .cls-3 {", ".cls-2 {")
+svg = re.sub(r"\n\s*\.cls-3 \{[^}]*\}\n", "\n", svg)
+OUT.write_text(svg)
+print(f"wrote {OUT.relative_to(ROOT)} ('{char}' -> path, {size}px at {tx},{ty})")

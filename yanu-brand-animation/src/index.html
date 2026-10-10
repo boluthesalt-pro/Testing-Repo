@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YANU Brand Film</title>
+<style>
+  :root {
+    --page: #111;
+    --ui: #ffddad;
+    --ui-dim: rgba(255, 221, 173, 0.45);
+  }
+  html, body { margin: 0; height: 100%; background: var(--page); }
+  body {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; font: 13px/1.4 system-ui, sans-serif; color: var(--ui);
+  }
+
+  /* The stage always has the photograph's exact aspect ratio and fits the
+     viewport, so the composition is never cropped or distorted. */
+  .stage {
+    position: relative;
+    aspect-ratio: 7772 / 4412;
+    width: min(100vw - 32px, (100vh - 90px) * 7772 / 4412);
+    overflow: hidden;
+  }
+  .photo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .layer { position: absolute; display: block; height: auto; opacity: 0; }
+
+  .controls { display: flex; align-items: center; gap: 12px; width: min(100vw - 32px, 720px); }
+  .controls button {
+    background: none; border: 1px solid var(--ui-dim); color: var(--ui);
+    padding: 6px 14px; border-radius: 999px; font: inherit; cursor: pointer;
+  }
+  .controls input { flex: 1; accent-color: var(--ui); }
+  .controls output { font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: right; }
+
+  /* Export mode: no chrome, transparent page, stage fills the viewport, and
+     the photograph is left out (the renderer composites it separately). */
+  .export, .export body { background: transparent; }
+  .export body { display: block; }
+  .export .stage { width: 100vw; height: 100vh; }
+  .export .photo, .export .controls { display: none; }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <img class="photo" src="../../Yanu/Asset%2054x_1.png" alt="YANU campaign photograph">
+    <img class="layer" id="logo" src="../assets/yanu-logo.svg" alt="YANU">
+    <img class="layer" id="paragraph" src="../assets/paragraph.svg"
+         alt="Fashion and Beauty have always been sold as two separate things. Yanu doesnt see it that way. Every product we push does both at once. The concept is simple: A brand for women that wants to be seen and appreciated.">
+  </div>
+
+  <div class="controls">
+    <button id="play" type="button">Replay</button>
+    <input id="scrub" type="range" min="0" max="5" step="0.001" value="0" aria-label="Time">
+    <output id="time">0.00 s</output>
+  </div>
+
+<script src="animation.js"></script>
+<script>
+(function () {
+  const { DURATION, LAYOUT, render } = window.YANU;
+  const params = new URLSearchParams(location.search);
+  if (params.has("export")) document.documentElement.classList.add("export");
+
+  const stage = document.getElementById("stage");
+  const layers = {
+    logo: document.getElementById("logo"),
+    paragraph: document.getElementById("paragraph"),
+  };
+
+  // Resting placement, in % of the stage (= % of the photograph).
+  for (const [name, { x, y, w }] of Object.entries(LAYOUT)) {
+    const el = layers[name];
+    el.style.left = (x - w / 2) * 100 + "%";
+    el.style.top = y * 100 + "%";
+    el.style.width = w * 100 + "%";
+  }
+
+  const scrub = document.getElementById("scrub");
+  const out = document.getElementById("time");
+  let t = 0;
+  const draw = (time) => {
+    t = Math.min(Math.max(time, 0), DURATION);
+    render(t, layers, stage.getBoundingClientRect().height);
+    scrub.value = t;
+    out.textContent = t.toFixed(2) + " s";
+  };
+
+  // Used by tools/render.js to step through frames.
+  window.setTime = (time) => draw(time);
+  window.layersReady = Promise.all(
+    Object.values(layers).map((img) => img.decode().catch(() => {}))
+  );
+
+  let raf = 0;
+  const play = () => {
+    cancelAnimationFrame(raf);
+    const start = performance.now();
+    const tick = (now) => {
+      draw((now - start) / 1000);
+      if (t < DURATION) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  };
+
+  document.getElementById("play").addEventListener("click", play);
+  scrub.addEventListener("input", () => { cancelAnimationFrame(raf); draw(+scrub.value); });
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") { e.preventDefault(); play(); }
+  });
+  window.addEventListener("resize", () => draw(t));
+
+  if (params.has("t")) draw(+params.get("t"));
+  else if (params.has("export")) draw(0);
+  else {
+    // Start only once the photograph is on screen, so the film opens cleanly.
+    draw(0);
+    const photo = document.querySelector(".photo");
+    Promise.all([photo.decode().catch(() => {}), window.layersReady]).then(play);
+  }
+})();
+</script>
+</body>
+</html>
