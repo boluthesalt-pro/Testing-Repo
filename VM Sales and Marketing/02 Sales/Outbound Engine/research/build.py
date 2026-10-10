@@ -21,7 +21,7 @@ import json
 import os
 import re
 from collections import Counter, OrderedDict
-from urllib.parse import quote_plus, urlparse
+from urllib.parse import quote_plus, unquote, urlparse
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
@@ -168,6 +168,48 @@ def merge(primary, extra):
     return merged
 
 
+def is_company_page(url):
+    return "/company/" in url
+
+
+def apply_linkedin(data):
+    """Attach LinkedIn profile URLs from linkedin.jsonl to contacts, adding new contacts where needed."""
+    path = os.path.join(HERE, "linkedin.jsonl")
+    if not os.path.exists(path):
+        return
+    for line in open(path):
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        key = (r["v"], r["n"])
+        rec = data.get(key)
+        if rec is None or rec.get("pending"):
+            rec = data[key] = {"contacts": [], "note": (rec or {}).get("note", "")}
+            rec.pop("pending", None)
+        rec.setdefault("contacts", [])
+        name = r["name"].replace(" (company page)", "").strip()
+        if is_company_page(r["url"]):
+            rec["company_li"] = r["url"]
+            if r["role"].startswith("Company LinkedIn page"):
+                continue  # a company page with no named person
+        target = None
+        for c in rec["contacts"]:
+            a, b = norm(c[0]), norm(name)
+            if a == b or a.startswith(b) or b.startswith(a) or norm(c[0].split(" (")[0]) == norm(name.split(" (")[0]):
+                target = c
+                break
+        if target is None:
+            target = [name, r["role"], r["url"]]
+            rec["contacts"].append(target)
+        while len(target) < 4:
+            target.append("")
+        target[3] = r["url"]
+
+
+def best_li(c):
+    return c[3] if len(c) > 3 else ""
+
+
 def short_source(url):
     if not url.startswith("http"):
         return url
@@ -193,6 +235,7 @@ def build():
     results = load_results()
     legacy = load_legacy(rows)
     data = {k: merge(results.get(k), legacy.get(k)) for k in rows}
+    apply_linkedin(data)
 
     for src, dst in CROSS_DUPLICATES:
         s, d = data.get(src), data.get(dst)
@@ -219,7 +262,7 @@ def build():
             rec["status"] = CARRIED_STATUS[k]
         data[k] = rec
 
-    master, lookup, coverage = [], [], []
+    master, lookup, coverage, outreach = [], [], [], []
     for folder, title in VERTICAL_NAMES.items():
         v = int(folder[:2])
         keys = sorted(k for k in rows if k[0] == v)
@@ -234,6 +277,8 @@ def build():
             contacts = (rec or {}).get("contacts") or []
             if contacts:
                 counts["with_named_contact"] += 1
+            if any(best_li(c) and not is_company_page(best_li(c)) for c in contacts):
+                counts["with_linkedin"] += 1
             email = (rec or {}).get("email") or ""
             if email:
                 counts["with_verified_email"] += 1
@@ -241,11 +286,29 @@ def build():
             if status in STATUS_LABEL and STATUS_LABEL[status].split(".")[0] not in note:
                 note = (STATUS_LABEL[status] + " " + note).strip()
             table_rows.append((k, row, rec or {}, status, contacts, email, note))
+            if status not in ("duplicate", "unmatched", "not_nigerian", "closed"):
+                ranked = sorted(contacts, key=lambda c: (not best_li(c) or is_company_page(best_li(c))))
+                top = ranked[0] if ranked else ["", "", "", ""]
+                outreach.append({
+                    "vertical": folder, "row": k[1], "company": row["company"],
+                    "contact_name": top[0], "contact_role": top[1],
+                    "linkedin_profile": best_li(top),
+                    "second_contact": f"{ranked[1][0]} ({ranked[1][1]})" if len(ranked) > 1 else "",
+                    "second_contact_linkedin": best_li(ranked[1]) if len(ranked) > 1 else "",
+                    "company_linkedin": (rec or {}).get("company_li", ""),
+                    "verified_general_email": email,
+                    "personal_email": "",
+                    "source": top[2],
+                    "status": "not yet researched" if (status == "unresearched" or (rec or {}).get("pending")) else status,
+                    "note": note,
+                })
 
-            for c in contacts or [["", "", ""]]:
+            for c in contacts or [["", "", "", ""]]:
                 master.append({
                     "vertical": folder, "row": k[1], "company": row["company"],
                     "status": status, "decision_maker": c[0], "role": c[1], "source": c[2],
+                    "linkedin_profile": best_li(c),
+                    "company_linkedin": (rec or {}).get("company_li", ""),
                     "linkedin_search": linkedin_search(c[0], row["company"]) if c[0] else "",
                     "verified_general_email": email, "email_source": (rec or {}).get("email_src", ""),
                     "domain": (rec or {}).get("domain", ""),
@@ -256,7 +319,8 @@ def build():
                     lookup.append({
                         "vertical": folder, "row": k[1], "company": row["company"],
                         "domain": (rec or {}).get("domain", ""), "name": c[0], "role": c[1],
-                        "source": c[2], "linkedin_search": linkedin_search(c[0], row["company"]),
+                        "source": c[2], "linkedin_profile": best_li(c),
+                        "linkedin_search": linkedin_search(c[0], row["company"]),
                         "priority": "low (global brand or government)" if status in ("subsidiary", "government") else "normal",
                     })
 
@@ -264,6 +328,7 @@ def build():
                          "researched": len(keys) - counts["unresearched"],
                          "unresearched": counts["unresearched"],
                          "with_named_contact": counts["with_named_contact"],
+                         "with_linkedin": counts["with_linkedin"],
                          "with_verified_email": counts["with_verified_email"],
                          "unmatched": counts["unmatched"], "not_nigerian": counts["not_nigerian"],
                          "duplicate": counts["duplicate"], "closed": counts["closed"],
@@ -273,6 +338,7 @@ def build():
     write_csv("master-prospects.csv", master)
     write_csv("lookup-needed.csv", lookup)
     write_csv("coverage.csv", coverage)
+    write_csv("outreach-contacts.csv", outreach)
     total = Counter()
     for c in coverage:
         for key, val in c.items():
@@ -305,7 +371,8 @@ def render_pdf(folder, title, table_rows, cov):
     def p(text, style=cell):
         return Paragraph(text, style)
 
-    data = [[p(h, head) for h in ("#", "Company", "Decision maker", "Role", "Source", "Verified email", "Note")]]
+    data = [[p(h, head) for h in ("#", "Company", "Decision maker", "Role", "LinkedIn", "Source",
+                                    "Verified email", "Note")]]
     style = [
         ("BACKGROUND", (0, 0), (-1, 0), RED),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -314,6 +381,18 @@ def render_pdf(folder, title, table_rows, cov):
         ("LEFTPADDING", (0, 0), (-1, -1), 3),
         ("RIGHTPADDING", (0, 0), (-1, -1), 3),
     ]
+
+    def li_cell(url, name, company):
+        if url and is_company_page(url):
+            return f'<a href="{escape(url)}" color="#FF3838">Company page</a>'
+        if url:
+            slug = re.sub(r"^https?://([a-z]{2,3}\.)?(www\.)?linkedin\.com/in/", "", unquote(url)).rstrip("/")
+            slug = slug.encode("ascii", "ignore").decode().replace("--", "-")
+            return f'<a href="{escape(url)}" color="#FF3838"><b>in/{escape(slug)}</b></a>'
+        if name:
+            return f'<a href="{escape(linkedin_search(name, company))}" color="#6B6B6B">Search</a>'
+        return "&nbsp;"
+
     for k, row, rec, status, contacts, email, note in table_rows:
         if email:
             esrc = rec.get("email_src", "")
@@ -321,20 +400,28 @@ def render_pdf(folder, title, table_rows, cov):
         else:
             email_cell = "&nbsp;"
         company = f"<b>{escape(row['company'])}</b><br/><font color='#6B6B6B'>{escape(row['what'])}</font>"
+        if rec.get("company_li"):
+            company += f'<br/><a href="{escape(rec["company_li"])}" color="#FF3838">Company LinkedIn</a>'
         first = len(data)
-        for i, c in enumerate(contacts or [["", "", ""]]):
-            name = (f'<a href="{escape(linkedin_search(c[0], row["company"]))}" color="#1A1A1A">{escape(c[0])}</a>'
-                    if c[0] else "&nbsp;")
-            src = (f'<a href="{escape(c[2])}" color="#FF3838">{escape(short_source(c[2]))}</a>'
-                   if c[2].startswith("http") else escape(c[2])) or "&nbsp;"
+        for i, c in enumerate(contacts or [["", "", "", ""]]):
+            li = best_li(c)
+            target = li or (linkedin_search(c[0], row["company"]) if c[0] else "")
+            name = (f'<a href="{escape(target)}" color="#1A1A1A">{escape(c[0])}</a>' if c[0] else "&nbsp;")
+            if c[2] and c[2] == li:
+                src = "LinkedIn"
+            elif c[2].startswith("http"):
+                src = f'<a href="{escape(c[2])}" color="#FF3838">{escape(short_source(c[2]))}</a>'
+            else:
+                src = escape(c[2]) or "&nbsp;"
+            lic = li_cell(li, c[0], row["company"])
             if i == 0:
-                data.append([p(str(k[1])), p(company), p(name), p(escape(c[1]) or "&nbsp;"), p(src),
+                data.append([p(str(k[1])), p(company), p(name), p(escape(c[1]) or "&nbsp;"), p(lic), p(src),
                              p(email_cell), p(escape(note), small)])
             else:
-                data.append(["", "", p(name), p(escape(c[1])), p(src), "", ""])
+                data.append(["", "", p(name), p(escape(c[1])), p(lic), p(src), "", ""])
         last = len(data) - 1
         if last > first:
-            for col in (0, 1, 5, 6):
+            for col in (0, 1, 6, 7):
                 style.append(("SPAN", (col, first), (col, last)))
         style.append(("LINEBELOW", (0, last), (-1, last), 0.4, RULE))
         if status in ("unmatched", "closed", "not_nigerian"):
@@ -343,16 +430,18 @@ def render_pdf(folder, title, table_rows, cov):
         elif status in ("duplicate", "unresearched") or rec.get("pending"):
             style.append(("BACKGROUND", (0, first), (-1, last), colors.HexColor("#F6F6F6")))
 
-    widths = [8 * mm, 46 * mm, 36 * mm, 46 * mm, 28 * mm, 34 * mm, 75 * mm]
+    widths = [7 * mm, 40 * mm, 31 * mm, 40 * mm, 40 * mm, 23 * mm, 30 * mm, 62 * mm]
     t = Table(data, colWidths=widths, repeatRows=1)
     t.setStyle(TableStyle(style))
 
     summary = (f"{cov['rows']} rows. {cov['researched']} researched, {cov['unresearched']} not yet researched. "
-               f"{cov['with_named_contact']} have a named decision maker with a source. "
+               f"{cov['with_named_contact']} have a named decision maker with a source, and "
+               f"{cov['with_linkedin']} of those have a verified LinkedIn profile. "
                f"{cov['with_verified_email']} have a verified published email. "
                f"{cov['unmatched']} could not be matched to a real business, {cov['duplicate']} are duplicates, "
                f"{cov['not_nigerian']} are not Nigerian.")
-    legend = ("Only sourced data is shown. Blank means unconfirmed. Names link to a LinkedIn people search. "
+    legend = ("Only sourced data is shown. Blank means unconfirmed. Red in/ links open the person's own LinkedIn "
+              "profile; Search runs a LinkedIn people search where no profile was confirmed. "
               "Rows tinted red could not be matched, have closed, or are not Nigerian. Grey rows are duplicates "
               "or not yet researched. Personal emails are not listed because none were found in public sources.")
 
