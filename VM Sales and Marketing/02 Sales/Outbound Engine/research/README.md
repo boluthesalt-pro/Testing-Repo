@@ -7,8 +7,6 @@ This folder holds the research behind the 10 `prospects.pdf` files. The PDFs are
 | File | What it is |
 | --- | --- |
 | `prospects-original.json` | The 500 rows extracted from the old `prospects.pdf` files before they were replaced. It is kept for reference only. Its emails and Instagram handles are not used, because most emails were guesses and many handles were corrupted. |
-| `../Outreach-Contacts.xlsx` | The outreach sheet. Each tab is a vertical and each row is a company, with the best contact, their LinkedIn profile, a second contact and an empty column for a verified personal email. Duplicates, unmatched and non-Nigerian companies are left out. |
-| `outreach-contacts.csv` | The same data as one CSV. |
 | `linkedin.jsonl` | LinkedIn profiles found for named decision makers, one per line. A profile counts only when its title shows the person's name together with the company. |
 | `results.jsonl` | Research records, one per line, keyed by vertical (`v`) and row (`n`). Each record has named contacts with role and source URL, an optional verified general email with its source, and a note. If a row appears more than once, the last line wins. |
 | `legacy/` | Put the JSON files from the earlier research run here (see below). This folder does not exist yet. |

@@ -262,7 +262,7 @@ def build():
             rec["status"] = CARRIED_STATUS[k]
         data[k] = rec
 
-    master, lookup, coverage, outreach = [], [], [], []
+    master, lookup, coverage = [], [], []
     for folder, title in VERTICAL_NAMES.items():
         v = int(folder[:2])
         keys = sorted(k for k in rows if k[0] == v)
@@ -286,22 +286,6 @@ def build():
             if status in STATUS_LABEL and STATUS_LABEL[status].split(".")[0] not in note:
                 note = (STATUS_LABEL[status] + " " + note).strip()
             table_rows.append((k, row, rec or {}, status, contacts, email, note))
-            if status not in ("duplicate", "unmatched", "not_nigerian", "closed"):
-                ranked = sorted(contacts, key=lambda c: (not best_li(c) or is_company_page(best_li(c))))
-                top = ranked[0] if ranked else ["", "", "", ""]
-                outreach.append({
-                    "vertical": folder, "row": k[1], "company": row["company"],
-                    "contact_name": top[0], "contact_role": top[1],
-                    "linkedin_profile": best_li(top),
-                    "second_contact": f"{ranked[1][0]} ({ranked[1][1]})" if len(ranked) > 1 else "",
-                    "second_contact_linkedin": best_li(ranked[1]) if len(ranked) > 1 else "",
-                    "company_linkedin": (rec or {}).get("company_li", ""),
-                    "verified_general_email": email,
-                    "personal_email": "",
-                    "source": top[2],
-                    "status": "not yet researched" if (status == "unresearched" or (rec or {}).get("pending")) else status,
-                    "note": note,
-                })
 
             for c in contacts or [["", "", "", ""]]:
                 master.append({
@@ -338,7 +322,6 @@ def build():
     write_csv("master-prospects.csv", master)
     write_csv("lookup-needed.csv", lookup)
     write_csv("coverage.csv", coverage)
-    write_csv("outreach-contacts.csv", outreach)
     total = Counter()
     for c in coverage:
         for key, val in c.items():
