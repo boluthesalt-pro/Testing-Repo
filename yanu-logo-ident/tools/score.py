@@ -7,12 +7,13 @@ the same grid).
 
   bar 1  0-2 s  Bbmaj9   Intro. Breathy "ooh" choir under a low-pass filter
                          that slowly opens, a few glass-bell notes and finger
-                         snaps, under the hairline. A silk swell rises
-                         into the drop.
-  bar 2  2-4 s  Am7      The drop. Soft kick, sub bass and a clap on 3.0.
-                         One bell per letter (C5 E5 G5 A5 at 2.00 / 2.25 /
-                         2.50 / 2.75 s), then a sparkle chime as the ® lands
-                         at 3.5 s.
+                         snaps, under the slow macro drift. A silk swell
+                         rises into the drop.
+  bar 2  2-4 s  Am7      The drop and the pull-back reveal. Soft kick, sub
+                         bass and a clap on 3.0. A rising bell arpeggio
+                         (C5 E5 G5 A5 at 2.00 / 2.25 / 2.50 / 2.75 s)
+                         rides the camera move, then a sparkle chime as
+                         the ® lands at 3.5 s.
   bar 3  4-6 s  Gm9      Full groove with electric-piano stabs while the
                          logo holds.
   bar 4  6-8 s  Fmaj9    Resolve. Sonic logo "ya-nu" (C6 -> A5) on 6.0 and
@@ -268,7 +269,7 @@ for b in (1, 2, 3):
     for s in (2, 9):
         put("keys", epiano(voicing, 0.7), bar0 + s * STEP, 0.42, -0.15)
 
-# Bell per letter (2.00 / 2.25 / 2.50 / 2.75) and the ® sparkle (3.5).
+# Rising bell arpeggio over the reveal (2.00 / 2.25 / 2.50 / 2.75) and the ® sparkle (3.5).
 for k, note in enumerate(("C5", "E5", "G5", "A5")):
     put("bells", bell(hz(note), 2.2, bright=1.1), 2.0 + k * 0.25, 0.42, (-0.45, -0.15, 0.15, 0.45)[k])
 put("bells", bell(hz("E6"), 2.0, bright=0.8), 3.5, 0.28, 0.4)
