@@ -10,13 +10,14 @@ encoding, every frame is checked:
   * all type pixels fall inside the two layers' resting boxes (plus their
     rise distance), so nothing leaks onto the photo elsewhere;
   * frames 0-12 (before 0.4 s) are the bare photograph;
-  * every frame from 2.5 s to the end is byte-identical to the last one.
+  * every frame after the last element settles is byte-identical to the
+    last one;
+  * the last frame matches the supplied artwork rendered statically.
 
     python3 tools/composite.py --size 1920x1090
 """
 import argparse
 import json
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -36,15 +37,16 @@ layers_dir = ROOT / "out" / f".layers-{W}x{H}"
 name = f"yanu-brand-film-{W}x{H}"
 
 # Timeline and layout come from the same file the browser uses.
-js = (ROOT / "src" / "animation.js").read_text()
-FPS = int(re.search(r"const FPS = (\d+)", js).group(1))
-DURATION = float(re.search(r"const DURATION = ([\d.]+)", js).group(1))
+cfg = json.loads(subprocess.check_output(["node", "-e", """
+  global.window = {};
+  require(process.argv[1]);
+  const { FPS, DURATION, PHOTO, LAYOUT, TIMELINE } = window.YANU;
+  console.log(JSON.stringify({ FPS, DURATION, PHOTO, LAYOUT, TIMELINE }));
+""", str(ROOT / "src" / "animation.js")]))
+FPS, DURATION = cfg["FPS"], cfg["DURATION"]
 FRAMES = round(FPS * DURATION)
-PHOTO_W, PHOTO_H = map(int, re.search(r"PHOTO = \{ width: (\d+), height: (\d+)", js).groups())
-layout = {k: dict(x=float(x), y=float(y), w=float(w)) for k, x, y, w in re.findall(
-    r"(\w+):\s*\{ x: ([\d.]+), y: ([\d.]+), w: ([\d.]+) \}", js)}
-timeline = {k: dict(start=float(a), end=float(b), rise=float(r)) for k, a, b, r in re.findall(
-    r"(\w+):\s*\{ start: ([\d.]+), end: ([\d.]+), rise: (\d+) \}", js)}
+PHOTO_W, PHOTO_H = cfg["PHOTO"]["width"], cfg["PHOTO"]["height"]
+layout, timeline = cfg["LAYOUT"], cfg["TIMELINE"]
 
 # The output must keep the photograph's aspect ratio (no crop, no stretch).
 if abs(W / H - PHOTO_W / PHOTO_H) > 1 / H:
@@ -65,16 +67,24 @@ bg = bg.copy()
 bg.setflags(write=False)
 
 # --- Allowed regions for type pixels. -------------------------------------
+# Each layer's resting box, plus its rise and a margin for the logo's
+# blur and tracking (both settle to nothing; masks clip everything else).
 svg_aspect = {"logo": 139.01 / 438.72, "paragraph": 70.77 / 672.26}
 allowed = np.zeros((H, W), bool)
 for k, L in layout.items():
-    x0 = (L["x"] - L["w"] / 2) * W
-    y0 = L["y"] * H
     bw = L["w"] * W
     bh = bw * svg_aspect[k]
-    rise = timeline[k]["rise"] * H / 1080
-    allowed[max(0, int(y0) - 1): int(np.ceil(y0 + bh + rise)) + 2,
-            max(0, int(x0) - 1): int(np.ceil(x0 + bw)) + 2] = True
+    x0, y0 = (L["x"] - L["w"] / 2) * W, L["y"] * H
+    if k == "logo":
+        # Mask feather below each letter, widest tracking offset, 3σ of blur;
+        # all in logo SVG units.
+        lt = timeline["logo"]["letters"]
+        pad = (lt["feather"] + 1.5 * lt["spread"] + 3 * lt["blur"]) * bw / 438.72
+    else:
+        pad = 1
+    rise = timeline[k].get("rise", 0) * H / 1080
+    allowed[max(0, int(y0 - pad)): int(np.ceil(y0 + bh + rise + pad)) + 1,
+            max(0, int(x0 - pad)): int(np.ceil(x0 + bw + pad)) + 1] = True
 
 # --- Encode. -------------------------------------------------------------
 mp4 = ROOT / "out" / f"{name}.mp4"
@@ -108,6 +118,9 @@ for i in range(FRAMES):
         assert np.array_equal(frame, bg), f"frame {i}: should be the bare photograph"
     if i == FRAMES - 1:
         Image.fromarray(frame).save(ROOT / "out" / f"{name}-final-frame.png")
+        ref = np.asarray(Image.open(layers_dir / "reference.png").convert("RGBA")).astype(int)
+        end_vs_artwork = int(np.abs(layer.astype(int) - ref).max())
+        assert end_vs_artwork <= 1, f"end frame differs from the supplied artwork by {end_vs_artwork}"
     if i >= hold_from:
         if last is not None:
             assert np.array_equal(frame, last), f"frame {i}: hold is not static"
@@ -119,6 +132,7 @@ if ff.wait():
 
 report["checks"] = {
     "photo_identical_outside_type_every_frame": True,
+    "end_frame_matches_static_artwork_max_diff": end_vs_artwork,
     "type_confined_to_layer_boxes": True,
     f"frames_0_to_{first_reveal}_are_bare_photo": True,
     f"frames_{hold_from}_to_{FRAMES - 1}_byte_identical": True,

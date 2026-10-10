@@ -2,8 +2,10 @@
 //
 // The page is loaded in export mode (`index.html?export`): no controls and no
 // photograph, just the logo and paragraph on a transparent stage the size of
-// the output frame. tools/composite.py then lays these over the untouched
-// photograph and encodes the video.
+// the output frame. It also saves `reference.png`, the supplied artwork shown
+// statically at rest, which the final animated frame must match.
+// tools/composite.py then lays these over the untouched photograph and
+// encodes the video.
 //
 //   NODE_PATH=$(npm root -g) node tools/render.js [--size 1920x1090] [--out DIR]
 
@@ -40,6 +42,11 @@ const outDir = path.resolve(arg("--out", path.join(ROOT, "out", `.layers-${width
       omitBackground: true,
     });
   }
+  // Reference: the supplied artwork at rest, untouched, for the end-frame QC.
+  await page.goto(url + "&static");
+  await page.evaluate(() => window.layersReady);
+  await page.screenshot({ path: path.join(outDir, "reference.png"), omitBackground: true });
+
   await browser.close();
   console.log(`${frames} layer frames at ${width}x${height} -> ${path.relative(ROOT, outDir)}`);
 })();

@@ -4,11 +4,12 @@
   "frames": 150,
   "checks": {
     "photo_identical_outside_type_every_frame": true,
+    "end_frame_matches_static_artwork_max_diff": 0,
     "type_confined_to_layer_boxes": true,
     "frames_0_to_12_are_bare_photo": true,
-    "frames_75_to_149_byte_identical": true,
-    "min_untouched_photo_pixels_per_frame": 8226260,
-    "type_box_area_fraction": 0.0583
+    "frames_81_to_149_byte_identical": true,
+    "min_untouched_photo_pixels_per_frame": 8226188,
+    "type_box_area_fraction": 0.0774
   },
   "mp4": {
     "codec_name": "h264",
@@ -20,6 +21,6 @@
     "nb_read_frames": "150",
     "duration": "5.000000",
     "file": "yanu-brand-film-3840x2180.mp4",
-    "bytes": 19037415
+    "bytes": 18977933
   }
 }
