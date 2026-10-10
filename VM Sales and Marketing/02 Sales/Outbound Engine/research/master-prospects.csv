@@ -143,7 +143,7 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 03-food-beverage,16,Mr Biggs,researched,Fola Aiyesimoju,"Group Managing Director, UAC of Nigeria",https://businessfront.com/finance/insights/nigerias-mrbiggs-debonairs-bleed-sales/,,,https://www.linkedin.com/search/results/people/?keywords=Fola+Aiyesimoju+Mr+Biggs,,,,,A 2025 report says Mr Bigg's sales are declining. The old PDF had a corrupted email.
 03-food-beverage,17,Tastee Fried Chicken,researched,Olayinka Pamela Adedayo,Founder and Managing Director / CEO,https://marketingedge.com.ng/meet-mrs-olayinka-pamela-adedayo-tastee-fried-chicken-founder/,,,https://www.linkedin.com/search/results/people/?keywords=Olayinka+Pamela+Adedayo+Tastee+Fried+Chicken,,,,,The handle in the old PDF was corrupted.
 03-food-beverage,18,Bungalow Restaurant,researched,Kola Adewale,Founder (single unverified source),https://kashgain.net/blog/indulge-in-culinary-excellence-top-10-restaurants-in-nigeria/,,,https://www.linkedin.com/search/results/people/?keywords=Kola+Adewale+Bungalow+Restaurant,,,,,"Low-confidence source, so confirm the owner before outreach."
-03-food-beverage,19,Nkoyo Restaurant,researched,,,,,,,,,,,"Restaurant exists, but no owner was named in any source."
+03-food-beverage,19,Nkoyo Restaurant,researched,,,,,,,info@nkoyo.ng,https://wakaabuja.com/nkoyo-abuja/,,,"Restaurant exists, but no owner was named in any source."
 03-food-beverage,20,Terra Kulture,researched,Bolanle Austen-Peters,Founder and Managing Director,https://en.wikipedia.org/wiki/Bolanle_Austen-Peters,https://www.linkedin.com/in/bolanle-austen-peters-a18abb194/,,https://www.linkedin.com/search/results/people/?keywords=Bolanle+Austen-Peters+Terra+Kulture,,,,,Duplicate of 05/46.
 03-food-beverage,21,Barcelos Nigeria,unmatched,,,,,,,,,,,Could not be matched to a real Nigerian business. Confirm before outreach. No Nigerian Barcelos franchisee or manager was found. Confirm the brand still operates in Nigeria.
 03-food-beverage,22,Pinkberry Nigeria,duplicate,Patrick McMichael,"Group Managing Director and CEO, Eat'N'Go",https://brandcom.ng/2021/02/26/eat-n-go-elevates-patrick-mcmichael-to-group-managing-director/,,,https://www.linkedin.com/search/results/people/?keywords=Patrick+McMichael+Pinkberry+Nigeria,,,,,Duplicate. Pinkberry Nigeria is run by Eat'N'Go (03/40).
@@ -261,7 +261,7 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 05-hospitality-events,7,Four Points by Sheraton Lagos,subsidiary,Kaliq Essop,General Manager (April 2024),https://thisdaylive.com/index.php/2024/04/19/four-points-by-sheraton-hotel-rebrands,,,https://www.linkedin.com/search/results/people/?keywords=Kaliq+Essop+Four+Points+by+Sheraton+Lagos,,,,,Local arm of a global brand. Brand decisions sit abroad. Marriott brand.
 05-hospitality-events,7,Four Points by Sheraton Lagos,subsidiary,Monday Usoroh,Director of Sales,https://thisdaylive.com/index.php/2024/04/19/four-points-by-sheraton-hotel-rebrands,,,https://www.linkedin.com/search/results/people/?keywords=Monday+Usoroh+Four+Points+by+Sheraton+Lagos,,,,,Local arm of a global brand. Brand decisions sit abroad. Marriott brand.
 05-hospitality-events,8,The Wheatbaker,researched,Simon Grindrod,General Manager,https://businessday.ng/life-arts/article/a-review-of-the-wheatbaker-at-8/,,,https://www.linkedin.com/search/results/people/?keywords=Simon+Grindrod+The+Wheatbaker,,,,,Managed by Legacy Group. A 2024 review still names him as GM. Covers 08/29 (Wheatbaker Spa) as well.
-05-hospitality-events,9,Federal Palace Hotel,researched,,,,,,,,,,,"Sun International sold its stake in 2024 to an entity linked to the Ibru family, and the owner is Ikeja Hotel Plc. Check its 2025 annual report for current management."
+05-hospitality-events,9,Federal Palace Hotel,researched,,,,,,,reservations@suninternational.com,https://www.suninternational.com/federal-palace,,,"Sun International sold its stake in 2024 to an entity linked to the Ibru family, and the owner is Ikeja Hotel Plc. Check its 2025 annual report for current management."
 05-hospitality-events,10,InterContinental Lagos,researched,Didier Coeln,General Manager (2013 opening),https://businessday.ng/art-and-travel/article/intercontinental-truly-lagos-hospitality-hotbed/,,,https://www.linkedin.com/search/results/people/?keywords=Didier+Coeln+InterContinental+Lagos,,,,,"The source is very old. The hotel left the IHG brand and now trades as Lagos Continental Hotel, which duplicates 05/27."
 05-hospitality-events,11,Transcorp Hilton Abuja,researched,Uzo Oshogwe,"Managing Director and CEO, Transcorp Hotels Plc (from January 2025)",https://heirsholdings.com/?p=25074,,,https://www.linkedin.com/search/results/people/?keywords=Uzo+Oshogwe+Transcorp+Hilton+Abuja,,,,,"Owner of Transcorp Hilton Abuja. Brand work would cover Transcorp Hotels and the Aura app, not the Hilton flag."
 05-hospitality-events,12,Hard Rock Cafe Lagos,unresearched,,,,,,,,,,,Not yet researched.
@@ -273,8 +273,8 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 05-hospitality-events,17,Moist Lounge,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,18,Escape Nightlife,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,19,Tiger Lagos,unresearched,,,,,,,,,,,Not yet researched.
-05-hospitality-events,20,Bay Lounge,unresearched,,,,,,,,,,,Not yet researched.
-05-hospitality-events,21,Upbeat Recreation Centre,unresearched,,,,,,,,,,,Not yet researched.
+05-hospitality-events,20,Bay Lounge,researched,,,,,,,info@bayloungeltd.com,https://www.finelib.com/listing/Bay-Lounge/62066/,,,
+05-hospitality-events,21,Upbeat Recreation Centre,researched,,,,,,,upbeatcentre@gmail.com,https://www.finelib.com/listing/Upbeat-Recreation-Centre/84141,,,
 05-hospitality-events,22,RSVP Lagos,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,23,Livespot360,researched,Deola Art Alade,Co-founder and Group CEO,https://www.linkedin.com/in/deolaartalade/,https://www.linkedin.com/in/deolaartalade/,,https://www.linkedin.com/search/results/people/?keywords=Deola+Art+Alade+Livespot360,,,,,
 05-hospitality-events,23,Livespot360,researched,Darey Art Alade,Co-founder and Chief Creative Officer,https://www.linkedin.com/in/darey-art-alade-28575b106/,https://www.linkedin.com/in/darey-art-alade-28575b106/,,https://www.linkedin.com/search/results/people/?keywords=Darey+Art+Alade+Livespot360,,,,,
@@ -282,10 +282,10 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 05-hospitality-events,25,Eventbrite Nigeria,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,26,Naija Events,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,27,Lagos Continental Hotel,researched,Karl Hala,"General Manager (2021) and Group GM, Continental Hotels",https://atcnews.org/lagos-continental-hotel-welcomes-karl-hala-as-general-manager/,,,https://www.linkedin.com/search/results/people/?keywords=Karl+Hala+Lagos+Continental+Hotel,,,,,Formerly the InterContinental Lagos (05/10).
-05-hospitality-events,28,NICON Luxury Hotel,unresearched,,,,,,,,,,,Not yet researched.
+05-hospitality-events,28,NICON Luxury Hotel,researched,,,,,,,info@niconluxury.com,https://www.finelib.com/listing/Nicon-Luxury-Hotel-Abuja/3936,,,
 05-hospitality-events,29,Protea Hotel Lagos,researched,Margaret Asian,"General Manager, Protea Hotel Ikeja Select",https://www.linkedin.com/in/margaret-asian-3a88a242/,https://www.linkedin.com/in/margaret-asian-3a88a242/,,https://www.linkedin.com/search/results/people/?keywords=Margaret+Asian+Protea+Hotel+Lagos,,,,,
 05-hospitality-events,30,Alara Lagos,researched,Reni Folawiyo,Founder,https://www.linkedin.com/in/reni-folawiyo-b5792295/,https://www.linkedin.com/in/reni-folawiyo-b5792295/,,https://www.linkedin.com/search/results/people/?keywords=Reni+Folawiyo+Alara+Lagos,,,,,
-05-hospitality-events,31,The Blowfish Hotel,researched,,,,,https://ng.linkedin.com/company/the-blowfish-group,,,,,,
+05-hospitality-events,31,The Blowfish Hotel,researched,,,,,https://ng.linkedin.com/company/the-blowfish-group,,reservation@theblowfishhotel.com,https://drupal.oxfordbusinessgroup.com/node/942484,,,
 05-hospitality-events,32,House 15,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,33,Montego Bay Lagos,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,34,Sky Restaurant,unresearched,,,,,,,,,,,Not yet researched.
@@ -293,8 +293,8 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 05-hospitality-events,36,La Taverna,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,37,CityGate Events,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,38,EventsNG,unresearched,,,,,,,,,,,Not yet researched.
-05-hospitality-events,39,The Civic Centre,unresearched,,,,,,,,,,,Not yet researched.
-05-hospitality-events,40,Oriental Hotel,unresearched,,,,,,,,,,,Not yet researched.
+05-hospitality-events,39,The Civic Centre,researched,,,,,,,info@theciviccentre.com,https://www.finelib.com/listing/The-Civic-Centre/37515,,,
+05-hospitality-events,40,Oriental Hotel,researched,,,,,,,info@lagosoriental.com,https://www.finelib.com/listing/Lagos-Oriental-Hotel/37503,,,
 05-hospitality-events,41,Kwarleyz Residence,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,42,Golden Tulip Lagos,unresearched,,,,,,,,,,,Not yet researched.
 05-hospitality-events,43,Ibis Lagos,unresearched,,,,,,,,,,,Not yet researched.
@@ -334,8 +334,8 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 06-tech-saas,20,Anchor,researched,Segun Adeyemi,CEO,https://uk.linkedin.com/in/segunadeyemi,https://uk.linkedin.com/in/segunadeyemi,,https://www.linkedin.com/search/results/people/?keywords=Segun+Adeyemi+Anchor,,,,,
 06-tech-saas,21,Eden Life,researched,Nadayar Enegesi,Co-founder and CEO,https://www.linkedin.com/in/nadayar/,https://www.linkedin.com/in/nadayar/,,https://www.linkedin.com/search/results/people/?keywords=Nadayar+Enegesi+Eden+Life,,,,,
 06-tech-saas,22,Shuttlers,researched,Damilola Olokesusi,Co-founder and CEO,https://ng.linkedin.com/in/damilola-olokesusi-37638035,https://ng.linkedin.com/in/damilola-olokesusi-37638035,,https://www.linkedin.com/search/results/people/?keywords=Damilola+Olokesusi+Shuttlers,,,,,
-06-tech-saas,23,Gokada,unresearched,,,,,,,,,,,Not yet researched.
-06-tech-saas,24,Kwik,unresearched,,,,,,,,,,,Not yet researched.
+06-tech-saas,23,Gokada,researched,,,,,,,marketing@gokada.ng,https://www.autotouch.ai/prospecting/gokada,,,
+06-tech-saas,24,Kwik,researched,,,,,,,contact@kwik.delivery,https://www.finelib.com/listing/kwik/80957,,,
 06-tech-saas,25,Topship,researched,Moses O Enenwali,Co-founder and CEO,https://www.linkedin.com/in/moses-o-enenwali-b37694192/,https://www.linkedin.com/in/moses-o-enenwali-b37694192/,,https://www.linkedin.com/search/results/people/?keywords=Moses+O+Enenwali+Topship,,,,,
 06-tech-saas,26,Releaf,researched,Ikenna Nzewi,Co-founder and CEO,https://www.linkedin.com/in/inzewi/,https://www.linkedin.com/in/inzewi/,,https://www.linkedin.com/search/results/people/?keywords=Ikenna+Nzewi+Releaf,,,,,
 06-tech-saas,27,ThriveAgric,researched,Uka Eje,Co-founder and CEO,https://www.linkedin.com/company/thriveagric,https://www.linkedin.com/company/thriveagric,https://www.linkedin.com/company/thriveagric,https://www.linkedin.com/search/results/people/?keywords=Uka+Eje+ThriveAgric,,,,,
@@ -383,12 +383,12 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 07-fintech-financial-services,14,Chaka,researched,Tosin Osibodu,CEO,https://ng.linkedin.com/in/tosinosibodu,https://ng.linkedin.com/in/tosinosibodu,,https://www.linkedin.com/search/results/people/?keywords=Tosin+Osibodu+Chaka,,,,,
 07-fintech-financial-services,15,Trove,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,16,Aella Credit,researched,Akin Jones,"Co-founder and CEO (now Chairman, Aella MFB)",https://www.linkedin.com/in/akin-j-65b89ba/,https://www.linkedin.com/in/akin-j-65b89ba/,,https://www.linkedin.com/search/results/people/?keywords=Akin+Jones+Aella+Credit,,,,,
-07-fintech-financial-services,17,Renmoney,researched,,,,,https://ng.linkedin.com/company/renmoneyng,,,,,,
+07-fintech-financial-services,17,Renmoney,researched,,,,,https://ng.linkedin.com/company/renmoneyng,,app@renmoney.com,https://apps.apple.com/ng/app/renmoney-mfb/id1491158086,,,
 07-fintech-financial-services,18,Lidya,researched,Tunde Kehinde,Co-founder and CEO,https://www.linkedin.com/in/tunde-kehinde-048aa635/,https://www.linkedin.com/in/tunde-kehinde-048aa635/,,https://www.linkedin.com/search/results/people/?keywords=Tunde+Kehinde+Lidya,,,,,
-07-fintech-financial-services,19,OneFi (Carbon parent),unresearched,,,,,,,,,,,Not yet researched.
-07-fintech-financial-services,20,Branch Nigeria,unresearched,,,,,,,,,,,Not yet researched.
+07-fintech-financial-services,19,OneFi (Carbon parent),researched,,,,,,,customer@getcarbon.co,https://techcabal.com/2026/05/22/customer-care-numbers-banks-fintechs-nigeria/,,,
+07-fintech-financial-services,20,Branch Nigeria,researched,,,,,,,nigeria@branch.co,https://nairacompare.ng/personal-loans/quick-loans/branch-branch-personal-loan,,,
 07-fintech-financial-services,21,Sparkle,researched,Uzoma Dozie,Founder and CEO,https://ng.linkedin.com/company/sparklenigeria,https://ng.linkedin.com/company/sparklenigeria,https://ng.linkedin.com/company/sparklenigeria,https://www.linkedin.com/search/results/people/?keywords=Uzoma+Dozie+Sparkle,,,,,
-07-fintech-financial-services,22,VFD Microfinance Bank,unresearched,,,,,,,,,,,Not yet researched.
+07-fintech-financial-services,22,VFD Microfinance Bank,researched,,,,,,,support@vbank.ng,https://nairacompare.ng/providers/vfd-microfinance-bank,,,
 07-fintech-financial-services,23,LAPO Microfinance,researched,Cynthia Ikponmwosa,Managing Director and CEO,https://www.linkedin.com/in/cynthia-ikponmwosa-5b469a383/,https://www.linkedin.com/in/cynthia-ikponmwosa-5b469a383/,,https://www.linkedin.com/search/results/people/?keywords=Cynthia+Ikponmwosa+LAPO+Microfinance,,,,,
 07-fintech-financial-services,24,Mintyn Digital Bank,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,25,Rubies Microfinance,unresearched,,,,,,,,,,,Not yet researched.
@@ -396,31 +396,31 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 07-fintech-financial-services,27,Brass,duplicate,Emmanuel Okeke,Co-founder and CTO (company page link),https://ng.linkedin.com/company/joinbrass,https://ng.linkedin.com/company/joinbrass,https://ng.linkedin.com/company/joinbrass,https://www.linkedin.com/search/results/people/?keywords=Emmanuel+Okeke+Brass,,,,,Duplicate. Same company as 06/15 (Brass). Contact once.
 07-fintech-financial-services,28,Bloc,researched,Edmund Olotu,Founder,https://ng.linkedin.com/company/buildwithbloc,https://ng.linkedin.com/company/buildwithbloc,https://ng.linkedin.com/company/buildwithbloc,https://www.linkedin.com/search/results/people/?keywords=Edmund+Olotu+Bloc,,,,,
 07-fintech-financial-services,29,Anchor,duplicate,Segun Adeyemi,CEO,https://uk.linkedin.com/in/segunadeyemi,https://uk.linkedin.com/in/segunadeyemi,,https://www.linkedin.com/search/results/people/?keywords=Segun+Adeyemi+Anchor,,,,,Duplicate. Same company as 06/20 (Anchor). Contact once.
-07-fintech-financial-services,30,Lenco,researched,,,,,https://ng.linkedin.com/company/lencobank,,,,,,
+07-fintech-financial-services,30,Lenco,researched,,,,,https://ng.linkedin.com/company/lencobank,,support@lenco.ng,https://jobs.techstars.com/companies/lenco-technologies-2-9cf267cb-5827-44f5-a84b-7ac5df406f68,,,
 07-fintech-financial-services,31,Stanbic IBTC,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,32,GTBank,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,33,Access Bank,researched,Roosevelt Ogbonna,Group Managing Director and CEO,https://ng.linkedin.com/in/roosevelt-ogbonna-b3875744,https://ng.linkedin.com/in/roosevelt-ogbonna-b3875744,,https://www.linkedin.com/search/results/people/?keywords=Roosevelt+Ogbonna+Access+Bank,,,,,
 07-fintech-financial-services,34,Wema Bank (ALAT),researched,Moruf Oseni,Managing Director and CEO (from April 2023),https://www.linkedin.com/company/wemabankplc,https://www.linkedin.com/company/wemabankplc,https://www.linkedin.com/company/wemabankplc,https://www.linkedin.com/search/results/people/?keywords=Moruf+Oseni+Wema+Bank+%28ALAT%29,,,,,
-07-fintech-financial-services,35,Sterling Bank,unresearched,,,,,,,,,,,Not yet researched.
-07-fintech-financial-services,36,Coronation Insurance,unresearched,,,,,,,,,,,Not yet researched.
-07-fintech-financial-services,37,Leadway Assurance,unresearched,,,,,,,,,,,Not yet researched.
+07-fintech-financial-services,35,Sterling Bank,researched,,,,,,,customercare@sterling.ng,https://nairacompare.ng/providers/sterling-bank-plc,,,
+07-fintech-financial-services,36,Coronation Insurance,researched,,,,,,,contactcentre@coronationinsurance.com.ng,https://eu-assets.contentstack.com/v3/assets/bltacf39601912ccb86/bltf7b1b9dd6ec81524/65e1b8d90f7fab040aa0f646/FAQs.pdf,,,
+07-fintech-financial-services,37,Leadway Assurance,researched,,,,,,,insure@leadway.com,https://nairacompare.ng/insurance/car-insurance/leadway-assurance-company-ltd,,,
 07-fintech-financial-services,38,AXA Mansard,researched,Tope Adeniyi,"CEO, AXA Mansard Health",https://www.linkedin.com/in/tope-adeniyi-673a8316/,https://www.linkedin.com/in/tope-adeniyi-673a8316/,,https://www.linkedin.com/search/results/people/?keywords=Tope+Adeniyi+AXA+Mansard,,,,,
 07-fintech-financial-services,39,Heirs Insurance,researched,Wole Fayemi,"MD and CEO, Heirs General Insurance",https://ng.linkedin.com/in/wole-fayemi-81379333,https://ng.linkedin.com/in/wole-fayemi-81379333,,https://www.linkedin.com/search/results/people/?keywords=Wole+Fayemi+Heirs+Insurance,,,,,
 07-fintech-financial-services,39,Heirs Insurance,researched,Niyi Onifade,"MD and CEO, Heirs Life Assurance",https://www.linkedin.com/in/niyionifade/,https://www.linkedin.com/in/niyionifade/,,https://www.linkedin.com/search/results/people/?keywords=Niyi+Onifade+Heirs+Insurance,,,,,
-07-fintech-financial-services,40,Tangerine Life,unresearched,,,,,,,,,,,Not yet researched.
+07-fintech-financial-services,40,Tangerine Life,researched,,,,,,,hello@tangerine.africa,https://nairacompare.ng/insurance/car-insurance/tangerine-general-insurance-ltd,,,
 07-fintech-financial-services,41,Ceviant Finance,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,42,Payfixy,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,43,Remita,researched,John Tanimola Obaro,"Founder and Group Managing Director, SystemSpecs (owner of Remita)",https://ng.linkedin.com/in/john-tanimola-obaro,https://ng.linkedin.com/in/john-tanimola-obaro,,https://www.linkedin.com/search/results/people/?keywords=John+Tanimola+Obaro+Remita,,,,,
 07-fintech-financial-services,44,Interswitch,researched,Mitchell Elegbe,Founder and Group Managing Director and CEO,https://www.linkedin.com/company/interswitch-limited,https://www.linkedin.com/company/interswitch-limited,https://www.linkedin.com/company/interswitch-limited,https://www.linkedin.com/search/results/people/?keywords=Mitchell+Elegbe+Interswitch,,,,,
 07-fintech-financial-services,45,eTranzact,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,46,SystemSpecs (Remita),researched,John Tanimola Obaro,"Founder and Group Managing Director, SystemSpecs",https://ng.linkedin.com/in/john-tanimola-obaro,https://ng.linkedin.com/in/john-tanimola-obaro,,https://www.linkedin.com/search/results/people/?keywords=John+Tanimola+Obaro+SystemSpecs+%28Remita%29,,,,,
-07-fintech-financial-services,47,Africa Prudential,unresearched,,,,,,,,,,,Not yet researched.
+07-fintech-financial-services,47,Africa Prudential,researched,,,,,,,cxc@africaprudential.com,https://doclib.ngxgroup.com/Financial_NewsDocs/47489_AFRICA_PRUDENTIAL_PLC-CORPORATE_ACTION_ANNOUNCEMENT_CORPORATE_ACTIONS_JULY_2026.pdf,,,
 07-fintech-financial-services,48,Providus Bank,researched,Walter Akpani,Managing Director (as of about 2024),https://ng.linkedin.com/company/providusbank,https://ng.linkedin.com/company/providusbank,https://ng.linkedin.com/company/providusbank,https://www.linkedin.com/search/results/people/?keywords=Walter+Akpani+Providus+Bank,,,,,
 07-fintech-financial-services,49,TrustBanc Holdings,unresearched,,,,,,,,,,,Not yet researched.
 07-fintech-financial-services,50,Fidelity Bank,researched,Nneka Onyeali-Ikpe,Managing Director and CEO,https://ng.linkedin.com/in/nneka-onyeali-ikpe,https://ng.linkedin.com/in/nneka-onyeali-ikpe,,https://www.linkedin.com/search/results/people/?keywords=Nneka+Onyeali-Ikpe+Fidelity+Bank,,,,,
 08-health-wellness,1,i-Fitness,researched,Foluso Ogunwale,Founder and CEO,https://ng.linkedin.com/company/ifitness-centre-ltd,https://ng.linkedin.com/company/ifitness-centre-ltd,https://ng.linkedin.com/company/ifitness-centre-ltd,https://www.linkedin.com/search/results/people/?keywords=Foluso+Ogunwale+i-Fitness,,,,,
 08-health-wellness,2,Bodyline Fitness,unresearched,,,,,,,,,,,Not yet researched.
-08-health-wellness,3,EliteBox Fitness,unresearched,,,,,,,,,,,Not yet researched.
+08-health-wellness,3,EliteBox Fitness,researched,,,,,,,mail@eliteboxng.com,https://connectciti.com/listing/elitebox-fitness,,,
 08-health-wellness,4,Pure Fitness Africa,unresearched,,,,,,,,,,,Not yet researched.
 08-health-wellness,5,Starke Fitness,unresearched,,,,,,,,,,,Not yet researched.
 08-health-wellness,6,CapitaHealth,unresearched,,,,,,,,,,,Not yet researched.
@@ -436,12 +436,12 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 08-health-wellness,16,Health Plus Pharmacy,researched,Bukky George,Founder and Managing Director,https://ng.linkedin.com/in/bukky-george-4769a12b,https://ng.linkedin.com/in/bukky-george-4769a12b,,https://www.linkedin.com/search/results/people/?keywords=Bukky+George+Health+Plus+Pharmacy,,,,,
 08-health-wellness,17,MedPlus,researched,Joke Bakare,Founder and CEO,https://www.linkedin.com/company/medplus-pharmacy-limited,https://www.linkedin.com/company/medplus-pharmacy-limited,https://www.linkedin.com/company/medplus-pharmacy-limited,https://www.linkedin.com/search/results/people/?keywords=Joke+Bakare+MedPlus,,,,,
 08-health-wellness,18,Reddington Hospital,researched,Emmanuel Matthews,"Group COO, Reddington Hospital",https://www.linkedin.com/in/emmanuel-matthews-44821b15/,https://www.linkedin.com/in/emmanuel-matthews-44821b15/,,https://www.linkedin.com/search/results/people/?keywords=Emmanuel+Matthews+Reddington+Hospital,,,,,
-08-health-wellness,19,Lagoon Hospital,unresearched,,,,,,,,,,,Not yet researched.
+08-health-wellness,19,Lagoon Hospital,researched,,,,,,,customerservice@lagoonhospitals.com,https://www.gov.uk/government/publications/nigeria-list-of-medical-facilitiespractitioners/nigeria-list-of-medical-facilities,,,
 08-health-wellness,20,EverCare Hospital,unresearched,,,,,,,,,,,Not yet researched.
-08-health-wellness,21,Flying Doctors Nigeria,unresearched,,,,,,,,,,,Not yet researched.
+08-health-wellness,21,Flying Doctors Nigeria,researched,,,,,,,sales@flyingdoctorsnigeria.com,https://www.flyingdoctorsnigeria.com/?p=2053,,,
 08-health-wellness,22,WellNewMe,unresearched,,,,,,,,,,,Not yet researched.
 08-health-wellness,23,Reliance HMO,researched,Femi Kuti,Co-founder and CEO,https://www.linkedin.com/in/femikuti/,https://www.linkedin.com/in/femikuti/,,https://www.linkedin.com/search/results/people/?keywords=Femi+Kuti+Reliance+HMO,,,,,
-08-health-wellness,24,Hygeia HMO,researched,,,,,https://ng.linkedin.com/company/hygeia-hmo,,,,,,
+08-health-wellness,24,Hygeia HMO,researched,,,,,https://ng.linkedin.com/company/hygeia-hmo,,hycare@hygeiahmo.com,https://www.finelib.com/listing/Hygeia-HMO/7398/,,,
 08-health-wellness,25,Leadway Health,researched,Oladipupo Awosika,Chairman of the Board,https://www.linkedin.com/in/oladipupo-awosika-07a99010/,https://www.linkedin.com/in/oladipupo-awosika-07a99010/,,https://www.linkedin.com/search/results/people/?keywords=Oladipupo+Awosika+Leadway+Health,,,,,
 08-health-wellness,26,The Spa at Eko Hotels,duplicate,Iyadunni Gbadebo,Director of Sales and Marketing,https://guardian.ng/life/events/eko-hotels-legacy-summit-to-groom-future-african-hospitality-leaders-iyadunni-gbadebo/,,,https://www.linkedin.com/search/results/people/?keywords=Iyadunni+Gbadebo+The+Spa+at+Eko+Hotels,,,,,Duplicate. Same company as 05/2 (Eko Hotels). Contact once.
 08-health-wellness,26,The Spa at Eko Hotels,duplicate,Danny Kioupoureglou,General Manager,https://www.africainterviews.com/eko-hotels-at-50-what-africas-tourism-leaders-say-the-continent-must-do-next/,,,https://www.linkedin.com/search/results/people/?keywords=Danny+Kioupoureglou+The+Spa+at+Eko+Hotels,,,,,Duplicate. Same company as 05/2 (Eko Hotels). Contact once.
@@ -490,10 +490,10 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 09-entertainment-media,18,FilmOne Distribution,researched,Moses Babatope,"Co-founder, FilmOne",https://www.linkedin.com/in/moses-babatope-9ba014134/,https://www.linkedin.com/in/moses-babatope-9ba014134/,,https://www.linkedin.com/search/results/people/?keywords=Moses+Babatope+FilmOne+Distribution,,,,,
 09-entertainment-media,19,Ebonylife Media,researched,Mo Abudu,"Founder and CEO, EbonyLife Group",https://ng.linkedin.com/in/mo-abudu,https://ng.linkedin.com/in/mo-abudu,,https://www.linkedin.com/search/results/people/?keywords=Mo+Abudu+Ebonylife+Media,,,,,
 09-entertainment-media,20,Anthill Studios,researched,Niyi Akinmolayan,Founder and creative director,https://www.linkedin.com/in/niyiakinmolayan/,https://www.linkedin.com/in/niyiakinmolayan/,,https://www.linkedin.com/search/results/people/?keywords=Niyi+Akinmolayan+Anthill+Studios,,,,,
-09-entertainment-media,21,Showmax Nigeria,unresearched,,,,,,,,,,,Not yet researched.
+09-entertainment-media,21,Showmax Nigeria,researched,Laura Cooke,"Head of Communications, Showmax (group)",https://stories.showmax.com/ke/press-resources,,,https://www.linkedin.com/search/results/people/?keywords=Laura+Cooke+Showmax+Nigeria,,,,,
 09-entertainment-media,22,TellyAfrica,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,23,Beat FM,researched,Chris Ubosi,"CEO, MegaLectrics (operator of The Beat 99.9 FM)",https://www.linkedin.com/in/chrisubosi/,https://www.linkedin.com/in/chrisubosi/,,https://www.linkedin.com/search/results/people/?keywords=Chris+Ubosi+Beat+FM,,,,,
-09-entertainment-media,24,Cool FM,unresearched,,,,,,,,,,,Not yet researched.
+09-entertainment-media,24,Cool FM,researched,,,,,,,info@coolfm.ng,https://www.finelib.com/listing/Cool-FM-969-Lagos/2219,,,
 09-entertainment-media,25,The Cable,researched,Simon Kolawole,Founder and CEO,https://www.linkedin.com/in/simon-kolawole-41a71194/,https://www.linkedin.com/in/simon-kolawole-41a71194/,,https://www.linkedin.com/search/results/people/?keywords=Simon+Kolawole+The+Cable,,,,,
 09-entertainment-media,26,BellaNaija,duplicate,Uche Pedro,"Founder and CEO, BellaNaija",https://weforum.org/people/uche-pedro,https://www.linkedin.com/in/uchepedro/,,https://www.linkedin.com/search/results/people/?keywords=Uche+Pedro+BellaNaija,,,,,Duplicate. Same company as 02/7 (BN Beauty). Contact once.
 09-entertainment-media,27,Pulse Nigeria,unresearched,,,,,,,,,,,Not yet researched.
@@ -502,17 +502,17 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 09-entertainment-media,30,Native Mag,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,31,Street Souk,researched,Iretidayo Zaccheaus,Founder and convenor,https://ng.linkedin.com/company/street-souk,https://ng.linkedin.com/company/street-souk,https://ng.linkedin.com/company/street-souk,https://www.linkedin.com/search/results/people/?keywords=Iretidayo+Zaccheaus+Street+Souk,,,,,
 09-entertainment-media,32,Afro Nation Nigeria,unresearched,,,,,,,,,,,Not yet researched.
-09-entertainment-media,33,Lagos Biennial,unresearched,,,,,,,,,,,Not yet researched.
+09-entertainment-media,33,Lagos Biennial,researched,,,,,,,opencall@lagos-biennial.org,https://biennialfoundation.org/2019/09/the-lagos-biennial-curatorial-intensive-programme-open-call/,,,
 09-entertainment-media,34,ART X Lagos,researched,Tokini Peterside-Schwebig,Founder,https://www.linkedin.com/in/tokinipeterside/,https://www.linkedin.com/in/tokinipeterside/,,https://www.linkedin.com/search/results/people/?keywords=Tokini+Peterside-Schwebig+ART+X+Lagos,,,,,
 09-entertainment-media,35,GTBank Fashion Weekend,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,36,SocialMediaWeek Lagos,unresearched,,,,,,,,,,,Not yet researched.
-09-entertainment-media,37,Flytime Music Festival,researched,,,,,https://ng.linkedin.com/company/flytimefest,,,,,,
+09-entertainment-media,37,Flytime Music Festival,researched,,,,,https://ng.linkedin.com/company/flytimefest,,sponsorship@flytimefest.com,https://blog.flytimefest.com/?p=7036,,,
 09-entertainment-media,38,Experience Lagos,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,39,Gidi Culture Festival,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,40,One Africa Music Fest,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,41,Dentaa Show,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,42,The Ndani Group,researched,Otega Idadi,"Head of Production, NdaniTV",https://ng.linkedin.com/in/otega-idadi-6bb14475,https://ng.linkedin.com/in/otega-idadi-6bb14475,,https://www.linkedin.com/search/results/people/?keywords=Otega+Idadi+The+Ndani+Group,,,,,
-09-entertainment-media,43,Red Media Africa,researched,,,,,https://ng.linkedin.com/company/redmediaafrica,,,,,,
+09-entertainment-media,43,Red Media Africa,researched,,,,,https://ng.linkedin.com/company/redmediaafrica,,redmediaafrica@gmail.com,https://www.finelib.com/listing/Red-Media-Africa-Surulere/79131,,,
 09-entertainment-media,44,Mosaic Media,unresearched,,,,,,,,,,,Not yet researched.
 09-entertainment-media,45,Temple Management,researched,Idris Olorunnimbe,"Founder and Group CEO, The Temple Company",https://www.linkedin.com/in/idris-olorunnimbe-03b867119/,https://www.linkedin.com/in/idris-olorunnimbe-03b867119/,,https://www.linkedin.com/search/results/people/?keywords=Idris+Olorunnimbe+Temple+Management,,,,,
 09-entertainment-media,46,Insight Publicis,researched,,,,,https://ng.linkedin.com/company/insight-publicis,,,,,,
@@ -532,35 +532,36 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 10-education-professional-development,9,LearnFlourish,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,10,AltSchool Africa,duplicate,Adewale Yusuf,Co-founder and CEO,https://www.linkedin.com/in/adewaleyusuf/,https://www.linkedin.com/in/adewaleyusuf/,,https://www.linkedin.com/search/results/people/?keywords=Adewale+Yusuf+AltSchool+Africa,,,,,Duplicate. Same company as 06/48 (AltSchool Africa). Contact once.
 10-education-professional-development,11,Decagon,duplicate,,,,,,,,,,,Duplicate. Same company as 06/47 (Decagon). Contact once. Not yet researched.
-10-education-professional-development,12,HiiT Plc,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,12,HiiT Plc,researched,,,,,,,enquiries@hiitplc.com,https://www.finelib.com/listing/HiiT-Plc/4608,,,
 10-education-professional-development,13,New Horizons Nigeria,researched,Timothy (Tim) Akano,Managing Director,https://www.linkedin.com/in/tim-akano-638999185/,https://www.linkedin.com/in/tim-akano-638999185/,,https://www.linkedin.com/search/results/people/?keywords=Timothy+%28Tim%29+Akano+New+Horizons+Nigeria,,,,,
 10-education-professional-development,14,Utiva,researched,Eyitayo Ogunmola,Founder and CEO,https://www.linkedin.com/in/eyitayoogunmola/,https://www.linkedin.com/in/eyitayoogunmola/,,https://www.linkedin.com/search/results/people/?keywords=Eyitayo+Ogunmola+Utiva,,,,,
 10-education-professional-development,15,Side Hustle Internship,researched,,,,,https://ng.linkedin.com/company/sidehustleng,,,,,,
 10-education-professional-development,16,Semicolon Africa,researched,Sam Immanuel,CEO (one source names Adeyinka Adedokun),https://www.linkedin.com/in/samimmanuel/,https://www.linkedin.com/in/samimmanuel/,,https://www.linkedin.com/search/results/people/?keywords=Sam+Immanuel+Semicolon+Africa,,,,,
-10-education-professional-development,17,Stutern,unresearched,,,,,,,,,,,Not yet researched.
-10-education-professional-development,18,Ingressive For Good,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,17,Stutern,researched,Kehinde Ayanleye,Co-founder and CEO,https://capitalfm.africa/myhustle-naija-twins-hand-picked-for-obama-foundation-program/,,,https://www.linkedin.com/search/results/people/?keywords=Kehinde+Ayanleye+Stutern,,,,,
+10-education-professional-development,17,Stutern,researched,Taiwo Ayanleye,Co-founder,https://capitalfm.africa/myhustle-naija-twins-hand-picked-for-obama-foundation-program/,,,https://www.linkedin.com/search/results/people/?keywords=Taiwo+Ayanleye+Stutern,,,,,
+10-education-professional-development,18,Ingressive For Good,researched,,,,,,,hello@ingressive.org,https://thecondia.com/ingressive-for-good-impact-african-youths/,,,
 10-education-professional-development,19,She Code Africa,researched,Ada Nduka Oyom,Founder and executive director,https://www.linkedin.com/in/ada-nduka-oyom/,https://www.linkedin.com/in/ada-nduka-oyom/,,https://www.linkedin.com/search/results/people/?keywords=Ada+Nduka+Oyom+She+Code+Africa,,,,,
 10-education-professional-development,20,Google Developer Groups Lagos,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,21,Jobberman,researched,Ore Boboye,CEO,https://www.linkedin.com/company/jobbermannigeria,https://www.linkedin.com/company/jobbermannigeria,https://www.linkedin.com/company/jobbermannigeria,https://www.linkedin.com/search/results/people/?keywords=Ore+Boboye+Jobberman,,,,,
-10-education-professional-development,22,MyJobMag,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,22,MyJobMag,researched,,,,,,,services@myjobmag.com,https://www.finelib.com/listing/MyJobMag-Limited/41388,,,
 10-education-professional-development,23,FATE Foundation,researched,Adenike Adeyemi,Executive Director,https://www.linkedin.com/company/fate-foundation,https://www.linkedin.com/company/fate-foundation,https://www.linkedin.com/company/fate-foundation,https://www.linkedin.com/search/results/people/?keywords=Adenike+Adeyemi+FATE+Foundation,,,,,
-10-education-professional-development,24,Enterprise Development Centre,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,24,Enterprise Development Centre,researched,,,,,,,edc@pau.edu.ng,https://lsetf.ng/content/enterprise-development-centre,,,
 10-education-professional-development,25,Tony Elumelu Foundation,researched,Somachi Chris-Asoluka,CEO,https://www.linkedin.com/in/somachi-chris-asoluka-39041013/,https://www.linkedin.com/in/somachi-chris-asoluka-39041013/,,https://www.linkedin.com/search/results/people/?keywords=Somachi+Chris-Asoluka+Tony+Elumelu+Foundation,,,,,
 10-education-professional-development,26,Lagos Business School,researched,Olayinka David-West,Dean,https://www.linkedin.com/in/olayinka-david-west/,https://www.linkedin.com/in/olayinka-david-west/,,https://www.linkedin.com/search/results/people/?keywords=Olayinka+David-West+Lagos+Business+School,,,,,
 10-education-professional-development,27,Pan-Atlantic University,researched,Enase Okonedo,Vice-Chancellor (as of 2023),https://www.linkedin.com/in/enase-odu-okonedo-5614771/,https://www.linkedin.com/in/enase-odu-okonedo-5614771/,,https://www.linkedin.com/search/results/people/?keywords=Enase+Okonedo+Pan-Atlantic+University,,,,,
 10-education-professional-development,28,Covenant University,unresearched,,,,,,,,,,,Not yet researched.
-10-education-professional-development,29,Babcock University,unresearched,,,,,,,,,,,Not yet researched.
-10-education-professional-development,30,African Leadership University,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,29,Babcock University,researched,,,,,,,info@babcock.edu.ng,https://legacy.babcock.edu.ng/info/36,,,
+10-education-professional-development,30,African Leadership University,researched,,,,,,,info@alueducation.com,https://anishaffar.org/schools-colleges/,,,
 10-education-professional-development,31,Tekedia Institute,researched,Ndubuisi Ekekwe,Founder,https://www.linkedin.com/in/ndubuisi-ekekwe-36068210/,https://www.linkedin.com/in/ndubuisi-ekekwe-36068210/,,https://www.linkedin.com/search/results/people/?keywords=Ndubuisi+Ekekwe+Tekedia+Institute,,,,,
 10-education-professional-development,32,EdTech Foundry,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,33,PrepClass,researched,Olumide Ogunlana,Co-founder,https://www.linkedin.com/in/olumide-ogunlana-55b08242/,https://www.linkedin.com/in/olumide-ogunlana-55b08242/,,https://www.linkedin.com/search/results/people/?keywords=Olumide+Ogunlana+PrepClass,,,,,
 10-education-professional-development,34,Gradely,researched,Boye Oshinaga,Co-founder and CEO,https://ng.linkedin.com/in/boyeoshinaga,https://ng.linkedin.com/in/boyeoshinaga,,https://www.linkedin.com/search/results/people/?keywords=Boye+Oshinaga+Gradely,,,,,
-10-education-professional-development,35,ScholarX,unresearched,,,,,,,,,,,Not yet researched.
-10-education-professional-development,36,TGM Education,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,35,ScholarX,researched,,,,,,,advisory@scholarx.co,https://techcabal.com/2016/08/01/scholarx/,,,
+10-education-professional-development,36,TGM Education,researched,,,,,,,info@tgmeducation.com,https://www.finelib.com/listing/TGM-Education/34920,,,
 10-education-professional-development,37,Schoolgate,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,38,Flex Finance Academy,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,39,Phillips Consulting,researched,Foluso Phillips,Chairman,https://www.linkedin.com/in/foluso-phillips-ba695122/,https://www.linkedin.com/in/foluso-phillips-ba695122/,,https://www.linkedin.com/search/results/people/?keywords=Foluso+Phillips+Phillips+Consulting,,,,,
-10-education-professional-development,40,KPMG Nigeria (Training),unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,40,KPMG Nigeria (Training),researched,,,,,,,ng-fmtaxenquiries@ng.kpmg.com,https://kpmg.com/kpmg-us/content/dam/kpmg/taxnewsflash/pdf/2024/12/tnf-tp-nigeria-dec9-2024.pdf,,,
 10-education-professional-development,41,Nigerian Seminars & Trainings,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,42,Afrilearn,researched,Isaac Oladipupo,Co-founder and CEO,https://ng.linkedin.com/company/afrilearn,https://ng.linkedin.com/company/afrilearn,https://ng.linkedin.com/company/afrilearn,https://www.linkedin.com/search/results/people/?keywords=Isaac+Oladipupo+Afrilearn,,,,,
 10-education-professional-development,42,Afrilearn,researched,Gabriel Olatunji-Legend,Co-founder and Head of Content,https://www.linkedin.com/in/olatunjilegend/,https://www.linkedin.com/in/olatunjilegend/,https://ng.linkedin.com/company/afrilearn,https://www.linkedin.com/search/results/people/?keywords=Gabriel+Olatunji-Legend+Afrilearn,,,,,
@@ -568,7 +569,7 @@ vertical,row,company,status,decision_maker,role,source,linkedin_profile,company_
 10-education-professional-development,44,Teachable (Nigeria users),unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,45,Roqqu Academy,unresearched,,,,,,,,,,,Not yet researched.
 10-education-professional-development,46,Business Day Training,unresearched,,,,,,,,,,,Not yet researched.
-10-education-professional-development,47,CIPM Nigeria,researched,,,,,https://ng.linkedin.com/company/chartered-institute-of-personnel-management-of-nigeria,,,,,,
-10-education-professional-development,48,ICAN Nigeria,unresearched,,,,,,,,,,,Not yet researched.
-10-education-professional-development,49,Nigerian Bar Association,unresearched,,,,,,,,,,,Not yet researched.
+10-education-professional-development,47,CIPM Nigeria,researched,,,,,https://ng.linkedin.com/company/chartered-institute-of-personnel-management-of-nigeria,,info@cipmnigeria.org,https://www.finelib.com/listing/Chartered-Institute-of-Personnel-Management/37087,,,
+10-education-professional-development,48,ICAN Nigeria,researched,,,,,,,info.ican@ican.org.ng,https://nigerianqueries.com/ican-head-office-and-study-centre-addresses-in-lagos/,,,
+10-education-professional-development,49,Nigerian Bar Association,researched,,,,,,,nigerianbar@nba.org.ng,https://achpr.au.int/fr/ngos/nigerian-bar-association-nba,,,
 10-education-professional-development,50,Creative Lagos,unresearched,,,,,,,,,,,Not yet researched.

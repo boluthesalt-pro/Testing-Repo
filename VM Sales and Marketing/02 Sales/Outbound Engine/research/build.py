@@ -214,6 +214,37 @@ def apply_linkedin(data):
         target[3] = r["url"]
 
 
+def apply_emails(data):
+    """Apply official company inboxes (and the odd published personal address) from emails.jsonl."""
+    path = os.path.join(HERE, "emails.jsonl")
+    if not os.path.exists(path):
+        return
+    for line in open(path):
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        key = (r["v"], r["n"])
+        rec = data.get(key)
+        if rec is None or rec.get("pending"):
+            rec = data[key] = {"contacts": list((rec or {}).get("contacts") or []), "note": (rec or {}).get("note", ""),
+                               **({"status": rec["status"]} if rec and rec.get("status") else {})}
+        rec.setdefault("contacts", [])
+        if r.get("contact"):
+            name, role = r["contact"]
+            target = next((c for c in rec["contacts"] if norm(c[0]) == norm(name)), None)
+            if target is None:
+                target = [name, role, r.get("src", ""), ""]
+                rec["contacts"].append(target)
+            while len(target) < 5:
+                target.append("")
+            if r.get("email"):
+                target[4] = r["email"]
+                target.append(r.get("src", ""))
+        elif r.get("email") and not rec.get("email"):
+            rec["email"], rec["email_src"] = r["email"], r.get("src", "")
+            rec["email_kind"] = r.get("kind", "")
+
+
 def best_li(c):
     return c[3] if len(c) > 3 else ""
 
@@ -244,6 +275,7 @@ def build():
     legacy = load_legacy(rows)
     data = {k: merge(results.get(k), legacy.get(k)) for k in rows}
     apply_linkedin(data)
+    apply_emails(data)
 
     for src, dst in CROSS_DUPLICATES:
         s, d = data.get(src), data.get(dst)
@@ -430,8 +462,17 @@ def render_pdf(folder, title, table_rows, cov):
             who = (f"<b>{escape(c[0])}</b><br/><font color='#6B6B6B'>{escape(c[1])}</font>" if c[0] else "&nbsp;")
             mail = []
             if i == 0 and email:
-                mail.append(p(escape(email) + '<br/><font size="5.6" color="#6B6B6B">general inbox</font>'))
-            if c[0]:
+                src = rec.get("email_src") or ""
+                label = "official company inbox" + (f", found via {short_source(src)}" if src.startswith("http") else "")
+                if src.startswith("http"):
+                    label = f'<a href="{escape(src)}" color="#6B6B6B">{escape(label)}</a>'
+                mail.append(p(f'<a href="mailto:{escape(email)}">{escape(email)}</a>'
+                              f'<br/><font size="5.6" color="#6B6B6B">{label}</font>'))
+            if len(c) > 4 and c[4]:
+                psrc = c[5] if len(c) > 5 else ""
+                mail.append(p(f'<a href="mailto:{escape(c[4])}">{escape(c[4])}</a><br/><font size="5.6" color="#6B6B6B">'
+                              f'published on {escape(short_source(psrc))}</font>'))
+            elif c[0]:
                 mail.append(EmailField(f"email_{k[0]:02d}_{k[1]:02d}_{i}"))
             mail_cell = mail or ""
             lic = p(li_cell(li, c[0], row["company"]))
@@ -455,7 +496,7 @@ def render_pdf(folder, title, table_rows, cov):
 
     summary = (f"{cov['with_named_contact']} of {cov['rows']} companies have a named decision maker. "
                f"{cov['with_linkedin']} have that person's own LinkedIn profile linked. "
-               "Emails: only published addresses are printed, marked 'general inbox'. Personal emails are not "
+               "Emails: only published addresses are printed. Where no decision maker could be found, the company's official inbox is given with its source. Personal emails are not "
                "published anywhere, so each decision maker has a box to type one in once Apollo or Hunter "
                "confirms it. Handles are cleaned of the stray text in the old file but are unverified.")
 

@@ -15,11 +15,13 @@ This folder holds the research behind the 10 `prospects.pdf` files. The PDFs are
 | `lookup-needed.csv` | 320 named contacts at real, in-scope companies that still need a verified personal email from Hunter or Apollo. |
 | `coverage.csv` | Research status per vertical. |
 | `add.py` | Appends records to `results.jsonl`. |
+| `emails.jsonl` | Official company inboxes, each with the page where it was found. They are used where no decision maker could be found. Add more with `add_email.py`. |
 
 ## Rules the data follows
 
 - Nothing is guessed. A name appears only when a source URL names that person in that role at that company.
-- An email appears only when it was found published. Every verified email is a general address. No personal director or marketing-head email was found in public sources for any company.
+- An email appears only when it was found published, and the PDF links to the page it came from. Where no decision maker could be found, the company's official inbox is given instead. 44 companies now have one. The only published personal address found is Laura Cooke's at MultiChoice (09/21).
+- Directory listings (finelib, wakaabuja and similar) can be out of date. Treat those inboxes as likely, and send a test message before a campaign.
 - Rows that could not be matched to a real business are tinted red and flagged. They stay in the sheet so the numbering still matches the outreach copy.
 - Same-company duplicates are marked and point to the row to contact. Revolution Plus (04/5) and RevolutionPlus Property (04/50) are merged into 04/5.
 - Instagram handles were dropped from the new sheets. About 40 contained a stray string ("aborian"), and the rest were never verified.
