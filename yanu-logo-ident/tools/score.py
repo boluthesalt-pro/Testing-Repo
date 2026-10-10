@@ -7,16 +7,17 @@ the same grid).
 
   bar 1  0-2 s  Bbmaj9   Intro. Breathy "ooh" choir under a low-pass filter
                          that slowly opens, a few glass-bell notes and finger
-                         snaps. A silk swell rises into the drop.
+                         snaps, under the hairline. A silk swell rises
+                         into the drop.
   bar 2  2-4 s  Am7      The drop. Soft kick, sub bass and a clap on 3.0.
                          One bell per letter (C5 E5 G5 A5 at 2.00 / 2.25 /
                          2.50 / 2.75 s), then a sparkle chime as the ® lands
                          at 3.5 s.
-  bar 3  4-6 s  Gm9      Full groove. A silk whoosh lands on each colour wipe
-                         (4.0, 5.0, 6.0 s), with electric-piano stabs.
+  bar 3  4-6 s  Gm9      Full groove with electric-piano stabs while the
+                         logo holds.
   bar 4  6-8 s  Fmaj9    Resolve. Sonic logo "ya-nu" (C6 -> A5) on 6.0 and
-                         6.5 s, a sparkle on 7.0 s, then the music blooms
-                         and fades out by 8.0 s.
+                         6.5 s, under the sheen, then the music blooms and
+                         fades out by 8.0 s.
 
 Everything is synthesised here (numpy + scipy). No samples are used.
 """
@@ -273,17 +274,13 @@ for k, note in enumerate(("C5", "E5", "G5", "A5")):
 put("bells", bell(hz("E6"), 2.0, bright=0.8), 3.5, 0.28, 0.4)
 put("fx", sparkle(11), 3.48, 0.8)
 
-# Colour wipes: a whoosh landing on 4.0, 5.0 and 6.0 s, panned across.
-for k, at in enumerate((4.0, 5.0, 6.0)):
-    put("fx", whoosh(0.42, seed=20 + k), at - 0.42, 0.26, (-0.5, 0.5, 0.0)[k])
 put("bells", bell(hz("D6"), 1.5, bright=0.7), 4.0, 0.2, -0.3)
 put("bells", bell(hz("A5"), 1.5, bright=0.7), 5.0, 0.2, 0.3)
 
-# Sonic logo: "ya-nu", C6 -> A5, doubled an octave down, then the sparkle.
+# Sonic logo: "ya-nu", C6 -> A5, doubled an octave down.
 for at, note in ((6.0, "C6"), (6.5, "A5")):
     put("bells", bell(hz(note), 2.0, bright=1.2), at, 0.45)
     put("bells", bell(hz(note) / 2, 2.0, bright=0.8), at, 0.22)
-put("fx", sparkle(42, count=12, spread=0.5), 6.98, 0.9)
 put("keys", epiano([hz(v) for v in ("F3", "A3", "C4", "E4", "G4")], 1.9), 6.0, 0.28)
 
 # --- Mix -----------------------------------------------------------------------
