@@ -1,0 +1,4522 @@
+{
+ "01-fashion-streetwear": [
+  [
+   "1",
+   "Emmy Kasbit",
+   "kasbit01@gmail.com",
+   "@emmykasbit",
+   "Fashion",
+   "Menswear studio, custom tailoring",
+   "Identity could match authority, premium positioning gap"
+  ],
+  [
+   "2",
+   "Ashluxe",
+   "info@ashcorpgroup.com",
+   "@asaborian_hluxe",
+   "Streetwear",
+   "Premium streetwear brand",
+   "Rapid growth, brand architecture needed across product lines"
+  ],
+  [
+   "3",
+   "WafflesnCream",
+   "info@wafflesncrm.com",
+   "@waborian_fflsncream",
+   "Streetwear/Skate",
+   "Streetwear and skate culture brand",
+   "Pioneer brand, identity system could match cultural impact"
+  ],
+  [
+   "4",
+   "Orange Culture",
+   "info@orangeculture.com.ng",
+   "@orangecultureng",
+   "Fashion",
+   "Menswear movement brand",
+   "Strong creative vision, brand system could be more cohesive"
+  ],
+  [
+   "5",
+   "Kenneth Ize",
+   "studio@kennethize.net",
+   "@kennethize",
+   "Fashion",
+   "Luxury fashion, traditional fabrics",
+   "International recognition, brand architecture opportunity"
+  ],
+  [
+   "6",
+   "Maki Oh",
+   "info@makioh.com",
+   "@maborian_ki_oh",
+   "Fashion",
+   "Luxury womenswear",
+   "Global recognition, brand system could match prestige"
+  ],
+  [
+   "7",
+   "Andrea Iyamah",
+   "admin@andreaiyamah.com",
+   "@andreaiyamah",
+   "Swimwear/Fashion",
+   "Luxury swimwear and resort",
+   "International stockists, brand consistency opportunity"
+  ],
+  [
+   "8",
+   "Lisa Folawiyo",
+   "info@lisafolawiyo.com",
+   "@lisafolawiyo",
+   "Fashion",
+   "Luxury womenswear, Ankara innovation",
+   "Heritage brand, identity evolution opportunity"
+  ],
+  [
+   "9",
+   "Tia Adeola",
+   "press@tiaadeola.com",
+   "@tiaaborian_adeola",
+   "Fashion",
+   "Renaissance-inspired fashion",
+   "International press, brand system needed"
+  ],
+  [
+   "10",
+   "Tokyo James",
+   "info@tokyojames.com",
+   "@tokyojames",
+   "Fashion",
+   "Menswear, London/Lagos",
+   "Dual-city brand, architecture opportunity"
+  ],
+  [
+   "11",
+   "Fruche",
+   "hello@fruche.com",
+   "@fruaborian_che",
+   "Fashion",
+   "Contemporary menswear",
+   "Growing recognition, identity system needed"
+  ],
+  [
+   "12",
+   "Pepper Row",
+   "hello@pepperrow.com",
+   "@pepperrow",
+   "Fashion",
+   "Sustainable luxury fashion",
+   "Sustainability story, brand could amplify it"
+  ],
+  [
+   "13",
+   "Maxivive",
+   "info@maxivive.com",
+   "@maxivive",
+   "Fashion",
+   "Activism-focused fashion",
+   "Strong vision, brand system could match message"
+  ],
+  [
+   "14",
+   "Bloke",
+   "info@blokewear.com",
+   "@blokewear",
+   "Streetwear",
+   "Contemporary streetwear",
+   "Strong editorial voice, identity opportunity"
+  ],
+  [
+   "15",
+   "Vivendii",
+   "hello@vivendii.com",
+   "@vivendii",
+   "Streetwear",
+   "Streetwear and DJ collective",
+   "Cultural brand, visual identity could be stronger"
+  ],
+  [
+   "16",
+   "Nkwo",
+   "info@nkwo.ng",
+   "@nkwo_",
+   "Fashion",
+   "Sustainable fashion from waste textiles",
+   "Impact story, brand needs professional system"
+  ],
+  [
+   "17",
+   "Re Lagos",
+   "hello@relagos.com",
+   "@relagos",
+   "Streetwear",
+   "Lagos streetwear brand",
+   "Growing brand, identity system needed"
+  ],
+  [
+   "18",
+   "Clan",
+   "info@clan.ng",
+   "@clanaborian_",
+   "Streetwear",
+   "Premium streetwear",
+   "Strong product, brand system could match quality"
+  ],
+  [
+   "19",
+   "TZAR Studios",
+   "hello@tzarstudios.com",
+   "@tzaborian_arstudios",
+   "Streetwear",
+   "Lagos streetwear studio",
+   "Creative output strong, brand identity opportunity"
+  ],
+  [
+   "20",
+   "Daily Paper (Nigeria)",
+   "info@dailypaperclothing.com",
+   "@dailypaper",
+   "Streetwear",
+   "Amsterdam-based, African heritage streetwear",
+   "International brand, Nigeria activation opportunity"
+  ],
+  [
+   "21",
+   "Banke Kuku",
+   "studio@bankekuku.com",
+   "@bankekuku",
+   "Fashion",
+   "Print designer, silk scarves",
+   "Distinctive prints, brand architecture opportunity"
+  ],
+  [
+   "22",
+   "Gozel Green",
+   "info@gozelgreen.com",
+   "@gozelgreen",
+   "Fashion",
+   "Womenswear label",
+   "Growing brand, needs cohesive identity"
+  ],
+  [
+   "23",
+   "Sisiano",
+   "info@sisiano.com",
+   "@sisiano",
+   "Fashion",
+   "Luxury menswear",
+   "Celebrity clientele, brand system could match reputation"
+  ],
+  [
+   "24",
+   "Adebayo Jones",
+   "info@adebayojones.com",
+   "@adebayojones",
+   "Fashion",
+   "Couture and luxury",
+   "Heritage brand, digital presence opportunity"
+  ],
+  [
+   "25",
+   "Mai Atafo",
+   "info@maiatafo.com",
+   "@maiatafo",
+   "Fashion",
+   "Luxury menswear and womenswear",
+   "Established designer, brand refresh opportunity"
+  ],
+  [
+   "26",
+   "ABIOLA Collection",
+   "hello@abiolacollection.com",
+   "@aabolareiacollection",
+   "Fashion",
+   "Contemporary womenswear",
+   "Growing brand, identity needed"
+  ],
+  [
+   "27",
+   "House of Kaya",
+   "info@houseofkaya.com",
+   "@houseofkaya",
+   "Fashion/Accessories",
+   "Leather goods and accessories",
+   "Craft brand, identity system opportunity"
+  ],
+  [
+   "28",
+   "Ilami",
+   "hello@ilami.co",
+   "@ilamiworld",
+   "Streetwear",
+   "Streetwear brand",
+   "Growing brand, needs visual identity"
+  ],
+  [
+   "29",
+   "Lagos Space Programme",
+   "info@lagosspaceprogramme.com",
+   "@lagosspaceprogramme",
+   "Fashion",
+   "Conceptual fashion collective",
+   "Cultural significance, brand architecture needed"
+  ],
+  [
+   "30",
+   "House of Irawo",
+   "hello@houseofirawo.com",
+   "@houseofirawo",
+   "Accessories",
+   "Jewelry and accessories",
+   "Craft-focused, brand identity opportunity"
+  ],
+  [
+   "31",
+   "Hudayya",
+   "info@hudayya.com",
+   "@hudayyaofficial",
+   "Fashion",
+   "Modest fashion brand",
+   "Growing niche, brand system needed"
+  ],
+  [
+   "32",
+   "Deola Sagoe",
+   "info@deolasagoe.com",
+   "@deolasagoe",
+   "Fashion",
+   "Couture and luxury",
+   "Legacy brand, modernisation opportunity"
+  ],
+  [
+   "33",
+   "Frank Oshodi",
+   "info@frankoshodi.com",
+   "@frankoshodi",
+   "Fashion",
+   "Celebrity stylist and designer",
+   "Personal brand, could benefit from brand system"
+  ],
+  [
+   "34",
+   "Zephans & Co",
+   "info@zephansandco.com",
+   "@zephansandco",
+   "Fashion",
+   "Luxury womenswear",
+   "Premium positioning, brand identity opportunity"
+  ],
+  [
+   "35",
+   "JZO",
+   "hello@jzo.studio",
+   "@jzo.studio",
+   "Fashion",
+   "Contemporary fashion",
+   "Strong design, brand system could match"
+  ],
+  [
+   "36",
+   "Knanfe",
+   "hello@knanfe.com",
+   "@knanfe",
+   "Fashion/Leather",
+   "Leather goods and fashion",
+   "Quality craft, needs brand system"
+  ],
+  [
+   "37",
+   "Grey Projects",
+   "info@greyprojects.co",
+   "@greyprojects",
+   "Streetwear",
+   "Lagos streetwear",
+   "Growing brand, visual identity opportunity"
+  ],
+  [
+   "38",
+   "Post Imperial",
+   "info@postimperial.com",
+   "@postimperial",
+   "Fashion",
+   "Brooklyn/Lagos fashion",
+   "Dual-city, brand architecture needed"
+  ],
+  [
+   "39",
+   "Onalaja",
+   "hello@onalaja.com",
+   "@onalaja",
+   "Fashion",
+   "Contemporary womenswear",
+   "Distinctive designs, brand system could match"
+  ],
+  [
+   "40",
+   "Ejiro Amos Tafiri",
+   "info@ejiroamostafiri.com",
+   "@ejiroamostafiri",
+   "Fashion",
+   "Luxury womenswear",
+   "Established designer, digital presence gap"
+  ],
+  [
+   "41",
+   "Kelechi Amadi-Obi",
+   "studio@kelechiamadiobi.com",
+   "@kelechiamadiobi",
+   "Fashion/Photography",
+   "Fashion photography and creative",
+   "Creative brand, identity system opportunity"
+  ],
+  [
+   "42",
+   "IAMISIGO",
+   "hello@iamisigo.com",
+   "@iamisigo",
+   "Fashion",
+   "Sustainable luxury fashion",
+   "Impact story, brand identity opportunity"
+  ],
+  [
+   "43",
+   "Kunbi Oyelese (April by Kunbi)",
+   "info@aprilbykunbi.com",
+   "@aprilbykunbi",
+   "Bridal/Fashion",
+   "Bridal and occasion wear",
+   "Niche leader, brand system opportunity"
+  ],
+  [
+   "44",
+   "Lanre Da Silva Ajayi",
+   "info@lanredasilva.com",
+   "@lanredasilvaajayi",
+   "Fashion",
+   "Couture womenswear",
+   "Legacy brand, needs modernisation"
+  ],
+  [
+   "45",
+   "Style House Files",
+   "info@stylehousefiles.com",
+   "@stylehousefiles",
+   "Fashion Industry",
+   "Fashion consulting and Lagos Fashion Week",
+   "Industry platform, brand evolution opportunity"
+  ],
+  [
+   "46",
+   "T.I Nathan",
+   "hello@tinathan.com",
+   "@ti.nathan",
+   "Fashion",
+   "Contemporary fashion brand",
+   "Growing brand, identity needed"
+  ],
+  [
+   "47",
+   "BFNLAGOS",
+   "info@bfnlagos.com",
+   "@bfnlagos",
+   "Fashion",
+   "Fashion collective",
+   "Creative collective, brand architecture needed"
+  ],
+  [
+   "48",
+   "Dzyn Lagos",
+   "hello@dzynlagos.com",
+   "@dzynlagos",
+   "Fashion/Retail",
+   "Fashion retail",
+   "Retail brand, identity opportunity"
+  ],
+  [
+   "49",
+   "Emmy Collins",
+   "info@emmycollins.com",
+   "@emmycollins",
+   "Fashion",
+   "Celebrity fashion designer",
+   "Personal brand, identity system opportunity"
+  ],
+  [
+   "50",
+   "Ituen Basi",
+   "info@ituenbasi.com",
+   "@ituenbasi",
+   "Fashion",
+   "Womenswear, African-inspired",
+   "Heritage brand, modernisation opportunity"
+  ]
+ ],
+ "02-beauty-personal-care": [
+  [
+   "1",
+   "Nuban Beauty",
+   "order@nubanbeauty.com",
+   "@nubanbeauty",
+   "Cosmetics",
+   "Premium Nigerian makeup brand",
+   "Quality products, brand identity could match premium positioning"
+  ],
+  [
+   "2",
+   "Arami Essentials",
+   "hello@aramiessentials.com",
+   "@aramiessentials",
+   "Skincare",
+   "Sustainable Nigerian skincare",
+   "Strong sustainability story, brand could amplify it"
+  ],
+  [
+   "3",
+   "Zaron Cosmetics",
+   "info@zaroncosmetics.com",
+   "@zaroncosmetics",
+   "Cosmetics",
+   "Major Nigerian cosmetics brand",
+   "Large operation, brand modernisation opportunity"
+  ],
+  [
+   "4",
+   "House of Tara",
+   "school@houseoftara.com",
+   "@houseoftaraint",
+   "Cosmetics/Beauty School",
+   "Pioneer African makeup brand and school",
+   "Heritage brand, digital presence gap"
+  ],
+  [
+   "5",
+   "R&R Luxury",
+   "info@randrskincare.co",
+   "@rrluxury",
+   "Skincare",
+   "Shea butter luxury skincare",
+   "Premium positioning, brand identity could match price"
+  ],
+  [
+   "6",
+   "Hegai & Esther",
+   "info@hegaiandestherskincare.com",
+   "@hegaiandestherskincare",
+   "Skincare",
+   "Natural skincare products",
+   "Growing brand, professional identity needed"
+  ],
+  [
+   "7",
+   "BN Beauty",
+   "beauty@bellanaija.com",
+   "@bnbeauty",
+   "Beauty Media",
+   "Beauty content and reviews",
+   "Strong audience, brand system opportunity"
+  ],
+  [
+   "8",
+   "Base Nigeria",
+   "hello@base.ng",
+   "@base.ng",
+   "Beauty Retail",
+   "Beauty e-commerce platform",
+   "Digital beauty, brand and UX opportunity"
+  ],
+  [
+   "9",
+   "Epara Skincare",
+   "info@eparaskincare.com",
+   "@eparaskincare",
+   "Skincare",
+   "Luxury skincare for dark skin",
+   "International distribution, brand architecture needed"
+  ],
+  [
+   "10",
+   "Lush Hair Nigeria",
+   "info@lushhairng.com",
+   "@lushhairnigeria",
+   "Hair",
+   "Hair extensions brand",
+   "Large market share, brand system opportunity"
+  ],
+  [
+   "11",
+   "TW Magazine Beauty",
+   "info@twmagazine.net",
+   "@twmagazine",
+   "Beauty Media",
+   "Beauty and lifestyle media",
+   "Content brand, visual identity opportunity"
+  ],
+  [
+   "12",
+   "Labelle (by Beauty Shea)",
+   "info@labellenaturals.com",
+   "@labellenaturals",
+   "Skincare",
+   "Natural skincare range",
+   "Clean beauty positioning, brand could match"
+  ],
+  [
+   "13",
+   "KimOra Beauty",
+   "info@kimorabeauty.com",
+   "@kimorabeauty",
+   "Cosmetics",
+   "Makeup brand",
+   "Growing brand, identity system needed"
+  ],
+  [
+   "14",
+   "Sleek Studio",
+   "hello@sleekstudio.ng",
+   "@sleekstudiong",
+   "Beauty/Salon",
+   "Premium beauty studio",
+   "Premium positioning, brand should match experience"
+  ],
+  [
+   "15",
+   "Tara Beauty Bar",
+   "info@tarabeautybar.com",
+   "@tarabeautybar",
+   "Beauty/Salon",
+   "Beauty services",
+   "Service brand, identity opportunity"
+  ],
+  [
+   "16",
+   "Darling Hair Nigeria",
+   "info@darlinghairng.com",
+   "@darlinghairing",
+   "Hair",
+   "Hair brand, East African owned",
+   "Large brand, local identity expression"
+  ],
+  [
+   "17",
+   "BMPRO",
+   "info@bmpro.com.ng",
+   "@baborian_mpro",
+   "Makeup Artist/Brand",
+   "Celebrity makeup artist brand",
+   "Personal brand, product line expansion"
+  ],
+  [
+   "18",
+   "Dodos Skincare",
+   "info@dodosskincare.com",
+   "@dodosskincare",
+   "Skincare",
+   "Natural skincare products",
+   "Established brand, needs professional identity"
+  ],
+  [
+   "19",
+   "TOPICALS Nigeria",
+   "info@topicals.com",
+   "@topicals",
+   "Skincare",
+   "Science-backed skincare",
+   "International brand, local activation"
+  ],
+  [
+   "20",
+   "Dudu-Osun",
+   "info@tropicanaturals.com",
+   "@duduosun",
+   "Skincare/Soap",
+   "Heritage African black soap",
+   "Legacy brand, modernisation opportunity"
+  ],
+  [
+   "21",
+   "Cantu Nigeria",
+   "info@cantubeauty.com",
+   "@cantunigeria",
+   "Hair Care",
+   "Hair care brand",
+   "International brand, local presence"
+  ],
+  [
+   "22",
+   "Skin101 Clinics",
+   "info@skin101clinics.com",
+   "@skin101clinics",
+   "Dermatology",
+   "Skin clinic chain",
+   "Medical aesthetics, professional brand needed"
+  ],
+  [
+   "23",
+   "Beauty Barn",
+   "hello@beautybarn.ng",
+   "@beautybarn.ng",
+   "Beauty Retail",
+   "Beauty retail store",
+   "Retail brand, identity opportunity"
+  ],
+  [
+   "24",
+   "OGX Nigeria",
+   "info@ogxbeauty.com",
+   "@ogxbeauty",
+   "Hair/Body",
+   "Hair and body care",
+   "International brand, local activation"
+  ],
+  [
+   "25",
+   "Peau de Velours",
+   "info@peaudevours.com",
+   "@peaudevours",
+   "Skincare",
+   "French-style Nigerian skincare",
+   "Premium positioning gap"
+  ],
+  [
+   "26",
+   "Ivory Aesthetics",
+   "info@ivoryaesthetics.com",
+   "@ivoryaesthetics",
+   "Medical Aesthetics",
+   "Medical aesthetics clinic",
+   "Premium medical brand, identity needed"
+  ],
+  [
+   "27",
+   "Sade Baron",
+   "hello@sadebaron.com",
+   "@sadebaron",
+   "Skincare",
+   "Bath and body brand",
+   "International e-commerce, brand identity opportunity"
+  ],
+  [
+   "28",
+   "Marini Naturals",
+   "info@marininaturals.com",
+   "@marininaturals",
+   "Hair Care",
+   "Natural hair care products",
+   "Growing brand, needs cohesive identity"
+  ],
+  [
+   "29",
+   "Eden Cosmetics",
+   "info@edencosmetics.ng",
+   "@edencosmetics",
+   "Cosmetics",
+   "Nigerian cosmetics brand",
+   "Growing brand, identity system needed"
+  ],
+  [
+   "30",
+   "Nola Skincare",
+   "hello@nolaskincare.com",
+   "@nolaskincare",
+   "Skincare",
+   "Nigerian skincare brand",
+   "Quality products, brand could match"
+  ],
+  [
+   "31",
+   "Glam Africa Magazine",
+   "info@glamafrica.com",
+   "@glamaborian_africamag",
+   "Beauty Media",
+   "Beauty and lifestyle magazine",
+   "Content brand, visual identity opportunity"
+  ],
+  [
+   "32",
+   "Spa by BN",
+   "spa@bellanaija.com",
+   "@spaborian_abybn",
+   "Spa",
+   "Beauty and spa services",
+   "Service brand, identity needed"
+  ],
+  [
+   "33",
+   "SavvyChic Beauty",
+   "info@savvychicbeauty.com",
+   "@savvychicbeauty",
+   "Beauty Retail",
+   "Beauty e-commerce",
+   "Online retail, brand and UX opportunity"
+  ],
+  [
+   "34",
+   "Beautyworld Lagos",
+   "info@beautyworldlagos.com",
+   "@beautyworldlagos",
+   "Beauty Events",
+   "Beauty expo and trade show",
+   "Event brand, identity system needed"
+  ],
+  [
+   "35",
+   "African Naturalistas",
+   "info@africannaturalistas.com",
+   "@africannaturalistas",
+   "Hair Care",
+   "Natural hair blog and products",
+   "Content to commerce, brand transition opportunity"
+  ],
+  [
+   "36",
+   "MD Beauty Bar",
+   "info@mdbeautybar.com",
+   "@mdbeautybar",
+   "Beauty/Salon",
+   "Premium beauty services",
+   "Premium positioning, brand should match"
+  ],
+  [
+   "37",
+   "Beauty Africa",
+   "info@beautyafrica.com",
+   "@beautyafricaexpo",
+   "Beauty Industry",
+   "Beauty industry expo",
+   "Industry event brand, needs identity system"
+  ],
+  [
+   "38",
+   "Kinky Apothecary",
+   "hello@kinkyapothecary.com",
+   "@kinkyapothecary",
+   "Hair Care",
+   "Curated hair care products",
+   "E-commerce brand, identity opportunity"
+  ],
+  [
+   "39",
+   "Nubi Hair",
+   "info@nubihair.com",
+   "@nubihair",
+   "Hair Care",
+   "Hair tools and care",
+   "Product brand, identity needed"
+  ],
+  [
+   "40",
+   "Olive Oil Skincare",
+   "info@oliveoilskincare.com",
+   "@oliveaborian_oilskincare",
+   "Skincare",
+   "Nigerian olive oil skincare",
+   "Growing brand, identity opportunity"
+  ],
+  [
+   "41",
+   "MAC Nigeria",
+   "info@maccosmetics.com",
+   "@maccosmetics",
+   "Cosmetics",
+   "International cosmetics brand",
+   "Local activation opportunity"
+  ],
+  [
+   "42",
+   "Lipbar Nigeria",
+   "hello@thelipbar.com",
+   "@thelipbar",
+   "Cosmetics",
+   "Inclusive beauty brand",
+   "International brand, Nigeria market"
+  ],
+  [
+   "43",
+   "Nivea Nigeria",
+   "info@nivea.com.ng",
+   "@nivea_ng",
+   "Skincare/Body",
+   "International skincare",
+   "Local brand expression opportunity"
+  ],
+  [
+   "44",
+   "Genevieve Magazine",
+   "info@genevievemagazine.com",
+   "@geaborian_nevievemaga zine",
+   "Beauty/Fashion Media",
+   "Lifestyle and beauty magazine",
+   "Legacy media, digital transformation"
+  ],
+  [
+   "45",
+   "PAC Cosmetics",
+   "info@paccosmetics.com",
+   "@paborian_accosmetics",
+   "Cosmetics",
+   "Professional cosmetics",
+   "Pro-use brand, consumer identity opportunity"
+  ],
+  [
+   "46",
+   "Black Opal Nigeria",
+   "info@blackopalbeauty.com",
+   "@blackopalng",
+   "Cosmetics",
+   "Cosmetics for dark skin",
+   "Targeted brand, identity system needed"
+  ],
+  [
+   "47",
+   "Grace Makeover",
+   "info@gracemakeover.com",
+   "@gracemakeover",
+   "Makeup Artist",
+   "Celebrity makeup artist",
+   "Personal brand, product extension opportunity"
+  ],
+  [
+   "48",
+   "Medlin Boss",
+   "info@medlinboss.com",
+   "@medlinboss",
+   "Fashion/Beauty",
+   "Fashion and beauty entrepreneur",
+   "Personal brand, identity system needed"
+  ],
+  [
+   "49",
+   "Tana Africa Beauty",
+   "info@tana-africa.com",
+   "@tanaaborian_africabeaut",
+   "Beauty Distribution",
+   "Beauty product distribution",
+   "B2B brand, corporate identity needed"
+  ],
+  [
+   "50",
+   "Jibiti Beauty",
+   "info@jibitibeauty.com",
+   "y@jibitibeauty",
+   "Cosmetics",
+   "Affordable cosmetics",
+   "Value brand, identity should match positioning"
+  ]
+ ],
+ "03-food-beverage": [
+  [
+   "1",
+   "Rite Foods",
+   "customercare@ritefoodsltd.com",
+   "@ritefoodsltd",
+   "FMCG",
+   "Beverages, snacks, packaged foods",
+   "N75B+ revenue, brand system should match scale"
+  ],
+  [
+   "2",
+   "Chivita",
+   "info@chivitahollandia.com",
+   "@chivitajuice",
+   "Beverages",
+   "Juice and dairy brand (CHI Limited)",
+   "Heritage brand, packaging and identity opportunity"
+  ],
+  [
+   "3",
+   "Chowdeck",
+   "hello@chowdeck.com",
+   "@chowdeck",
+   "Food Tech",
+   "On-demand food delivery",
+   "Fast growth, brand should match trajectory"
+  ],
+  [
+   "4",
+   "Cafe Neo",
+   "hello@mycafeneo.com",
+   "@mycafeneo",
+   "Coffee Chain",
+   "Premium coffee chain",
+   "Multi-location, brand consistency needed"
+  ],
+  [
+   "5",
+   "Bukka Hut",
+   "info@bukkahut.com",
+   "@bukkahut",
+   "Restaurant Chain",
+   "Nigerian cuisine restaurant chain",
+   "Expanding chain, brand system opportunity"
+  ],
+  [
+   "6",
+   "Chicken Republic",
+   "info@foodconceptsplc.com",
+   "@chickenrepublic",
+   "QSR",
+   "Fast food chain",
+   "Major chain, brand refresh opportunity"
+  ],
+  [
+   "7",
+   "Cold Stone Creamery Nigeria",
+   "info@coldstonecreamery.com.ng",
+   "@coldstoneng",
+   "Ice Cream",
+   "Ice cream franchise",
+   "International franchise, local brand expression"
+  ],
+  [
+   "8",
+   "Dano Milk Nigeria",
+   "customercaredano@tgarla.com",
+   "@danomilk",
+   "Dairy",
+   "Dairy products",
+   "Growing dairy brand, packaging identity"
+  ],
+  [
+   "9",
+   "Debonairs Pizza Nigeria",
+   "info@debonairspizzang.com",
+   "@debonairspizza",
+   "QSR",
+   "Pizza franchise chain",
+   "Multi-location, brand identity opportunity"
+  ],
+  [
+   "10",
+   "Dominos Pizza Nigeria",
+   "info@dominos.ng",
+   "@dominosng",
+   "QSR",
+   "Pizza delivery chain",
+   "Local activation of global brand"
+  ],
+  [
+   "11",
+   "Kilimanjaro Restaurant",
+   "info@kilimanjaro.com.ng",
+   "@kilaborian_imanjaroresta urant",
+   "Restaurant",
+   "Nigerian cuisine restaurant",
+   "Established brand, identity refresh needed"
+  ],
+  [
+   "12",
+   "Nuli Juice",
+   "hello@nulijuice.com",
+   "@nulijuice",
+   "Beverages",
+   "Cold-pressed juice brand",
+   "Health brand, packaging and identity opportunity"
+  ],
+  [
+   "13",
+   "SmallChops.ng",
+   "hello@smallchops.ng",
+   "@smallchops.ng",
+   "Catering/Food",
+   "Online food ordering",
+   "Digital food brand, identity needed"
+  ],
+  [
+   "14",
+   "FoodCourt Nigeria",
+   "info@foodcourt.ng",
+   "@foodcourt_ng",
+   "Food Tech",
+   "Food ordering platform",
+   "Digital platform, brand and UX opportunity"
+  ],
+  [
+   "15",
+   "Sweet Sensation",
+   "info@sweetsensation.com.ng",
+   "@sweetsensation",
+   "QSR",
+   "Fast food and bakery chain",
+   "Heritage chain, modernisation opportunity"
+  ],
+  [
+   "16",
+   "Mr Biggs",
+   "info@uaborian_cfoodsplc.com",
+   "@mrbiggs_ng",
+   "QSR",
+   "Fast food chain",
+   "Legacy brand, major refresh needed"
+  ],
+  [
+   "17",
+   "Tastee Fried Chicken",
+   "info@tasteefriedchicken.com",
+   "@taborian_asteefriedchick en",
+   "QSR",
+   "Fast food chain",
+   "Heritage chain, brand system opportunity"
+  ],
+  [
+   "18",
+   "Bungalow Restaurant",
+   "reservations@thebungalow.ng",
+   "@thebungalowlagos",
+   "Restaurant",
+   "Premium restaurant",
+   "Premium dining, brand identity opportunity"
+  ],
+  [
+   "19",
+   "Nkoyo Restaurant",
+   "info@nkoyo.com",
+   "@nkoyolagos",
+   "Restaurant",
+   "Nigerian cuisine restaurant",
+   "Premium Nigerian food, brand identity"
+  ],
+  [
+   "20",
+   "Terra Kulture",
+   "info@terrakulture.com",
+   "@terrakulture",
+   "Restaurant/Culture",
+   "Restaurant and art space",
+   "Cultural brand, identity system needed"
+  ],
+  [
+   "21",
+   "Barcelos Nigeria",
+   "info@barcelos.com.ng",
+   "@barcelosng",
+   "QSR",
+   "Portuguese chicken franchise",
+   "Franchise brand, local expression"
+  ],
+  [
+   "22",
+   "Pinkberry Nigeria",
+   "info@pinkberry.com.ng",
+   "@pinkberryngr",
+   "Frozen Yogurt",
+   "Frozen yogurt chain",
+   "Premium positioning, brand consistency"
+  ],
+  [
+   "23",
+   "Southern Fried Chicken",
+   "info@sfcng.com",
+   "@sfcnigeria",
+   "QSR",
+   "Fried chicken chain",
+   "Growing chain, needs brand system"
+  ],
+  [
+   "24",
+   "Yahuza Suya",
+   "info@yahuza.com",
+   "@yahuzasuya",
+   "Restaurant",
+   "Suya chain restaurant",
+   "Established chain, brand modernisation"
+  ],
+  [
+   "25",
+   "The Place Restaurant",
+   "info@theplace.com.ng",
+   "@theplacerestaurants",
+   "Restaurant Chain",
+   "Multi-location restaurant",
+   "Growing chain, brand consistency needed"
+  ],
+  [
+   "26",
+   "Ofada Boy",
+   "hello@ofadaboy.com",
+   "@ofadaboy",
+   "Restaurant",
+   "Ofada rice specialist",
+   "Niche positioning, brand identity opportunity"
+  ],
+  [
+   "27",
+   "Yellow Chilli",
+   "info@yellowchilli.com",
+   "@theyellowchilli",
+   "Restaurant",
+   "Celebrity chef restaurant",
+   "Personal brand extension, identity system"
+  ],
+  [
+   "28",
+   "Paga Bakery",
+   "info@pagabakery.com",
+   "@paborian_gabakery",
+   "Bakery",
+   "Artisan bakery",
+   "Craft brand, identity opportunity"
+  ],
+  [
+   "29",
+   "Choprite",
+   "info@choprite.com",
+   "@choprite",
+   "Catering",
+   "Event catering brand",
+   "Growing catering, needs professional identity"
+  ],
+  [
+   "30",
+   "Indomie Nigeria",
+   "info@dufil.com",
+   "@indomie_ng",
+   "FMCG",
+   "Instant noodle brand",
+   "Dominant brand, continued identity evolution"
+  ],
+  [
+   "31",
+   "Peak Milk Nigeria",
+   "info@frieslandcampina.com.ng",
+   "@peakmilk",
+   "Dairy",
+   "Major dairy brand",
+   "Heritage brand, packaging opportunity"
+  ],
+  [
+   "32",
+   "Coca-Cola Nigeria",
+   "info@ccnpl.com",
+   "@cocacola_ng",
+   "Beverages",
+   "Beverage company",
+   "Local activation of global brand"
+  ],
+  [
+   "33",
+   "Maltina",
+   "info@nbplc.com",
+   "@maltina",
+   "Beverages",
+   "Malt drink brand",
+   "Heritage brand, youth repositioning opportunity"
+  ],
+  [
+   "34",
+   "Bigi (Rite Foods)",
+   "customercare@ritefoodsltd.com",
+   "@bigi_ng",
+   "Beverages",
+   "Carbonated drinks brand",
+   "Challenger brand, identity could be sharper"
+  ],
+  [
+   "35",
+   "Honeywell Flour Mills",
+   "info@honeywellflour.com",
+   "@honeywellflour",
+   "FMCG",
+   "Flour and pasta products",
+   "B2B/B2C brand, consumer identity opportunity"
+  ],
+  [
+   "36",
+   "Dangote Sugar",
+   "info@dangote.com",
+   "@dangotesugar",
+   "FMCG",
+   "Sugar and food products",
+   "Conglomerate brand, product identity needed"
+  ],
+  [
+   "37",
+   "La Casera",
+   "info@lacasera.com",
+   "@lacacaserang",
+   "Beverages",
+   "Apple drink brand",
+   "Heritage brand, modernisation opportunity"
+  ],
+  [
+   "38",
+   "Minimie Chinchin",
+   "info@minimie.com.ng",
+   "@minimie",
+   "Snacks",
+   "Snack brand",
+   "Youth snack brand, packaging opportunity"
+  ],
+  [
+   "39",
+   "TFC (The Food Catalog)",
+   "hello@thefoodcatalog.com",
+   "@thefoodcatalog",
+   "Food Media",
+   "Food blog and content",
+   "Content brand, visual identity opportunity"
+  ],
+  [
+   "40",
+   "Eat N Go (Dominos, Cold Stone)",
+   "info@eatngo.com.ng",
+   "@eatngo",
+   "QSR Holding",
+   "Multi-brand restaurant group",
+   "Corporate brand architecture needed"
+  ],
+  [
+   "41",
+   "Jollof Rice Festival",
+   "info@jollofricefestival.com",
+   "@jollaborian_ofricesfestival",
+   "Food Event",
+   "Food festival brand",
+   "Event brand, identity system needed"
+  ],
+  [
+   "42",
+   "FoodPro Nigeria",
+   "info@foodpro.com.ng",
+   "@foodprong",
+   "Food Industry",
+   "Food industry expo",
+   "B2B event brand, identity opportunity"
+  ],
+  [
+   "43",
+   "Nestle Nigeria",
+   "info@ng.nestle.com",
+   "@nestleng",
+   "FMCG",
+   "Food and beverage conglomerate",
+   "Corporate brand, product identity evolution"
+  ],
+  [
+   "44",
+   "Fan Milk Nigeria",
+   "info@fanmilk.com.ng",
+   "@fanmilk_ng",
+   "Dairy/Ice Cream",
+   "Ice cream and yogurt",
+   "Heritage brand, modernisation opportunity"
+  ],
+  [
+   "45",
+   "Red Ginger",
+   "reservations@redginger.ng",
+   "@redgingerlagos",
+   "Restaurant",
+   "Pan-Asian cuisine",
+   "Premium dining, brand identity opportunity"
+  ],
+  [
+   "46",
+   "Craft Gourmet",
+   "info@craftgourmet.com.ng",
+   "@craftgourmet",
+   "Restaurant",
+   "Gourmet dining Lagos",
+   "Premium brand, identity system opportunity"
+  ],
+  [
+   "47",
+   "Shiro Lagos",
+   "reservations@shiro.ng",
+   "@shirolagos",
+   "Restaurant",
+   "Japanese fusion restaurant",
+   "Premium dining, brand identity"
+  ],
+  [
+   "48",
+   "Gardens by Roun",
+   "info@gardensbyroun.com",
+   "@gardensbyroun",
+   "Restaurant",
+   "Garden restaurant concept",
+   "Experiential dining, brand identity"
+  ],
+  [
+   "49",
+   "Obalende Suya",
+   "info@obalendesuya.com",
+   "@obalendesuya",
+   "Restaurant",
+   "Traditional suya brand",
+   "Scaling brand, identity needed for expansion"
+  ],
+  [
+   "50",
+   "So Fresh Nigeria",
+   "info@sofresh.ng",
+   "@sofreshng",
+   "Healthy Food",
+   "Healthy food chain",
+   "Growing health food chain, brand system needed"
+  ]
+ ],
+ "04-real-estate-property": [
+  [
+   "1",
+   "Sujimoto Construction",
+   "info@sujimotonig.com",
+   "@sujimoto",
+   "Luxury Developer",
+   "Ultra-luxury residential towers",
+   "N100B+ projects, brand should match luxury positioning"
+  ],
+  [
+   "2",
+   "Landwey Investment",
+   "info@landwey.ng",
+   "@landwey",
+   "Developer/Investment",
+   "Large-scale estate developments",
+   "Aggressive growth, brand consistency needed"
+  ],
+  [
+   "3",
+   "Palton Morgan",
+   "info@paltonmorgan.com",
+   "@paltonmorgan",
+   "Luxury Developer",
+   "Luxury towers Ikoyi and Abuja",
+   "Premium projects, brand architecture opportunity"
+  ],
+  [
+   "4",
+   "Lekki Gardens",
+   "info@lekkigardens.com",
+   "@lekkigardens",
+   "Developer",
+   "Residential estates and developments",
+   "Major developer, brand modernisation needed"
+  ],
+  [
+   "5",
+   "Revolution Plus",
+   "info@revolutionplus.com",
+   "@revolutionplus",
+   "Developer",
+   "Mixed-use developments",
+   "Growing brand, identity system needed"
+  ],
+  [
+   "6",
+   "Mixta Africa",
+   "info@mixtaafrica.com",
+   "@mixtaafrica",
+   "Developer",
+   "Residential and commercial developer",
+   "Pan-African developer, brand architecture needed"
+  ],
+  [
+   "7",
+   "Grenadines Homes",
+   "info@grenadineshomes.com",
+   "@grenadineshomes",
+   "Developer",
+   "Luxury residential estates",
+   "Premium positioning, brand identity opportunity"
+  ],
+  [
+   "8",
+   "Periwinkle Properties",
+   "info@periwinkle.com.ng",
+   "@periwinkleproperties",
+   "Developer/Lifestyle",
+   "Lifestyle estate developments",
+   "Brand-lifestyle integration opportunity"
+  ],
+  [
+   "9",
+   "RealHouse Group",
+   "info@realhousegroup.com",
+   "@realhousegroup",
+   "Developer",
+   "Affordable housing developer",
+   "Value positioning, brand trust needed"
+  ],
+  [
+   "10",
+   "T Pumpy Concept",
+   "info@tpumpyconcept.com",
+   "@tpumpyconcept",
+   "Developer",
+   "Abuja-based estate developer",
+   "Growing developer, professional identity needed"
+  ],
+  [
+   "11",
+   "HFP Engineering",
+   "info@hfpeng.com",
+   "@hfpengineering",
+   "Construction",
+   "Engineering and construction",
+   "B2B brand, corporate identity opportunity"
+  ],
+  [
+   "12",
+   "Brains and Hammers",
+   "info@brainsandhammers.com",
+   "@brainsandhammers",
+   "Developer",
+   "Residential estate developer",
+   "Multi-estate brand, consistency needed"
+  ],
+  [
+   "13",
+   "Adron Homes",
+   "info@adronhomesproperties.com",
+   "@adronhomes",
+   "Developer",
+   "Affordable housing",
+   "Large developer, brand system opportunity"
+  ],
+  [
+   "14",
+   "CAPPA & D'Alberto",
+   "info@cappadalberto.com",
+   "@cappaborian_adalberto",
+   "Construction",
+   "Construction company",
+   "Heritage brand, modernisation needed"
+  ],
+  [
+   "15",
+   "Julius Berger Nigeria",
+   "info@julius-berger.com",
+   "@juliusberger",
+   "Construction",
+   "Major construction company",
+   "Corporate brand, identity evolution"
+  ],
+  [
+   "16",
+   "Propertymart",
+   "info@propertymartng.com",
+   "@propertymartng",
+   "Real Estate",
+   "Real estate company",
+   "Growing brand, professional identity needed"
+  ],
+  [
+   "17",
+   "Dennis Group",
+   "info@dennisgroup.com.ng",
+   "@dennisgroup",
+   "Developer",
+   "Real estate development",
+   "Corporate brand, identity system needed"
+  ],
+  [
+   "18",
+   "Cosgrove",
+   "info@cosgrove.com.ng",
+   "@cosgroveafrica",
+   "Luxury Developer",
+   "Premium smart homes",
+   "Tech-luxury positioning, brand should match"
+  ],
+  [
+   "19",
+   "Purple Capital",
+   "info@purplecapital.ng",
+   "@purplecapitalng",
+   "Investment/Property",
+   "Real estate investment",
+   "Investment brand, trust communication needed"
+  ],
+  [
+   "20",
+   "Lagos State Development & Property Corp",
+   "info@lsdpc.gov.ng",
+   "@lsdpc_official",
+   "Government/Develope r",
+   "State development corporation",
+   "Government brand, modernisation opportunity"
+  ],
+  [
+   "21",
+   "Nigerian Building and Road Research Institute",
+   "info@nbrri.gov.ng",
+   "@naborian_brri_ng",
+   "Research/Constructio n",
+   "Building research",
+   "Government body, brand modernisation"
+  ],
+  [
+   "22",
+   "Octo5 Holdings",
+   "info@octo5.com",
+   "@octo5holdings",
+   "Developer",
+   "Premium residential developer",
+   "Growing brand, identity needed"
+  ],
+  [
+   "23",
+   "Alaro City",
+   "info@alarocity.com",
+   "@alarocity",
+   "Mixed-Use Development",
+   "Free zone city development",
+   "New city brand, full identity system needed"
+  ],
+  [
+   "24",
+   "Eko Atlantic",
+   "info@ekoatlantic.com",
+   "@ekoatlantic",
+   "Mixed-Use Development",
+   "Mega city development",
+   "Landmark project, brand evolution opportunity"
+  ],
+  [
+   "25",
+   "Pinnacle Oil and Gas",
+   "info@pinnacleoilandgas.com",
+   "@pinnaborian_acleoilandg as",
+   "Energy/Property",
+   "Oil and gas with property arm",
+   "Diversified brand, architecture needed"
+  ],
+  [
+   "26",
+   "TAF Africa Homes",
+   "info@tafafricahomes.com",
+   "@tafaborian_africahomes",
+   "Developer",
+   "Pan-African developer",
+   "Growing developer, brand identity opportunity"
+  ],
+  [
+   "27",
+   "Metro Africa Xpress (MAX)",
+   "info@max.ng",
+   "@maxaborian_ng",
+   "Logistics/Property",
+   "Logistics with property division",
+   "Brand architecture opportunity"
+  ],
+  [
+   "28",
+   "Shelter Afrique",
+   "info@shelterafrique.org",
+   "@shelterafrique",
+   "Development Finance",
+   "Housing finance institution",
+   "Pan-African institution, brand modernisation"
+  ],
+  [
+   "29",
+   "Knight Frank Nigeria",
+   "nigeria@ng.knightfrank.com",
+   "@knightfrankng",
+   "Real Estate Services",
+   "International real estate advisory",
+   "Global brand, local expression"
+  ],
+  [
+   "30",
+   "UPDC (UAC Property)",
+   "info@upcdc.com",
+   "@updcplc",
+   "Developer",
+   "Major property developer",
+   "Listed company, brand identity evolution"
+  ],
+  [
+   "31",
+   "Veritasi Homes",
+   "info@veritasihomes.com",
+   "@veritasihomes",
+   "Developer",
+   "Residential developer",
+   "Growing brand, identity needed"
+  ],
+  [
+   "32",
+   "Fine and Country Nigeria",
+   "lagos@fineandcountry.com.ng",
+   "@fineandcountryng",
+   "Real Estate Services",
+   "Luxury property services",
+   "Franchise brand, local expression"
+  ],
+  [
+   "33",
+   "Novarick Homes",
+   "info@novarickhomes.com",
+   "@novarickhomes",
+   "Developer",
+   "Residential developer",
+   "New developer, identity system needed"
+  ],
+  [
+   "34",
+   "Urban Shelter",
+   "info@urbanshelter.com.ng",
+   "@urbanshelter",
+   "Developer",
+   "Abuja-based developer",
+   "Growing brand, professional identity"
+  ],
+  [
+   "35",
+   "Pwan Group",
+   "info@pwan.com.ng",
+   "@pwangroup",
+   "Real Estate",
+   "Real estate group",
+   "Multi-brand group, architecture needed"
+  ],
+  [
+   "36",
+   "Harcourt Properties",
+   "info@harcourtproperties.com",
+   "@harcourtproperties",
+   "Developer",
+   "Lagos-based developer",
+   "Growing developer, brand identity"
+  ],
+  [
+   "37",
+   "Planet Project",
+   "info@planetproject.com.ng",
+   "@planetproject",
+   "Developer",
+   "High-rise developer",
+   "Growing portfolio, brand system needed"
+  ],
+  [
+   "38",
+   "Wemimo Abbey (Vantage)",
+   "info@vantageproperty.ng",
+   "@vantageaborian_property",
+   "Investment",
+   "Real estate investment",
+   "Investment brand, trust identity needed"
+  ],
+  [
+   "39",
+   "FirstHomes Africa",
+   "info@firsthomes.com.ng",
+   "@firsthomesafrica",
+   "Developer",
+   "Affordable developer",
+   "Value brand, identity system opportunity"
+  ],
+  [
+   "40",
+   "Resort International Group",
+   "info@rigng.com",
+   "@rigaborian_nigeria",
+   "Hospitality/Property",
+   "Mixed-use hospitality developer",
+   "Dual-sector brand, architecture needed"
+  ],
+  [
+   "41",
+   "Alta Developers",
+   "info@altadevelopers.com",
+   "@altadevelopers",
+   "Developer",
+   "Residential developer",
+   "New brand, full identity system needed"
+  ],
+  [
+   "42",
+   "Northcourt Real Estate",
+   "info@northcourtrealestate.com",
+   "@northcourtng",
+   "Real Estate Services",
+   "Property advisory",
+   "Professional services brand, identity needed"
+  ],
+  [
+   "43",
+   "Brookstone Property",
+   "info@brookstoneproperty.com",
+   "@brookstonepropertyng",
+   "Developer",
+   "Lagos developer",
+   "Growing brand, needs identity system"
+  ],
+  [
+   "44",
+   "Urban Prime Properties",
+   "info@urbanprimeproperties.com",
+   "@urbanprimeproperties",
+   "Developer",
+   "Premium developer",
+   "Premium positioning, brand should match"
+  ],
+  [
+   "45",
+   "Troyland Investment",
+   "info@troyland.ng",
+   "@troylandng",
+   "Investment/Property",
+   "Property investment",
+   "Investment brand, trust signals needed"
+  ],
+  [
+   "46",
+   "Zylus Group",
+   "info@zylusgroup.com",
+   "@zylusgroup",
+   "Real Estate Group",
+   "Multi-brand real estate group",
+   "Group brand, architecture needed"
+  ],
+  [
+   "47",
+   "Misa Real Estate",
+   "info@misarealestate.com",
+   "@misarealestate",
+   "Real Estate",
+   "Property services",
+   "Service brand, identity opportunity"
+  ],
+  [
+   "48",
+   "Casa Lagos",
+   "info@casa.ng",
+   "@casalagos",
+   "Luxury Property",
+   "Luxury short-lets",
+   "Luxury brand, identity should match positioning"
+  ],
+  [
+   "49",
+   "Etihad Estates",
+   "info@etihadestates.com",
+   "@etihadestates",
+   "Developer",
+   "Residential developer",
+   "New developer, brand identity needed"
+  ],
+  [
+   "50",
+   "RevolutionPlus Property",
+   "info@revolutionplusproperty.com",
+   "@revplusaborian_property",
+   "Developer",
+   "Major developer, multiple estates",
+   "Scaled brand, system needed for consistency"
+  ]
+ ],
+ "05-hospitality-events": [
+  [
+   "1",
+   "Landmark Africa",
+   "contactus@landmarkafrica.com",
+   "@landmarkaborian_africa",
+   "Leisure/Entertainment",
+   "Leisure and entertainment venues",
+   "Major venue operator, brand consistency needed"
+  ],
+  [
+   "2",
+   "Eko Hotels",
+   "sales@ekohotels.com",
+   "@ekohotels",
+   "Hospitality",
+   "Iconic Lagos hotel and convention",
+   "Heritage hotel brand, digital identity opportunity"
+  ],
+  [
+   "3",
+   "The George Hotel",
+   "reservations@thegeorgelagos.com",
+   "@thegeorgelagos",
+   "Hospitality",
+   "Boutique hotel Lagos",
+   "Premium boutique, brand identity opportunity"
+  ],
+  [
+   "4",
+   "1677 Mayfair",
+   "info@1677mayfair.com",
+   "@1677mayfair",
+   "Hospitality",
+   "Luxury boutique hotel",
+   "New luxury brand, full identity system needed"
+  ],
+  [
+   "5",
+   "Radisson Blu Lagos",
+   "info.lagos@radissonblu.com",
+   "@radissonblulagos",
+   "Hospitality",
+   "International hotel brand",
+   "Global brand, local activation opportunity"
+  ],
+  [
+   "6",
+   "Southern Sun Ikoyi",
+   "ikoyi.reservations@southernsun.com",
+   "@southernsun",
+   "Hospitality",
+   "International hotel chain",
+   "Franchise brand, local expression needed"
+  ],
+  [
+   "7",
+   "Four Points by Sheraton Lagos",
+   "reservations.lagos@fourpoints.com",
+   "@fourpointslagos",
+   "Hospitality",
+   "International hotel brand",
+   "Global brand, local positioning"
+  ],
+  [
+   "8",
+   "The Wheatbaker",
+   "info@thewheatbaker.com",
+   "@thewheatbaker",
+   "Hospitality",
+   "Boutique hotel Ikoyi",
+   "Premium positioning, brand identity opportunity"
+  ],
+  [
+   "9",
+   "Federal Palace Hotel",
+   "info@federalpalacehotel.com",
+   "@federalpalacehotel",
+   "Hospitality",
+   "Heritage luxury hotel",
+   "Legacy brand, major refresh needed"
+  ],
+  [
+   "10",
+   "InterContinental Lagos",
+   "reservations@iclagos.com",
+   "@iclagos",
+   "Hospitality",
+   "International luxury hotel",
+   "Global brand, local expression"
+  ],
+  [
+   "11",
+   "Transcorp Hilton Abuja",
+   "reservations.abuja@hilton.com",
+   "@transcorphilton",
+   "Hospitality",
+   "Major Abuja hotel",
+   "Heritage brand, identity evolution"
+  ],
+  [
+   "12",
+   "Hard Rock Cafe Lagos",
+   "lagos@hardrock.com",
+   "@hardrockcafelagos",
+   "Hospitality/Entertainm ent",
+   "Entertainment dining venue",
+   "Franchise activation, local brand expression"
+  ],
+  [
+   "13",
+   "Shiro Lagos",
+   "reservations@shiro.ng",
+   "@shirolagos",
+   "Hospitality/Dining",
+   "Japanese fusion restaurant",
+   "Premium dining, brand system opportunity"
+  ],
+  [
+   "14",
+   "Sailors Lounge",
+   "info@sailorslounge.com",
+   "@sailorslounge",
+   "Hospitality/Nightlife",
+   "Premium lounge and dining",
+   "Nightlife brand, identity system needed"
+  ],
+  [
+   "15",
+   "Quilox Lagos",
+   "info@quilox.com",
+   "@quiloxlagos",
+   "Nightlife",
+   "Premium nightclub",
+   "Nightlife brand, identity opportunity"
+  ],
+  [
+   "16",
+   "DNA Lagos",
+   "info@dnalagos.com",
+   "@dnaborian_alagos",
+   "Nightlife",
+   "Premium nightclub",
+   "Entertainment brand, identity needed"
+  ],
+  [
+   "17",
+   "Moist Lounge",
+   "info@moistlounge.com",
+   "@moistlounge",
+   "Hospitality/Nightlife",
+   "Lounge and nightlife",
+   "Entertainment brand, visual identity"
+  ],
+  [
+   "18",
+   "Escape Nightlife",
+   "info@escapenightlife.com",
+   "@escapenightlife",
+   "Nightlife",
+   "Lagos nightclub",
+   "Entertainment brand, identity system needed"
+  ],
+  [
+   "19",
+   "Tiger Lagos",
+   "info@tigerlagos.com",
+   "@tigerlagos",
+   "Nightlife",
+   "Premium nightclub",
+   "Entertainment brand, identity opportunity"
+  ],
+  [
+   "20",
+   "Bay Lounge",
+   "info@baylounge.com",
+   "@baylounge",
+   "Hospitality",
+   "Waterfront lounge",
+   "Premium location, brand should match"
+  ],
+  [
+   "21",
+   "Upbeat Recreation Centre",
+   "info@upbeat.ng",
+   "@upbeatcentre",
+   "Leisure",
+   "Recreation and entertainment",
+   "Family entertainment, brand system needed"
+  ],
+  [
+   "22",
+   "RSVP Lagos",
+   "info@rsvplagos.com",
+   "@rsvplagos",
+   "Events",
+   "Events and experiences",
+   "Event brand, visual identity opportunity"
+  ],
+  [
+   "23",
+   "Livespot360",
+   "info@livespot360.com",
+   "@livespot360",
+   "Events/Entertainment",
+   "Entertainment and marketing company",
+   "Major events brand, identity architecture"
+  ],
+  [
+   "24",
+   "BetaRaves",
+   "hello@betaraves.com",
+   "@betaraves",
+   "Events",
+   "Events discovery platform",
+   "Platform brand, UX and identity needed"
+  ],
+  [
+   "25",
+   "Eventbrite Nigeria",
+   "nigeria@eventbrite.com",
+   "@eventbriteng",
+   "Events Tech",
+   "Event ticketing",
+   "International brand, local activation"
+  ],
+  [
+   "26",
+   "Naija Events",
+   "info@naijaevents.com",
+   "@naijaevents",
+   "Events Media",
+   "Events listing and blog",
+   "Content brand, identity opportunity"
+  ],
+  [
+   "27",
+   "Lagos Continental Hotel",
+   "reservations@lagoscontinental.com",
+   "@lagoscontinental",
+   "Hospitality",
+   "Major Lagos hotel",
+   "Heritage hotel, brand refresh opportunity"
+  ],
+  [
+   "28",
+   "NICON Luxury Hotel",
+   "info@niconluxury.com",
+   "@niconluxury",
+   "Hospitality",
+   "Abuja luxury hotel",
+   "Premium positioning, brand should match"
+  ],
+  [
+   "29",
+   "Protea Hotel Lagos",
+   "info.protealagos@marriott.com",
+   "@proteahotellagos",
+   "Hospitality",
+   "Marriott brand hotel",
+   "Franchise identity, local expression"
+  ],
+  [
+   "30",
+   "Alara Lagos",
+   "info@alaralagos.com",
+   "@alaralagos",
+   "Retail/Hospitality",
+   "Luxury concept store and cafe",
+   "Premium lifestyle brand, identity system"
+  ],
+  [
+   "31",
+   "The Blowfish Hotel",
+   "reservations@theblowfish.com.ng",
+   "@theblowfishhotel",
+   "Hospitality",
+   "Boutique hotel Lagos",
+   "Boutique brand, identity opportunity"
+  ],
+  [
+   "32",
+   "House 15",
+   "info@house15.ng",
+   "@house15lagos",
+   "Hospitality/Nightlife",
+   "Premium lounge venue",
+   "Nightlife brand, identity needed"
+  ],
+  [
+   "33",
+   "Montego Bay Lagos",
+   "info@montegobay.ng",
+   "@montegobaylagos",
+   "Hospitality",
+   "Beach lounge and restaurant",
+   "Leisure brand, identity opportunity"
+  ],
+  [
+   "34",
+   "Sky Restaurant",
+   "reservations@skyrestaurant.ng",
+   "@skyrestaurantlagos",
+   "Hospitality/Dining",
+   "Rooftop dining",
+   "Premium dining, brand identity"
+  ],
+  [
+   "35",
+   "Nok by Alara",
+   "reservations@nokbyalara.com",
+   "@nokbyalara",
+   "Hospitality/Dining",
+   "African fine dining",
+   "Premium African food, brand identity"
+  ],
+  [
+   "36",
+   "La Taverna",
+   "info@lataverna.ng",
+   "@latavernalagos",
+   "Hospitality/Dining",
+   "Italian restaurant Lagos",
+   "Premium dining, brand identity"
+  ],
+  [
+   "37",
+   "CityGate Events",
+   "info@citygateevents.com",
+   "@citygateevents",
+   "Events",
+   "Event management company",
+   "Corporate events, brand identity"
+  ],
+  [
+   "38",
+   "EventsNG",
+   "info@events.ng",
+   "@eventsng",
+   "Events Media",
+   "Events platform Nigeria",
+   "Platform brand, identity needed"
+  ],
+  [
+   "39",
+   "The Civic Centre",
+   "info@theciviccentre.com",
+   "@theciviccentre",
+   "Events Venue",
+   "Events and conference venue",
+   "Venue brand, identity opportunity"
+  ],
+  [
+   "40",
+   "Oriental Hotel",
+   "reservations@orientalhotels.com",
+   "@orientalhotelng",
+   "Hospitality",
+   "Lagos waterfront hotel",
+   "Heritage hotel, brand refresh"
+  ],
+  [
+   "41",
+   "Kwarleyz Residence",
+   "info@kwarleyz.com",
+   "@kwarleyz",
+   "Hospitality",
+   "Serviced apartments",
+   "Growing brand, identity system needed"
+  ],
+  [
+   "42",
+   "Golden Tulip Lagos",
+   "info@goldentuliplagos.com",
+   "@goldentuliplagos",
+   "Hospitality",
+   "International hotel brand",
+   "Franchise, local brand expression"
+  ],
+  [
+   "43",
+   "Ibis Lagos",
+   "info@ibislagos.com",
+   "@ibislagos",
+   "Hospitality",
+   "Budget hotel brand",
+   "Accor brand, local activation"
+  ],
+  [
+   "44",
+   "Best Western Lagos",
+   "info@bestwesternlagos.com",
+   "@bestwesternlagos",
+   "Hospitality",
+   "Hotel brand Lagos",
+   "Franchise identity, local expression"
+  ],
+  [
+   "45",
+   "Afrika Shrine",
+   "info@afrikashrine.com",
+   "@afrikashrine",
+   "Venue/Culture",
+   "Cultural venue and music hall",
+   "Cultural landmark, brand identity opportunity"
+  ],
+  [
+   "46",
+   "Terra Kulture",
+   "info@terrakulture.com",
+   "@terrakulture",
+   "Venue/Culture",
+   "Art, food and culture space",
+   "Cultural brand, identity system needed"
+  ],
+  [
+   "47",
+   "Muson Centre",
+   "info@maborian_usoncentre.org",
+   "@musoncentre",
+   "Venue",
+   "Music and arts venue",
+   "Cultural institution, brand modernisation"
+  ],
+  [
+   "48",
+   "Eko Convention Centre",
+   "events@ekohotels.com",
+   "@ekoconvcentre",
+   "Venue",
+   "Major convention centre",
+   "Venue brand, identity opportunity"
+  ],
+  [
+   "49",
+   "Freedom Park Lagos",
+   "info@freedompark.ng",
+   "@freedompark",
+   "Venue/Culture",
+   "Cultural and event space",
+   "Heritage site, brand identity needed"
+  ],
+  [
+   "50",
+   "The Haven Event Centre",
+   "info@thehaven.com.ng",
+   "@thehaven_ng",
+   "Venue",
+   "Premium events centre",
+   "Premium venue, brand should match positioning"
+  ]
+ ],
+ "06-tech-saas": [
+  [
+   "1",
+   "Bumpa",
+   "hello@bumpa.shop",
+   "@bumpaapp",
+   "E-commerce Tools",
+   "Social commerce platform for SMEs",
+   "Strong product, brand could match growth stage"
+  ],
+  [
+   "2",
+   "Kippa",
+   "team@kippa.africa",
+   "@kippaapp",
+   "Fintech/Bookkeeping",
+   "Bookkeeping app for SMEs",
+   "Growing user base, brand needs professional system"
+  ],
+  [
+   "3",
+   "Bujeti",
+   "hello@bujeti.com",
+   "@bujetiapp",
+   "Fintech/Expense",
+   "Spend management platform",
+   "Product strong, website and brand below potential"
+  ],
+  [
+   "4",
+   "Vendease",
+   "hello@vendease.com",
+   "@vendease",
+   "Supply Chain",
+   "B2B food supply chain platform",
+   "Funded startup, brand should match investor stage"
+  ],
+  [
+   "5",
+   "SeamlessHR",
+   "hello@seamlesshr.com",
+   "@seamlesshr",
+   "HR Tech",
+   "HR management platform",
+   "$22M raised, brand should match scale"
+  ],
+  [
+   "6",
+   "Helium Health",
+   "team@heliumhealth.com",
+   "@heliumhealth",
+   "Health Tech",
+   "Hospital management platform",
+   "Multi-country expansion, brand architecture needed"
+  ],
+  [
+   "7",
+   "Termii",
+   "sales@termii.com",
+   "@termiiafrica",
+   "Communication",
+   "Business communication API",
+   "Developer-focused, brand and documentation experience"
+  ],
+  [
+   "8",
+   "Chowdeck",
+   "hello@chowdeck.com",
+   "@chowdeck",
+   "Food Tech",
+   "On-demand food delivery",
+   "High growth, brand should match trajectory"
+  ],
+  [
+   "9",
+   "PiggyVest",
+   "contact@piggyvest.com",
+   "@piggyvest",
+   "Savings/Investment",
+   "Savings and investment platform",
+   "6M+ users, brand evolution opportunity"
+  ],
+  [
+   "10",
+   "Cowrywise",
+   "hello@cowrywise.com",
+   "@cowrywise",
+   "Wealth Management",
+   "SEC-regulated wealth platform",
+   "Regulated status, brand should signal trust"
+  ],
+  [
+   "11",
+   "Mono",
+   "hi@mono.co",
+   "@mono_hq",
+   "Data/API",
+   "Financial data API platform",
+   "Infrastructure product, brand and developer experience"
+  ],
+  [
+   "12",
+   "Stears",
+   "hello@stearsinsight.com",
+   "@stearsdata",
+   "Data/Analytics",
+   "Business intelligence for Africa",
+   "Data brand, visual identity opportunity"
+  ],
+  [
+   "13",
+   "Korapay",
+   "hello@korapay.com",
+   "@korapay",
+   "Payments",
+   "Payment infrastructure",
+   "Growing payments brand, identity could match scale"
+  ],
+  [
+   "14",
+   "Grey.co",
+   "support@grey.co",
+   "@greyfinance",
+   "Cross-border",
+   "Cross-border banking",
+   "Rapid growth, brand system needs to scale"
+  ],
+  [
+   "15",
+   "Brass",
+   "hello@trybrass.com",
+   "@trybrass",
+   "Business Banking",
+   "Business banking platform",
+   "Clean concept, brand could be more distinctive"
+  ],
+  [
+   "16",
+   "Risevest",
+   "support@risevest.co",
+   "@risevest",
+   "Investment",
+   "Dollar investment platform",
+   "Growing platform, brand should signal trust and maturity"
+  ],
+  [
+   "17",
+   "Bamboo",
+   "support@investbamboo.com",
+   "@investbamboo",
+   "Investment",
+   "US stock investment platform",
+   "Strong product, brand and website could be elevated"
+  ],
+  [
+   "18",
+   "Patricia",
+   "hello@mypatricia.co",
+   "@mypatricia",
+   "Crypto/Payments",
+   "Crypto and payments",
+   "Major platform, brand refresh opportunity"
+  ],
+  [
+   "19",
+   "Qore (Sterling Bank)",
+   "hello@getqore.com",
+   "@getqore",
+   "Digital Banking",
+   "Digital banking platform",
+   "Established backing, brand identity could be stronger"
+  ],
+  [
+   "20",
+   "Anchor",
+   "hello@getanchor.co",
+   "@getanchor",
+   "Banking-as-a-Service",
+   "BaaS platform",
+   "Infrastructure product, brand and website opportunity"
+  ],
+  [
+   "21",
+   "Eden Life",
+   "support@edenlife.ng",
+   "@edenlifehq",
+   "Lifestyle/Services",
+   "Home services platform",
+   "Lifestyle brand, visual identity could match ambition"
+  ],
+  [
+   "22",
+   "Shuttlers",
+   "hello@shuttlers.ng",
+   "@shuttlersng",
+   "Mobility",
+   "Bus-sharing platform",
+   "Growing mobility brand, needs cohesive identity"
+  ],
+  [
+   "23",
+   "Gokada",
+   "hello@gokada.ng",
+   "@gokadang",
+   "Mobility/Logistics",
+   "Logistics and delivery",
+   "Pivoted brand, new identity opportunity"
+  ],
+  [
+   "24",
+   "Kwik",
+   "hello@kwik.delivery",
+   "@kwik_ng",
+   "Logistics",
+   "Last-mile delivery",
+   "Logistics brand, identity and fleet branding"
+  ],
+  [
+   "25",
+   "Topship",
+   "hello@topship.africa",
+   "@topshipafrica",
+   "Logistics",
+   "Cross-border shipping",
+   "Shipping brand, trust signals through brand"
+  ],
+  [
+   "26",
+   "Releaf",
+   "hello@releaf.africa",
+   "@releaf_africa",
+   "Agritech",
+   "Agricultural processing technology",
+   "Impact-driven, brand could communicate vision better"
+  ],
+  [
+   "27",
+   "ThriveAgric",
+   "info@thriveagric.com",
+   "@thriveagric",
+   "Agritech",
+   "Farm financing and supply chain",
+   "Agritech brand, digital experience opportunity"
+  ],
+  [
+   "28",
+   "Farmcrowdy",
+   "support@farmcrowdy.com",
+   "@farmcrowdy",
+   "Agritech",
+   "Digital agriculture platform",
+   "Pioneer agritech, brand may need refresh"
+  ],
+  [
+   "29",
+   "Autochek",
+   "hello@autochek.africa",
+   "@autochek_africa",
+   "Automotive",
+   "Automotive marketplace",
+   "Pan-African brand, identity architecture needed"
+  ],
+  [
+   "30",
+   "Moove",
+   "info@moove.io",
+   "@moove_africa",
+   "Mobility",
+   "Vehicle financing platform",
+   "Funded startup, brand should match global ambition"
+  ],
+  [
+   "31",
+   "Prospa",
+   "hello@getprospa.com",
+   "@getprospa",
+   "Business Tools",
+   "Business management for SMEs",
+   "Growing platform, brand and UX opportunity"
+  ],
+  [
+   "32",
+   "Zoho Africa",
+   "info@zoho.com",
+   "@zohoafrica",
+   "SaaS",
+   "Business software suite",
+   "Enterprise SaaS, local brand activation"
+  ],
+  [
+   "33",
+   "Traction Apps",
+   "hello@traction.one",
+   "@tractionapps",
+   "POS/Payments",
+   "POS and payment solutions",
+   "Growing POS brand, identity system needed"
+  ],
+  [
+   "34",
+   "Indicina",
+   "hello@indicina.co",
+   "@indicina",
+   "Credit/Data",
+   "Credit decisioning infrastructure",
+   "B2B fintech, brand and website opportunity"
+  ],
+  [
+   "35",
+   "Payaza",
+   "hello@payaza.africa",
+   "@payaza",
+   "Payments",
+   "Payment platform",
+   "Payments brand, identity could be more distinctive"
+  ],
+  [
+   "36",
+   "Sabi",
+   "hello@sabi.am",
+   "@sabi_app",
+   "B2B Commerce",
+   "B2B trade platform",
+   "Large B2B platform, brand system for scale"
+  ],
+  [
+   "37",
+   "TradeDepot",
+   "hello@tradedepot.co",
+   "@tradedepot",
+   "B2B Commerce",
+   "B2B distribution platform",
+   "Funded startup, brand should match growth"
+  ],
+  [
+   "38",
+   "Omnibiz",
+   "info@omnibiz.com",
+   "@omnibiz_",
+   "B2B Commerce",
+   "B2B e-commerce for FMCG",
+   "Enterprise platform, corporate brand opportunity"
+  ],
+  [
+   "39",
+   "mPharma",
+   "info@mpharma.com",
+   "@mpharma",
+   "Health Tech",
+   "Pharmacy management platform",
+   "Healthcare brand, trust through identity"
+  ],
+  [
+   "40",
+   "54gene",
+   "info@54gene.com",
+   "@54gene",
+   "Health Tech",
+   "Genomics and drug discovery",
+   "Science brand, identity system for research and commercial"
+  ],
+  [
+   "41",
+   "Bundle Africa",
+   "hello@bundle.africa",
+   "@bundleafrica",
+   "Crypto/Social",
+   "Social crypto exchange",
+   "Social platform, brand and UX opportunity"
+  ],
+  [
+   "42",
+   "Getequity",
+   "hello@getequity.com",
+   "@getequity",
+   "Investment",
+   "Startup investment platform",
+   "Investment platform, trust signals through brand"
+  ],
+  [
+   "43",
+   "Dojah",
+   "hello@dojah.io",
+   "@dojah",
+   "Identity/KYC",
+   "Identity verification API",
+   "Infrastructure brand, developer experience"
+  ],
+  [
+   "44",
+   "Okra",
+   "hello@okra.ng",
+   "@okra_inc",
+   "Data/API",
+   "Financial data API",
+   "Developer-focused, brand and documentation"
+  ],
+  [
+   "45",
+   "Payhippo",
+   "hello@payhippo.co",
+   "@payhippo",
+   "Lending",
+   "SME lending platform",
+   "Fintech brand, trust and professionalism through identity"
+  ],
+  [
+   "46",
+   "Earnipay",
+   "hello@earnipay.com",
+   "@earnipay",
+   "Earned Wage Access",
+   "Salary advance platform",
+   "Growing product, brand could match positioning"
+  ],
+  [
+   "47",
+   "Decagon",
+   "info@decagonhq.com",
+   "@decagonhq",
+   "HR Tech/Training",
+   "Tech talent development",
+   "Training brand, identity and website opportunity"
+  ],
+  [
+   "48",
+   "AltSchool Africa",
+   "hello@altschoolafrica.com",
+   "@altschool_africa",
+   "EdTech",
+   "Online tech training",
+   "Education brand, identity and digital experience"
+  ],
+  [
+   "49",
+   "Turing (Nigeria office)",
+   "info@turing.com",
+   "@turingcom",
+   "Remote Work",
+   "Remote engineering platform",
+   "Global brand, local presence opportunity"
+  ],
+  [
+   "50",
+   "Nomba",
+   "hello@nomba.com",
+   "@nomba_ng",
+   "Payments/POS",
+   "Payments and business tools",
+   "Rebranded from Kudi, new identity needs solidification"
+  ]
+ ],
+ "07-fintech-financial-services": [
+  [
+   "1",
+   "OPay",
+   "customerservice@opay-inc.com",
+   "@opay_ng",
+   "Payments",
+   "Mobile payments and financial services",
+   "$2.75B valuation, brand system should match scale"
+  ],
+  [
+   "2",
+   "Moniepoint",
+   "hello@moniepoint.com",
+   "@moniepoint",
+   "Payments/POS",
+   "Payment infrastructure, POS",
+   "Dominant transaction volumes, brand architecture needed"
+  ],
+  [
+   "3",
+   "Kuda Bank",
+   "help@kuda.com",
+   "@kudabank",
+   "Digital Banking",
+   "Digital-first bank",
+   "7M+ users, brand evolution for next growth phase"
+  ],
+  [
+   "4",
+   "Carbon",
+   "hello@carbon.one",
+   "@carbonhq_",
+   "Digital Lending",
+   "Lending and digital banking",
+   "2M+ users, brand could match ambition"
+  ],
+  [
+   "5",
+   "PiggyVest",
+   "contact@piggyvest.com",
+   "@piggyvest",
+   "Savings",
+   "Savings and investment platform",
+   "6M+ users, brand refresh opportunity"
+  ],
+  [
+   "6",
+   "Flutterwave",
+   "hi@flutterwavego.com",
+   "@flutterwave",
+   "Payment",
+   "Payment technology company",
+   "$3B valuation, enterprise brand system"
+  ],
+  [
+   "7",
+   "Paystack",
+   "hello@paystack.com",
+   "@paystack",
+   "IPnafryamsterunctture",
+   "Online payments for Africa",
+   "Post-acquisition, brand evolution"
+  ],
+  [
+   "8",
+   "Paga",
+   "info@mypaga.com",
+   "@mypaga",
+   "IMnofrbaisletr uPcatuymreents",
+   "Mobile payments platform",
+   "Long-established, brand modernisation opportunity"
+  ],
+  [
+   "9",
+   "FairMoney",
+   "hello@fairmoney.io",
+   "@fairmoney_ng",
+   "Digital Lending",
+   "Digital lending and banking",
+   "Large user base, brand trust opportunity"
+  ],
+  [
+   "10",
+   "TeamApt (Moniepoint)",
+   "hello@moniepoint.com",
+   "@teamapt",
+   "Banking Infrastructure",
+   "Banking software and payments",
+   "Enterprise brand, corporate identity needed"
+  ],
+  [
+   "11",
+   "Cowrywise",
+   "hello@cowrywise.com",
+   "@cowrywise",
+   "Wealth Management",
+   "SEC-regulated savings and investment",
+   "Regulated status is trust asset, brand should amplify it"
+  ],
+  [
+   "12",
+   "Risevest",
+   "support@risevest.co",
+   "@risevest",
+   "Investment",
+   "Dollar investment platform",
+   "Growing platform, brand should signal trust"
+  ],
+  [
+   "13",
+   "Bamboo",
+   "support@investbamboo.com",
+   "@investbamboo",
+   "Investment",
+   "US stock investment",
+   "Strong product, brand could be more distinctive"
+  ],
+  [
+   "14",
+   "Chaka",
+   "hello@chaka.com",
+   "@chaka_hq",
+   "Investment",
+   "Regulated stock trading",
+   "Licensed brand, identity should signal regulation"
+  ],
+  [
+   "15",
+   "Trove",
+   "hello@troveapp.co",
+   "@trove_finance",
+   "Investment",
+   "Fractional stock investment",
+   "Accessible investing, brand clarity opportunity"
+  ],
+  [
+   "16",
+   "Aella Credit",
+   "support@aellaapp.com",
+   "@aellacredit",
+   "Lending",
+   "Digital lending platform",
+   "Large operation, brand could match scale"
+  ],
+  [
+   "17",
+   "Renmoney",
+   "customerservice@renmoney.com",
+   "@renmoney",
+   "Lending",
+   "Digital lending",
+   "Established lender, brand modernisation"
+  ],
+  [
+   "18",
+   "Lidya",
+   "hello@lidya.co",
+   "@lidya_ng",
+   "SME Lending",
+   "SME credit platform",
+   "B2B fintech, professional brand system needed"
+  ],
+  [
+   "19",
+   "OneFi (Carbon parent)",
+   "info@onefi.com",
+   "@onefi_hq",
+   "Holding/Fintech",
+   "Fintech holding company",
+   "Corporate brand architecture opportunity"
+  ],
+  [
+   "20",
+   "Branch Nigeria",
+   "support@branch.co",
+   "@branch_ng",
+   "Lending",
+   "Digital lending app",
+   "Mobile-first brand, identity system opportunity"
+  ],
+  [
+   "21",
+   "Sparkle",
+   "support@sparkle.ng",
+   "@sparkle_ng",
+   "Digital Banking",
+   "Digital banking app",
+   "Modern bank, brand and UX alignment"
+  ],
+  [
+   "22",
+   "VFD Microfinance Bank",
+   "info@vfdgroup.com",
+   "@vfdmfb",
+   "Microfinance",
+   "Microfinance banking",
+   "Traditional finance, digital brand transformation"
+  ],
+  [
+   "23",
+   "LAPO Microfinance",
+   "info@laaborian_po-nigeria.org",
+   "@lapomfbank",
+   "Microfinance",
+   "Microfinance institution",
+   "Large institution, brand modernisation opportunity"
+  ],
+  [
+   "24",
+   "Mintyn Digital Bank",
+   "hello@mintyn.com",
+   "@mintyn_official",
+   "Digital Banking",
+   "Digital bank",
+   "Growing digital bank, brand differentiation needed"
+  ],
+  [
+   "25",
+   "Rubies Microfinance",
+   "info@rubiesbank.com",
+   "@rubiesbank",
+   "Microfinance",
+   "Digital-first microfinance",
+   "Modern approach, brand should match"
+  ],
+  [
+   "26",
+   "Earnipay",
+   "hello@earnipay.com",
+   "@earnipay",
+   "Earned Wage Access",
+   "Salary access platform",
+   "Growing product, brand positioning opportunity"
+  ],
+  [
+   "27",
+   "Brass",
+   "hello@trybrass.com",
+   "@trybrass",
+   "Business Banking",
+   "Business banking platform",
+   "Clean concept, brand could be more distinctive"
+  ],
+  [
+   "28",
+   "Bloc",
+   "hello@bloc.money",
+   "@joinbloc",
+   "Banking-as-a-Service",
+   "BaaS infrastructure",
+   "Infrastructure brand, developer experience"
+  ],
+  [
+   "29",
+   "Anchor",
+   "hello@getanchor.co",
+   "@getanchor",
+   "Banking-as-a-Service",
+   "BaaS platform",
+   "B2B brand, trust and professionalism"
+  ],
+  [
+   "30",
+   "Lenco",
+   "hello@lenco.co",
+   "@lencohq",
+   "Business Banking",
+   "SME banking platform",
+   "Business-focused, brand and website opportunity"
+  ],
+  [
+   "31",
+   "Stanbic IBTC",
+   "enquiries@stanbicibtc.com",
+   "@stanbicibtc",
+   "Investment Banking",
+   "Major investment bank",
+   "Premium finance brand, may need brand refresh"
+  ],
+  [
+   "32",
+   "GTBank",
+   "gtconnect@gtbank.com",
+   "@gtbankng",
+   "Commercial Banking",
+   "Major commercial bank",
+   "Largest bank, brand architecture for digital"
+  ],
+  [
+   "33",
+   "Access Bank",
+   "contactcenter@accessbankplc.com",
+   "@myaccessbank",
+   "Commercial Banking",
+   "Major commercial bank",
+   "Post-merger brand evolution"
+  ],
+  [
+   "34",
+   "Wema Bank (ALAT)",
+   "alat@wemabank.com",
+   "@alatbywema",
+   "Digital Banking",
+   "Digital banking (ALAT)",
+   "Digital sub-brand, identity system needed"
+  ],
+  [
+   "35",
+   "Sterling Bank",
+   "customercare@sterlingbankng.com",
+   "@sterling_bankng",
+   "Commercial Banking",
+   "Commercial bank",
+   "Modern banking identity opportunity"
+  ],
+  [
+   "36",
+   "Coronation Insurance",
+   "contactcentre@coronationinsurance.com.ng",
+   "@coronationins",
+   "Insurance",
+   "Insurance company",
+   "Insurance brand, trust communication"
+  ],
+  [
+   "37",
+   "Leadway Assurance",
+   "insure@leadway.com",
+   "@leadwayng",
+   "Insurance",
+   "Major insurance company",
+   "Established insurer, brand modernisation"
+  ],
+  [
+   "38",
+   "AXA Mansard",
+   "insure@axamansard.com",
+   "@axamansard",
+   "Insurance",
+   "Insurance and investment",
+   "International backing, local brand expression"
+  ],
+  [
+   "39",
+   "Heirs Insurance",
+   "info@heirsinsurance.com",
+   "@heirsinsurance",
+   "Insurance",
+   "Insurance company (Tony Elumelu)",
+   "Corporate brand, trust and credibility"
+  ],
+  [
+   "40",
+   "Tangerine Life",
+   "hello@tangerine.africa",
+   "@tangerinelife",
+   "Insurance",
+   "Insurance and pension",
+   "Modern insurer, brand differentiation needed"
+  ],
+  [
+   "41",
+   "Ceviant Finance",
+   "info@ceviantfinance.com",
+   "@ceviantfinance",
+   "Lending",
+   "Lending and leasing",
+   "Financial services brand, trust signals"
+  ],
+  [
+   "42",
+   "Payfixy",
+   "hello@payfixy.com",
+   "@payfixy",
+   "Payments",
+   "Payment solution for businesses",
+   "Growing payments brand, identity opportunity"
+  ],
+  [
+   "43",
+   "Remita",
+   "info@remita.net",
+   "@remitang",
+   "Payments",
+   "Payment gateway",
+   "Enterprise payments, brand modernisation"
+  ],
+  [
+   "44",
+   "Interswitch",
+   "consumersupport@interswitchng.com",
+   "@interswitchgroup",
+   "Payment",
+   "Payment infrastructure",
+   "Major infrastructure brand, identity evolution"
+  ],
+  [
+   "45",
+   "eTranzact",
+   "info@etranzact.com",
+   "@etranzact",
+   "IPnafryamsterunctture",
+   "Digital payments",
+   "Established brand, needs modernisation"
+  ],
+  [
+   "46",
+   "SystemSpecs (Remita)",
+   "info@aborian_systemspecs.com.ng",
+   "@systemspecs",
+   "IPnafryamsterunct tTuerechnology",
+   "Payment technology provider",
+   "Enterprise tech, corporate brand opportunity"
+  ],
+  [
+   "47",
+   "Africa Prudential",
+   "info@africaprudential.com",
+   "@africapruregistrars",
+   "Registrar/Finance",
+   "Share registration, digital",
+   "Financial services brand, digital transformation"
+  ],
+  [
+   "48",
+   "Providus Bank",
+   "customerservice@providusbank.com",
+   "@providusbank",
+   "Commercial Banking",
+   "Modern commercial bank",
+   "Newer bank, brand differentiation needed"
+  ],
+  [
+   "49",
+   "TrustBanc Holdings",
+   "info@trustbancgroup.com",
+   "@trustbancholdings",
+   "Financial Services",
+   "Financial holding company",
+   "Corporate brand identity opportunity"
+  ],
+  [
+   "50",
+   "Fidelity Bank",
+   "info@fidelitybank.ng",
+   "@fidelitybankplc",
+   "Commercial Banking",
+   "Major commercial bank",
+   "Large bank, brand refresh opportunity"
+  ]
+ ],
+ "08-health-wellness": [
+  [
+   "1",
+   "i-Fitness",
+   "info@ifitness.ng",
+   "@ifitnessng",
+   "Gym Chain",
+   "Largest gym chain, 14+ branches",
+   "Major chain, brand consistency across locations"
+  ],
+  [
+   "2",
+   "Bodyline Fitness",
+   "bodylinefitnessandgym@gmail.com",
+   "@bodylinefitness",
+   "Gym Chain",
+   "Multi-location gym and wellness",
+   "Established chain, brand identity could match size"
+  ],
+  [
+   "3",
+   "EliteBox Fitness",
+   "info@eliteboxfitness.com",
+   "@eliteboxfitness",
+   "Boxing Gym",
+   "Boxing-inspired fitness, VI",
+   "Premium positioning, brand should match VI location"
+  ],
+  [
+   "4",
+   "Pure Fitness Africa",
+   "info@purefitnessafrica.com",
+   "@purefitnessafrica",
+   "Gym",
+   "Quality accessible fitness",
+   "Growing brand, visual identity opportunity"
+  ],
+  [
+   "5",
+   "Starke Fitness",
+   "info@starkefitness.com",
+   "@starkefitness",
+   "Gym/Rec",
+   "Large fitness and recreation centre",
+   "New facility, needs strong brand launch system"
+  ],
+  [
+   "6",
+   "CapitaHealth",
+   "info@capitahealth.ng",
+   "@capitahealth",
+   "Corporate Wellness",
+   "Physiotherapy and corporate wellness",
+   "B2B wellness, corporate brand needed"
+  ],
+  [
+   "7",
+   "The Green Place",
+   "hello@thegreenplace.ng",
+   "@thegreenplacelekki",
+   "Wellness Centre",
+   "Holistic wellness, yoga, meditation",
+   "Wellness positioning, brand should match atmosphere"
+  ],
+  [
+   "8",
+   "Oriki Group",
+   "reservations@orikigroup.com",
+   "@orikigroup",
+   "Spa Chain",
+   "Premium African spa experience",
+   "Multi-location spa, brand architecture opportunity"
+  ],
+  [
+   "9",
+   "Nuli App",
+   "hello@nuliapp.com",
+   "@nuliapp",
+   "Fitness App",
+   "Women's fitness and wellness app",
+   "Digital fitness brand, UI and brand alignment"
+  ],
+  [
+   "10",
+   "Mimi's Medicals",
+   "info@mimismedicals.com",
+   "@mimismedicals",
+   "Pharmacy/Health",
+   "Health and wellness retail",
+   "Pharmacy brand, trust through identity"
+  ],
+  [
+   "11",
+   "GymNation Nigeria",
+   "info@gymnation.com",
+   "@gymnation_ng",
+   "Gym",
+   "Affordable gym chain",
+   "Mass-market gym, brand needs professional system"
+  ],
+  [
+   "12",
+   "Fitness Factory",
+   "info@fitnessfactory.ng",
+   "@fitnessfactoryng",
+   "Gym",
+   "Gym and personal training",
+   "Growing gym, identity system needed"
+  ],
+  [
+   "13",
+   "Zumba Lagos",
+   "info@zumbalagos.com",
+   "@zumbalagos",
+   "Fitness",
+   "Zumba and group fitness",
+   "Community fitness, brand could be more cohesive"
+  ],
+  [
+   "14",
+   "CrossFit Lagos",
+   "info@crossfitlagos.com",
+   "@crossfitlagos",
+   "Gym",
+   "CrossFit box",
+   "Specialty gym, brand identity opportunity"
+  ],
+  [
+   "15",
+   "MOSH Fitness",
+   "info@moshfitness.com",
+   "@moshfitness",
+   "Gym",
+   "Boutique gym",
+   "Boutique positioning, brand should match"
+  ],
+  [
+   "16",
+   "Health Plus Pharmacy",
+   "customercare@healthplusnigeria.com",
+   "@healthplusng",
+   "Pharmacy Chain",
+   "Major pharmacy chain",
+   "Large retail chain, brand modernisation"
+  ],
+  [
+   "17",
+   "MedPlus",
+   "info@medplus.com.ng",
+   "@medplusng",
+   "Pharmacy Chain",
+   "Pharmacy and health retail",
+   "Chain brand, identity consistency across locations"
+  ],
+  [
+   "18",
+   "Reddington Hospital",
+   "info@reddingtonhospital.com",
+   "@reddingtonhospital",
+   "Healthcare",
+   "Multi-specialty hospital",
+   "Hospital brand, trust and professionalism"
+  ],
+  [
+   "19",
+   "Lagoon Hospital",
+   "info@lagoonhospitals.com",
+   "@lagoonhospitals",
+   "Healthcare",
+   "Hospital group",
+   "Healthcare brand, identity architecture"
+  ],
+  [
+   "20",
+   "EverCare Hospital",
+   "info@evercare.ng",
+   "@evercarehospital",
+   "Healthcare",
+   "International hospital group",
+   "Multi-location healthcare, brand consistency"
+  ],
+  [
+   "21",
+   "Flying Doctors Nigeria",
+   "info@flyingdoctorsnigeria.com",
+   "@flyingdoctorsng",
+   "Healthcare",
+   "Air ambulance and healthcare",
+   "Specialist healthcare, brand credibility"
+  ],
+  [
+   "22",
+   "WellNewMe",
+   "hello@wellnewme.com",
+   "@wellnewme",
+   "Wellness Platform",
+   "Digital health and wellness",
+   "Digital wellness, brand and UX opportunity"
+  ],
+  [
+   "23",
+   "Reliance HMO",
+   "hello@reliancehmo.com",
+   "@reliancehmo",
+   "Health Insurance",
+   "Digital health insurance",
+   "InsurTech, brand trust and digital experience"
+  ],
+  [
+   "24",
+   "Hygeia HMO",
+   "info@hygeiahmo.com",
+   "@hygeiahmo",
+   "Health Insurance",
+   "Health insurance provider",
+   "Insurance brand, trust communication"
+  ],
+  [
+   "25",
+   "Leadway Health",
+   "info@leadway.com",
+   "@leadwayhealth",
+   "Health Insurance",
+   "Health insurance",
+   "Insurance brand, visual identity opportunity"
+  ],
+  [
+   "26",
+   "The Spa at Eko Hotels",
+   "spa@ekohotels.com",
+   "@ekohotels",
+   "Spa",
+   "Hotel spa experience",
+   "Premium spa, brand could match hotel quality"
+  ],
+  [
+   "27",
+   "Ruby Spa",
+   "info@rubyspalagos.com",
+   "@rubyspalagos",
+   "Spa",
+   "Luxury spa services",
+   "Premium spa, brand identity opportunity"
+  ],
+  [
+   "28",
+   "Lotus Spa",
+   "info@lotusspa.ng",
+   "@lotusspalagos",
+   "Spa",
+   "Day spa and wellness",
+   "Wellness brand, environmental and digital branding"
+  ],
+  [
+   "29",
+   "Wheatbaker Spa",
+   "spa@thewheatbaker.com",
+   "@thewheatbaker",
+   "Spa",
+   "Boutique hotel spa",
+   "Luxury positioning, brand consistency"
+  ],
+  [
+   "30",
+   "Skin101 Clinic",
+   "info@skin101clinics.com",
+   "@skin101clinics",
+   "Dermatology",
+   "Skin clinic chain",
+   "Medical aesthetics, professional brand needed"
+  ],
+  [
+   "31",
+   "AskNiara Fitness",
+   "hello@askniara.com",
+   "@askniara",
+   "Fitness",
+   "Personal training brand",
+   "Growing fitness brand, visual identity opportunity"
+  ],
+  [
+   "32",
+   "BurnFit Nigeria",
+   "info@burnfit.ng",
+   "@burnfitng",
+   "Fitness",
+   "Fitness and weight management",
+   "Fitness brand, needs cohesive identity"
+  ],
+  [
+   "33",
+   "FitLab",
+   "hello@fitlab.ng",
+   "@fitlab_ng",
+   "Gym",
+   "Boutique fitness studio",
+   "Boutique gym, brand positioning opportunity"
+  ],
+  [
+   "34",
+   "Jumia Food Health",
+   "info@jumia.com.ng",
+   "@jumiafood",
+   "Health Food",
+   "Health food delivery",
+   "Digital food brand, health positioning"
+  ],
+  [
+   "35",
+   "GOFitness",
+   "hello@gofitness.ng",
+   "@gofitness_ng",
+   "Fitness App",
+   "Fitness tracking app",
+   "Digital fitness, brand and UX"
+  ],
+  [
+   "36",
+   "YogaSol",
+   "hello@yogasol.ng",
+   "@yogasollagos",
+   "Yoga",
+   "Yoga studio",
+   "Wellness brand, identity should match calm aesthetic"
+  ],
+  [
+   "37",
+   "Pilates Lagos",
+   "info@pilateslagos.com",
+   "@pilateslagos",
+   "Fitness",
+   "Pilates studio",
+   "Boutique fitness, brand opportunity"
+  ],
+  [
+   "38",
+   "Thistle Gym",
+   "info@thistlegym.com",
+   "@thistlegym",
+   "Gym",
+   "Community gym",
+   "Local gym, brand identity needed"
+  ],
+  [
+   "39",
+   "Body Perfect Fitness",
+   "info@bodyperfect.ng",
+   "@bodyperfectfitness",
+   "Gym",
+   "Lagos gym",
+   "Fitness brand, visual identity opportunity"
+  ],
+  [
+   "40",
+   "Life Gym",
+   "info@lifegym.ng",
+   "@lifegymlagos",
+   "Gym",
+   "Full-service gym",
+   "Growing gym, brand system needed"
+  ],
+  [
+   "41",
+   "NutriFit Nigeria",
+   "info@nutrifit.ng",
+   "@nutrifitng",
+   "Nutrition",
+   "Nutrition and meal plans",
+   "Health nutrition brand, packaging and identity"
+  ],
+  [
+   "42",
+   "Vitafoam (Wellness)",
+   "info@vitafoamng.com",
+   "@vitafoamng",
+   "Sleep/Wellness",
+   "Mattress and sleep wellness",
+   "Heritage brand, wellness repositioning opportunity"
+  ],
+  [
+   "43",
+   "Paelon Memorial Clinic",
+   "info@paelon.org",
+   "@paelonclinic",
+   "Healthcare",
+   "Specialist clinic",
+   "Medical brand, trust through professional identity"
+  ],
+  [
+   "44",
+   "Nordica Fertility Centre",
+   "info@nordica.com.ng",
+   "@nordica_ivf",
+   "Fertility",
+   "IVF and fertility clinic",
+   "Sensitive healthcare brand, requires sophisticated identity"
+  ],
+  [
+   "45",
+   "The Gym Lagos",
+   "info@thegym.ng",
+   "@thegymlagos",
+   "Gym",
+   "Premium gym facility",
+   "Premium gym, brand should match facility quality"
+  ],
+  [
+   "46",
+   "Total Child Hospital",
+   "info@totalchildhospital.com",
+   "@totalchildhospital",
+   "Paediatrics",
+   "Children's hospital",
+   "Paediatric brand, warm and trustworthy identity"
+  ],
+  [
+   "47",
+   "Livewell Initiative",
+   "info@livewellinitiative.com",
+   "@livewellinitiative",
+   "NGO/Health",
+   "Health education NGO",
+   "Non-profit health, needs professional brand"
+  ],
+  [
+   "48",
+   "Africa Health Holdings",
+   "info@africahealthholdings.com",
+   "@africahealthholdings",
+   "Healthcare",
+   "Healthcare investment",
+   "Corporate health brand, identity architecture"
+  ],
+  [
+   "49",
+   "Whispa Health",
+   "hello@whispa.health",
+   "@whispahealth",
+   "Digital Health",
+   "Anonymous health consultations",
+   "Digital health brand, trust and privacy through identity"
+  ],
+  [
+   "50",
+   "Doctoora",
+   "hello@doctoora.com",
+   "@doctoora",
+   "Telemedicine",
+   "Telemedicine platform",
+   "Digital health, brand and UX opportunity"
+  ]
+ ],
+ "09-entertainment-media": [
+  [
+   "1",
+   "Chocolate City Music",
+   "info@chocolatecitymusic.com",
+   "@chocmusic",
+   "Record Label",
+   "Major record label and management",
+   "Large roster, brand architecture across artists needed"
+  ],
+  [
+   "2",
+   "Mavin Records",
+   "info@mavinrecords.com",
+   "@mavinrecords",
+   "Record Label",
+   "Award-winning record label",
+   "Major label, corporate brand system opportunity"
+  ],
+  [
+   "3",
+   "960 Music Group",
+   "info@960musicgroup.com",
+   "@960musicgroup",
+   "Record Label",
+   "Record label and content",
+   "Content and music, needs cohesive brand system"
+  ],
+  [
+   "4",
+   "InterSpace Distribution",
+   "info@interspacedistribution.com",
+   "@interspacedistr",
+   "Music Distribution",
+   "Music distribution and marketing",
+   "B2B music brand, identity and website"
+  ],
+  [
+   "5",
+   "DVPPER",
+   "info@dvpper.com",
+   "@dvpper",
+   "Music Distribution",
+   "Distribution and label services",
+   "Music services brand, professional identity needed"
+  ],
+  [
+   "6",
+   "Freeme Music",
+   "info@freememusic.com",
+   "@freememusicng",
+   "Music Distribution",
+   "Digital music distribution",
+   "Platform brand, digital experience opportunity"
+  ],
+  [
+   "7",
+   "Coventi",
+   "hello@coventi.co",
+   "@coventiapp",
+   "Streaming",
+   "Live streaming platform for concerts",
+   "Tech-meets-entertainment, brand opportunity"
+  ],
+  [
+   "8",
+   "Gusto Entertainment",
+   "info@gustoent.com",
+   "@gustoentng",
+   "Production",
+   "Audio/video production",
+   "Production company, corporate identity needed"
+  ],
+  [
+   "9",
+   "Mediaworks",
+   "info@mediaworks.ng",
+   "@mediaworksng",
+   "Production",
+   "Film and event production",
+   "Production brand, corporate identity system"
+  ],
+  [
+   "10",
+   "DC Talent",
+   "info@dctalent.ng",
+   "@dctalent_",
+   "Talent Management",
+   "Talent development and management",
+   "Talent brand, needs professional identity"
+  ],
+  [
+   "11",
+   "Starboy Entertainment",
+   "info@starboyent.com",
+   "@starboyent",
+   "Record Label",
+   "Wizkid's label",
+   "Major artist label, corporate identity opportunity"
+  ],
+  [
+   "12",
+   "DMW",
+   "info@dmworldwide.com",
+   "@dmwrecords",
+   "Record Label",
+   "Davido's label",
+   "Major label, brand infrastructure"
+  ],
+  [
+   "13",
+   "Spaceship Entertainment",
+   "info@spaceshipcollective.com",
+   "@spaceshipent",
+   "Record Label",
+   "Burna Boy's label",
+   "Grammy-associated label, brand system needed"
+  ],
+  [
+   "14",
+   "Aristokrat Records",
+   "info@aristokrat.co",
+   "@aristokrat_group",
+   "Record Label",
+   "Record label and group",
+   "Multi-division brand, architecture opportunity"
+  ],
+  [
+   "15",
+   "Platoon (Nigeria)",
+   "info@platoon.ai",
+   "@platoon",
+   "Music Services",
+   "Artist services platform",
+   "International platform, local brand expression"
+  ],
+  [
+   "16",
+   "Africa Magic",
+   "info@africamagic.tv",
+   "@africamagic",
+   "Media/TV",
+   "African entertainment TV channels",
+   "Media brand, identity evolution opportunity"
+  ],
+  [
+   "17",
+   "IROKOtv",
+   "support@irokotv.com",
+   "@irokotv",
+   "Streaming",
+   "African movie streaming",
+   "VOD platform, brand and UX opportunity"
+  ],
+  [
+   "18",
+   "FilmOne Distribution",
+   "info@filmoneng.com",
+   "@filmonedist",
+   "Film Distribution",
+   "Film distribution company",
+   "Film brand, corporate and release branding"
+  ],
+  [
+   "19",
+   "Ebonylife Media",
+   "info@ebonylifetv.com",
+   "@ebonylifetv",
+   "Media/Production",
+   "Media and film production",
+   "Premium media brand, identity architecture"
+  ],
+  [
+   "20",
+   "Anthill Studios",
+   "hello@anthillstudios.com",
+   "@anthillstudios",
+   "Animation/Film",
+   "Animation and film studio",
+   "Creative studio, brand should match creative quality"
+  ],
+  [
+   "21",
+   "Showmax Nigeria",
+   "help@showmax.com",
+   "@showmaxng",
+   "Streaming",
+   "Video streaming platform",
+   "Streaming brand, local brand expression"
+  ],
+  [
+   "22",
+   "TellyAfrica",
+   "info@tellyafrica.com",
+   "@tellyafrica",
+   "Media",
+   "Digital media company",
+   "Media brand, identity and digital presence"
+  ],
+  [
+   "23",
+   "Beat FM",
+   "enquiries@thebeat99.com",
+   "@beat999fm",
+   "Radio/Media",
+   "Urban radio station Lagos",
+   "Media brand, visual identity evolution"
+  ],
+  [
+   "24",
+   "Cool FM",
+   "info@coolfm.ng",
+   "@coolfmlagos",
+   "Radio/Media",
+   "Major Lagos radio station",
+   "Legacy media brand, modernisation opportunity"
+  ],
+  [
+   "25",
+   "The Cable",
+   "editor@thecable.ng",
+   "@thecableng",
+   "Digital Media",
+   "Online news and journalism",
+   "Digital news brand, identity and website"
+  ],
+  [
+   "26",
+   "BellaNaija",
+   "ads@bellanaija.com",
+   "@bellanaija",
+   "Digital Media",
+   "Lifestyle and entertainment media",
+   "Major media brand, identity system opportunity"
+  ],
+  [
+   "27",
+   "Pulse Nigeria",
+   "info@pulse.ng",
+   "@pulsenigeria247",
+   "Digital Media",
+   "Digital news and entertainment",
+   "Large media brand, visual system evolution"
+  ],
+  [
+   "28",
+   "Zikoko",
+   "hello@zikoko.com",
+   "@zikokodot",
+   "Digital Media",
+   "Youth-focused media",
+   "Strong editorial voice, brand system could match"
+  ],
+  [
+   "29",
+   "Konbini Nigeria",
+   "lagos@konbini.com",
+   "@konbinilagos",
+   "Digital Media",
+   "Pop culture media",
+   "International format, local brand expression"
+  ],
+  [
+   "30",
+   "Native Mag",
+   "hello@thenativemag.com",
+   "@nativemag",
+   "Digital Media",
+   "Music and culture magazine",
+   "Strong editorial brand, visual identity opportunity"
+  ],
+  [
+   "31",
+   "Street Souk",
+   "admin@streetsouk.com",
+   "@streetsouk",
+   "Events",
+   "Cultural and street festival Lagos",
+   "Event brand, needs cohesive identity system"
+  ],
+  [
+   "32",
+   "Afro Nation Nigeria",
+   "info@afronation.com",
+   "@afronation",
+   "Music Festival",
+   "Major Afrobeats festival",
+   "Festival brand, event branding system"
+  ],
+  [
+   "33",
+   "Lagos Biennial",
+   "info@lagosbiennial.org",
+   "@lagosbiennial",
+   "Art/Events",
+   "Art and culture event",
+   "Cultural brand, visual identity opportunity"
+  ],
+  [
+   "34",
+   "ART X Lagos",
+   "hello@artxlagos.com",
+   "@artxlagos",
+   "Art Fair",
+   "Contemporary art fair",
+   "Art event brand, identity system for annual activation"
+  ],
+  [
+   "35",
+   "GTBank Fashion Weekend",
+   "fashionweekend@gtbank.com",
+   "@gtbankfashwknd",
+   "Fashion Event",
+   "Fashion and lifestyle event",
+   "Event brand within corporate framework"
+  ],
+  [
+   "36",
+   "SocialMediaWeek Lagos",
+   "info@socialmediaweek.org",
+   "@smwlagos",
+   "Events/Tech",
+   "Tech and media conference",
+   "Conference brand, annual identity refresh system"
+  ],
+  [
+   "37",
+   "Flytime Music Festival",
+   "info@flytimepromotions.com",
+   "@flytimefest",
+   "Music Festival",
+   "Annual music festival",
+   "Festival brand, marketing system needed"
+  ],
+  [
+   "38",
+   "Experience Lagos",
+   "info@experiencelagos.com",
+   "@experiencelagos",
+   "Concert",
+   "Major annual concert",
+   "Event brand, visual system for annual activation"
+  ],
+  [
+   "39",
+   "Gidi Culture Festival",
+   "info@gidiculturefest.com",
+   "@gidiculturefest",
+   "Music Festival",
+   "Culture and music festival",
+   "Festival brand, identity system"
+  ],
+  [
+   "40",
+   "One Africa Music Fest",
+   "info@oneafricamusicfest.com",
+   "@oneafricamusicfest",
+   "Music Festival",
+   "Pan-African music festival",
+   "International festival, brand architecture"
+  ],
+  [
+   "41",
+   "Dentaa Show",
+   "info@dentaashow.com",
+   "@dentaashow",
+   "TV/Media",
+   "Entertainment TV show",
+   "Show brand, visual identity and marketing"
+  ],
+  [
+   "42",
+   "The Ndani Group",
+   "info@ndani.tv",
+   "@ndanitv",
+   "Digital Media",
+   "Digital content and production",
+   "Content brand, identity system for multiple shows"
+  ],
+  [
+   "43",
+   "Red Media Africa",
+   "info@redmediaafrica.com",
+   "@redmediaafrica",
+   "PR/Communications",
+   "PR and communications firm",
+   "Agency brand, corporate identity opportunity"
+  ],
+  [
+   "44",
+   "Mosaic Media",
+   "info@mosaicmediagroup.com",
+   "@mosaicmediagroup",
+   "Media",
+   "Media buying and strategy",
+   "Media services brand, needs professional identity"
+  ],
+  [
+   "45",
+   "Temple Management",
+   "info@templemanagement.com",
+   "@templemgmt",
+   "Talent Management",
+   "Artist and talent management",
+   "Management brand, corporate identity needed"
+  ],
+  [
+   "46",
+   "Insight Publicis",
+   "info@insightpublicis.com",
+   "@insightpublicis",
+   "Advertising",
+   "Advertising agency",
+   "Agency brand, identity modernisation"
+  ],
+  [
+   "47",
+   "Noah's Ark Communications",
+   "info@noahsark.com.ng",
+   "@noahsark",
+   "Advertising",
+   "Advertising agency",
+   "Established agency, brand evolution opportunity"
+  ],
+  [
+   "48",
+   "X3M Music",
+   "info@x3mmusic.com",
+   "@x3mmusic",
+   "Record Label",
+   "Record label",
+   "Label brand, corporate and artist branding"
+  ],
+  [
+   "49",
+   "Smooth Promotions",
+   "info@smoothpromotions.com",
+   "@smoothpromotions",
+   "Events/Promotion",
+   "Event promotion and management",
+   "Promoter brand, needs visual identity system"
+  ],
+  [
+   "50",
+   "TRACE Naija",
+   "nigeria@trace.tv",
+   "@tracenaija",
+   "TV/Media",
+   "Music and entertainment TV",
+   "TV brand, local expression of international format"
+  ]
+ ],
+ "10-education-professional-development": [
+  [
+   "1",
+   "Digital Marketing Skill",
+   "info@digitalmarketingskill.com",
+   "@tobiasehinde",
+   "Training",
+   "Digital marketing training",
+   "Established training brand, identity could match authority"
+  ],
+  [
+   "2",
+   "ITnhseti tButuelb Africa",
+   "hello@thebulb.africa",
+   "@thebulbafrica",
+   "Tech Training",
+   "Software, data science, AI training",
+   "Quality training, brand and website could be stronger"
+  ],
+  [
+   "3",
+   "Andela",
+   "hello@andela.com",
+   "@andela",
+   "Tech Training/Placement",
+   "Tech talent development and placement",
+   "Global brand, visual identity evolution"
+  ],
+  [
+   "4",
+   "NIIT Nigeria",
+   "info@niit.com.ng",
+   "@niitnigeria",
+   "Tech Training",
+   "International IT education",
+   "International standard, local brand expression needed"
+  ],
+  [
+   "5",
+   "BincomDevCenter",
+   "info@bincom.net",
+   "@bincomdevcenter",
+   "Tech Training",
+   "Multi-location tech training",
+   "Growing training network, brand consistency needed"
+  ],
+  [
+   "6",
+   "uLesson",
+   "hello@ulesson.com",
+   "@ulessonhq",
+   "EdTech",
+   "K-12 online education platform",
+   "Funded EdTech, brand should match growth stage"
+  ],
+  [
+   "7",
+   "Learning Fortress",
+   "info@learningfortress.com",
+   "@learningfortress",
+   "Management Training",
+   "Management and consultancy training",
+   "Professional training, brand identity opportunity"
+  ],
+  [
+   "8",
+   "TechBridge Consulting",
+   "info@techbridge.ng",
+   "@techbridgeconsulting",
+   "EdTech/Training",
+   "Coding and data science courses",
+   "Growing training brand, needs professional identity"
+  ],
+  [
+   "9",
+   "LearnFlourish",
+   "hello@learnflourish.com",
+   "@learnflourish",
+   "Career Development",
+   "Career skills and simulations",
+   "Digital education brand, identity opportunity"
+  ],
+  [
+   "10",
+   "AltSchool Africa",
+   "hello@altschoolafrica.com",
+   "@altschool_africa",
+   "Tech Training",
+   "Online engineering school",
+   "Growing EdTech, brand should match ambition"
+  ],
+  [
+   "11",
+   "Decagon",
+   "info@decagonhq.com",
+   "@decagonhq",
+   "Tech Training",
+   "Software engineering institute",
+   "Premium tech training, brand identity should match"
+  ],
+  [
+   "12",
+   "HiiT Plc",
+   "info@hiaborian_itplc.com",
+   "@hiitplc",
+   "Tech Training",
+   "IT training and solutions",
+   "Established IT training, brand modernisation"
+  ],
+  [
+   "13",
+   "New Horizons Nigeria",
+   "info@newhorizonsng.com",
+   "@newhorizonsng",
+   "Tech Training",
+   "IT certification training",
+   "International franchise, local brand identity"
+  ],
+  [
+   "14",
+   "Utiva",
+   "hello@utiva.io",
+   "@utiva_io",
+   "Tech Training",
+   "Data, product, engineering training",
+   "Growing platform, brand should match quality"
+  ],
+  [
+   "15",
+   "Side Hustle Internship",
+   "info@sidehustle.ng",
+   "@sidehustleintern",
+   "Training/Internship",
+   "Free internship programme",
+   "Large community brand, identity system needed"
+  ],
+  [
+   "16",
+   "Semicolon Africa",
+   "info@semicolon.africa",
+   "@semicolon_africa",
+   "Tech Training",
+   "Software engineering school",
+   "Quality training, brand could match premium positioning"
+  ],
+  [
+   "17",
+   "Stutern",
+   "hello@stutern.com",
+   "@stutern",
+   "Graduate Training",
+   "Graduate accelerator programme",
+   "Early-career brand, identity and website opportunity"
+  ],
+  [
+   "18",
+   "Ingressive For Good",
+   "hello@ingressive.org",
+   "@ingressive4good",
+   "Training/Social Enterprise",
+   "Free tech training for youth",
+   "Social impact brand, needs professional identity"
+  ],
+  [
+   "19",
+   "She Code Africa",
+   "info@shecodeafrica.org",
+   "@shecodeafrica",
+   "Training",
+   "Women in tech training",
+   "Community brand, identity system for growth"
+  ],
+  [
+   "20",
+   "Google Developer Groups Lagos",
+   "gdg.lagos@gmail.com",
+   "@gdglagos",
+   "Community/Training",
+   "Developer community",
+   "Community brand, local identity expression"
+  ],
+  [
+   "21",
+   "Jobberman",
+   "info@jobberman.com",
+   "@jobberman",
+   "Career/Recruitment",
+   "Job platform with training",
+   "Platform brand, identity and UX opportunity"
+  ],
+  [
+   "22",
+   "MyJobMag",
+   "info@myjobmag.com",
+   "@myjobmag",
+   "Career/Recruitment",
+   "Jobs and career platform",
+   "Career platform, brand and digital experience"
+  ],
+  [
+   "23",
+   "FATE Foundation",
+   "info@fatefoundation.org",
+   "@fatefoundation",
+   "Entrepreneurship",
+   "Entrepreneur training and support",
+   "Established foundation, brand refresh opportunity"
+  ],
+  [
+   "24",
+   "Enterprise Development Centre",
+   "info@edc.edu.ng",
+   "@edc_lbs",
+   "Business Training",
+   "Pan-Atlantic University business centre",
+   "Academic brand, identity modernisation"
+  ],
+  [
+   "25",
+   "Tony Elumelu Foundation",
+   "info@tonyelumelufoundation.org",
+   "@tonyelumelufdn",
+   "Entrepreneurship",
+   "Entrepreneurship programme",
+   "Major foundation, brand architecture opportunity"
+  ],
+  [
+   "26",
+   "Lagos Business School",
+   "admissions@lbs.edu.ng",
+   "@lagasbusinessschool",
+   "Business School",
+   "Leading business school",
+   "Premium academic brand, identity evolution"
+  ],
+  [
+   "27",
+   "Pan-Atlantic University",
+   "info@pau.edu.ng",
+   "@panatlanticuniv",
+   "University",
+   "Private university",
+   "Academic brand, identity and website"
+  ],
+  [
+   "28",
+   "Covenant University",
+   "info@covenantuniversity.edu.ng",
+   "@covenantuniversity",
+   "University",
+   "Private university",
+   "Large institution, brand consistency"
+  ],
+  [
+   "29",
+   "Babcock University",
+   "info@babcock.edu.ng",
+   "@babcockuniversity",
+   "University",
+   "Private university",
+   "Academic brand, identity opportunity"
+  ],
+  [
+   "30",
+   "African Leadership University",
+   "info@alueducation.com",
+   "@alucommunity",
+   "University",
+   "Pan-African university",
+   "Innovative education, brand should match vision"
+  ],
+  [
+   "31",
+   "Tekedia Institute",
+   "info@tekedia.com",
+   "@tekediainst",
+   "Business Training",
+   "Online business education",
+   "Digital education brand, identity and website"
+  ],
+  [
+   "32",
+   "EdTech Foundry",
+   "info@edtechfoundry.com",
+   "@edtechfoundry",
+   "EdTech",
+   "Education technology solutions",
+   "EdTech brand, corporate identity needed"
+  ],
+  [
+   "33",
+   "PrepClass",
+   "hello@prepclass.com.ng",
+   "@prepclassng",
+   "Tutoring",
+   "Home tutoring platform",
+   "EdTech platform, brand and digital experience"
+  ],
+  [
+   "34",
+   "Gradely",
+   "hello@gradely.co",
+   "@gradely_ng",
+   "EdTech",
+   "Personalised learning platform",
+   "EdTech startup, brand should match innovation"
+  ],
+  [
+   "35",
+   "ScholarX",
+   "info@scholarx.ng",
+   "@scholarxng",
+   "EdTech",
+   "Scholarship and study abroad platform",
+   "Education services, brand trust and credibility"
+  ],
+  [
+   "36",
+   "TGM Education",
+   "info@tgmeducation.com",
+   "@tgmeducation",
+   "Study Abroad",
+   "Study abroad agency",
+   "Education consulting brand, identity opportunity"
+  ],
+  [
+   "37",
+   "Schoolgate",
+   "hello@schoolgate.ng",
+   "@schoolgateng",
+   "EdTech",
+   "School management platform",
+   "B2B education tech, corporate brand needed"
+  ],
+  [
+   "38",
+   "Flex Finance Academy",
+   "info@flexfinanceacademy.com",
+   "@flexfinanceacademy",
+   "Financial Training",
+   "Financial literacy training",
+   "Growing training brand, needs professional identity"
+  ],
+  [
+   "39",
+   "Phillips Consulting",
+   "info@phillipsconsulting.net",
+   "@pcl_ng",
+   "Consulting/Training",
+   "Management consulting and training",
+   "Corporate brand, identity modernisation"
+  ],
+  [
+   "40",
+   "KPMG Nigeria (Training)",
+   "ng-fminfo@kpmg.com",
+   "@kpmg_ng",
+   "Professional Training",
+   "Professional services training",
+   "Corporate training division, brand expression"
+  ],
+  [
+   "41",
+   "Nigerian Seminars & Trainings",
+   "info@nigerianseminarsandtrainings.com",
+   "@nigerianseminars",
+   "Training Platform",
+   "Training event marketplace",
+   "Platform brand, website and identity opportunity"
+  ],
+  [
+   "42",
+   "Afrilearn",
+   "hello@afrilearn.com",
+   "@afrilearnng",
+   "EdTech",
+   "Free K-12 video learning",
+   "Education platform, brand should match scale"
+  ],
+  [
+   "43",
+   "Edukoya",
+   "info@edukoya.com",
+   "@edukoya",
+   "EdTech",
+   "AI-powered learning platform",
+   "Funded EdTech, brand identity should match"
+  ],
+  [
+   "44",
+   "Teachable (Nigeria users)",
+   "support@teachable.com",
+   "@teachable",
+   "Online Course",
+   "Course creation platform",
+   "Platform local activation opportunity"
+  ],
+  [
+   "45",
+   "Roqqu Academy",
+   "info@roqqu.com",
+   "@roqquacademy",
+   "PClraytpfotorm/Training",
+   "Crypto and blockchain education",
+   "Niche training brand, professional identity"
+  ],
+  [
+   "46",
+   "Business Day Training",
+   "training@businessday.ng",
+   "@bdtraining",
+   "Business Training",
+   "Media company training arm",
+   "Corporate training brand, needs own identity"
+  ],
+  [
+   "47",
+   "CIPM Nigeria",
+   "info@cipmnigeria.org",
+   "@cipmnigeria",
+   "Professional Body",
+   "HR professional body",
+   "Professional body, brand modernisation"
+  ],
+  [
+   "48",
+   "ICAN Nigeria",
+   "info@aborian_ican.org.ng",
+   "@icannigeria",
+   "Professional Body",
+   "Accounting professional body",
+   "Professional body, identity evolution"
+  ],
+  [
+   "49",
+   "Nigerian Bar Association",
+   "info@nigerianbar.org.ng",
+   "@nbanigeria",
+   "Professional Body",
+   "Legal professional body",
+   "Professional body, brand modernisation"
+  ],
+  [
+   "50",
+   "Creative Lagos",
+   "hello@creativelagos.com",
+   "@creativelagos",
+   "Creative Training",
+   "Creative skills training",
+   "Creative training brand, identity should match creative field"
+  ]
+ ]
+}
