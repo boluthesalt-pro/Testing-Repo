@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YANU Logo Ident</title>
+<style>
+  :root { --page: #1a0802; --ui: #FFDDAC; --ui-dim: rgba(255, 221, 172, 0.4); }
+  html, body { margin: 0; height: 100%; background: var(--page); color: var(--ui);
+    font: 13px/1.4 system-ui, sans-serif; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+  .frame { position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+  #stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #stage svg { display: block; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
+    width: min(100vw - 32px, 760px); }
+  .controls button { background: none; border: 1px solid var(--ui-dim); color: var(--ui);
+    padding: 6px 14px; border-radius: 999px; font: inherit; cursor: pointer; }
+  .controls button[aria-pressed="true"] { background: var(--ui); color: var(--page); }
+  .controls input { flex: 1; min-width: 160px; accent-color: #FAAA48; }
+  .controls output { font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: right; }
+  .export, .export body { background: transparent; }
+  .export body { display: block; }
+  .export .frame { box-shadow: none; }
+  .export .controls { display: none; }
+</style>
+</head>
+<body>
+  <div class="frame" id="frame"><div id="stage"></div></div>
+  <div class="controls">
+    <button id="play" type="button">Play with sound</button>
+    <button type="button" data-size="1920x1080">16:9</button>
+    <button type="button" data-size="1080x1350">4:5</button>
+    <input id="scrub" type="range" min="0" max="8" step="0.001" value="0" aria-label="Time">
+    <output id="time">0.00 s</output>
+  </div>
+  <audio id="audio" src="../out/yanu-ident-score.wav" preload="auto"></audio>
+
+<script src="../../yanu-brand-animation/src/logo.js"></script>
+<script src="ident.js"></script>
+<script>
+(function () {
+  const { DURATION, build, render } = window.YANU_IDENT;
+  const params = new URLSearchParams(location.search);
+  const exporting = params.has("export");
+  if (exporting) document.documentElement.classList.add("export");
+
+  const frame = document.getElementById("frame");
+  const stage = document.getElementById("stage");
+  const scrub = document.getElementById("scrub");
+  const out = document.getElementById("time");
+  const audio = document.getElementById("audio");
+  let rig, W, H, t = 0;
+
+  function setup(size) {
+    [W, H] = size.split("x").map(Number);
+    stage.innerHTML = "";
+    rig = build(stage, W, H, window.YANU_LOGO_SVG);
+    document.querySelectorAll("[data-size]").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.size === size)));
+    fit();
+    draw(t);
+  }
+  function fit() {
+    const k = exporting ? 1 : Math.min((innerWidth - 32) / W, (innerHeight - 90) / H, 1);
+    frame.style.width = W * k + "px";
+    frame.style.height = H * k + "px";
+    stage.style.transform = `scale(${k})`;
+  }
+  function draw(time) {
+    t = Math.min(Math.max(time, 0), DURATION);
+    render(rig, t);
+    scrub.value = t;
+    out.textContent = t.toFixed(2) + " s";
+  }
+
+  window.setTime = draw;   // used by tools/render.js
+  setup(params.get("size") || "1920x1080");
+
+  let raf = 0;
+  function play() {
+    cancelAnimationFrame(raf);
+    audio.currentTime = 0;
+    const start = performance.now();
+    audio.play().catch(() => {});
+    const tick = (now) => {
+      // Follow the audio clock when it is running, so picture and beat stay locked.
+      draw(!audio.paused && audio.currentTime > 0 ? audio.currentTime : (now - start) / 1000);
+      if (t < DURATION) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+  document.getElementById("play").addEventListener("click", play);
+  document.querySelectorAll("[data-size]").forEach((b) =>
+    b.addEventListener("click", () => setup(b.dataset.size)));
+  scrub.addEventListener("input", () => { cancelAnimationFrame(raf); audio.pause(); draw(+scrub.value); });
+  document.addEventListener("keydown", (e) => { if (e.code === "Space") { e.preventDefault(); play(); } });
+  addEventListener("resize", fit);
+  if (params.has("t")) draw(+params.get("t"));
+})();
+</script>
+</body>
+</html>
