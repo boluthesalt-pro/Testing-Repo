@@ -168,6 +168,14 @@ def merge(primary, extra):
     return merged
 
 
+def clean_handle(h):
+    """Strip the stray 'aborian' string the old PDFs injected into Instagram handles."""
+    h = h.replace(" ", "").replace("aborian_", "").replace("aborian", "")
+    if h.startswith("y@"):
+        h = h[1:]
+    return h
+
+
 def is_company_page(url):
     return "/company/" in url
 
@@ -230,7 +238,7 @@ def build():
         for r in items:
             n = int(r[0])
             rows[(v, n)] = {"folder": folder, "company": NAME_FIXES.get((v, n), r[1]),
-                            "category": r[4], "what": r[5]}
+                            "category": r[4], "what": r[5], "handle": clean_handle(r[3]), "pain": r[6]}
 
     results = load_results()
     legacy = load_legacy(rows)
@@ -358,23 +366,46 @@ class EmailField(Flowable):
             forceBorder=True, relative=True)
 
 
+FLAG = {
+    "unmatched": "Not matched to a real business. Replace or confirm.",
+    "not_nigerian": "Not a Nigerian business.",
+    "closed": "Business has closed.",
+    "duplicate": "Duplicate. Contact once.",
+    "subsidiary": "Local arm of a global brand.",
+    "government": "Government body. Procurement route.",
+}
+
+
 def render_pdf(folder, title, table_rows, cov):
+    """Same layout as the original prospects.pdf, with the Email column replaced by the decision maker's
+    contact and a LinkedIn column added."""
     path = os.path.join(ENGINE, folder, "prospects.pdf")
-    doc = SimpleDocTemplate(path, pagesize=landscape(A4), leftMargin=12 * mm, rightMargin=12 * mm,
+    doc = SimpleDocTemplate(path, pagesize=landscape(A4), leftMargin=10 * mm, rightMargin=10 * mm,
                             topMargin=14 * mm, bottomMargin=14 * mm,
-                            title=f"{title} Prospects", author="Visiominds")
-    cell = ParagraphStyle("cell", fontName="Helvetica", fontSize=7, leading=8.6, textColor=INK)
-    small = ParagraphStyle("small", parent=cell, fontSize=6.4, leading=7.8, textColor=GREY)
-    bold = ParagraphStyle("bold", parent=cell, fontName="Helvetica-Bold")
+                            title=f"{title} - 50 Prospects", author="Visiominds")
+    cell = ParagraphStyle("cell", fontName="Helvetica", fontSize=6.8, leading=8.3, textColor=INK)
+    small = ParagraphStyle("small", parent=cell, fontSize=6.2, leading=7.6, textColor=GREY)
     head = ParagraphStyle("head", parent=cell, fontName="Helvetica-Bold", textColor=colors.white)
-    h1 = ParagraphStyle("h1", fontName="Helvetica-Bold", fontSize=16, leading=19, textColor=INK)
-    sub = ParagraphStyle("sub", fontName="Helvetica", fontSize=8, leading=11, textColor=GREY)
+    h1 = ParagraphStyle("h1", fontName="Helvetica-Bold", fontSize=15, leading=18, textColor=INK)
+    sub = ParagraphStyle("sub", fontName="Helvetica", fontSize=7.5, leading=10, textColor=GREY)
 
     def p(text, style=cell):
         return Paragraph(text, style)
 
-    data = [[p(h, head) for h in ("#", "Company", "Decision maker", "Role", "LinkedIn", "Source",
-                                    "Verified email", "Personal email", "Note")]]
+    def li_cell(url, name, company):
+        if url and is_company_page(url):
+            return f'<a href="{escape(url)}" color="#FF3838">Company page</a>'
+        if url:
+            slug = unquote(url).split("/in/", 1)[-1].split("?")[0].rstrip("/")
+            slug = slug.encode("ascii", "ignore").decode().replace("--", "-")
+            return f'<a href="{escape(url)}" color="#FF3838"><b>linkedin.com/in/{escape(slug)}</b></a>'
+        if name:
+            return f'<a href="{escape(linkedin_search(name, company))}" color="#6B6B6B">Find on LinkedIn</a>'
+        return "&nbsp;"
+
+    headers = ("#", "Company", "Decision maker", "LinkedIn", "Email", "Handle", "Category",
+               "What They Do", "Pain Signal / Opportunity")
+    data = [[p(h, head) for h in headers]]
     style = [
         ("BACKGROUND", (0, 0), (-1, 0), RED),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -383,71 +414,50 @@ def render_pdf(folder, title, table_rows, cov):
         ("LEFTPADDING", (0, 0), (-1, -1), 3),
         ("RIGHTPADDING", (0, 0), (-1, -1), 3),
     ]
-
-    def li_cell(url, name, company):
-        if url and is_company_page(url):
-            return f'<a href="{escape(url)}" color="#FF3838">Company page</a>'
-        if url:
-            slug = re.sub(r"^https?://([a-z]{2,3}\.)?(www\.)?linkedin\.com/in/", "", unquote(url)).rstrip("/")
-            slug = slug.encode("ascii", "ignore").decode().replace("--", "-")
-            return f'<a href="{escape(url)}" color="#FF3838"><b>in/{escape(slug)}</b></a>'
-        if name:
-            return f'<a href="{escape(linkedin_search(name, company))}" color="#6B6B6B">Search</a>'
-        return "&nbsp;"
-
     for k, row, rec, status, contacts, email, note in table_rows:
-        if email:
-            esrc = rec.get("email_src", "")
-            email_cell = escape(email) + (f'<br/><font size="5.6" color="#6B6B6B">{escape(short_source(esrc))}</font>' if esrc else "")
-        else:
-            email_cell = "&nbsp;"
-        company = f"<b>{escape(row['company'])}</b><br/><font color='#6B6B6B'>{escape(row['what'])}</font>"
+        company = f"<b>{escape(row['company'])}</b>"
         if rec.get("company_li"):
             company += f'<br/><a href="{escape(rec["company_li"])}" color="#FF3838">Company LinkedIn</a>'
+        flag = FLAG.get(status)
+        if rec.get("pending") or status == "unresearched":
+            flag = (flag + " " if flag else "") + "Contact not yet researched."
+        if flag:
+            company += f'<br/><font color="#FF3838" size="6">{escape(flag)}</font>'
         first = len(data)
-        for i, c in enumerate(contacts or [["", "", "", ""]]):
+        shown = contacts[:3] or [["", "", "", ""]]
+        for i, c in enumerate(shown):
             li = best_li(c)
-            target = li or (linkedin_search(c[0], row["company"]) if c[0] else "")
-            name = (f'<a href="{escape(target)}" color="#1A1A1A">{escape(c[0])}</a>' if c[0] else "&nbsp;")
-            if c[2] and c[2] == li:
-                src = "LinkedIn"
-            elif c[2].startswith("http"):
-                src = f'<a href="{escape(c[2])}" color="#FF3838">{escape(short_source(c[2]))}</a>'
-            else:
-                src = escape(c[2]) or "&nbsp;"
-            lic = li_cell(li, c[0], row["company"])
-            field = EmailField(f"email_{k[0]:02d}_{k[1]:02d}_{i}") if c[0] else ""
+            who = (f"<b>{escape(c[0])}</b><br/><font color='#6B6B6B'>{escape(c[1])}</font>" if c[0] else "&nbsp;")
+            mail = []
+            if i == 0 and email:
+                mail.append(p(escape(email) + '<br/><font size="5.6" color="#6B6B6B">general inbox</font>'))
+            if c[0]:
+                mail.append(EmailField(f"email_{k[0]:02d}_{k[1]:02d}_{i}"))
+            mail_cell = mail or ""
+            lic = p(li_cell(li, c[0], row["company"]))
             if i == 0:
-                data.append([p(str(k[1])), p(company), p(name), p(escape(c[1]) or "&nbsp;"), p(lic), p(src),
-                             p(email_cell), field, p(escape(note), small)])
+                data.append([p(str(k[1])), p(company), p(who), lic, mail_cell, p(escape(row["handle"]), small),
+                             p(escape(row["category"]), small), p(escape(row["what"]), small),
+                             p(escape(row["pain"]), small)])
             else:
-                data.append(["", "", p(name), p(escape(c[1])), p(lic), p(src), "", field, ""])
+                data.append(["", "", p(who), lic, mail_cell, "", "", "", ""])
         last = len(data) - 1
         if last > first:
-            for col in (0, 1, 6, 8):
+            for col in (0, 1, 5, 6, 7, 8):
                 style.append(("SPAN", (col, first), (col, last)))
         style.append(("LINEBELOW", (0, last), (-1, last), 0.4, RULE))
         if status in ("unmatched", "closed", "not_nigerian"):
             style.append(("BACKGROUND", (0, first), (-1, last), colors.HexColor("#FFF1F1")))
-            style.append(("LINEBEFORE", (0, first), (0, last), 2, RED))
-        elif status in ("duplicate", "unresearched") or rec.get("pending"):
-            style.append(("BACKGROUND", (0, first), (-1, last), colors.HexColor("#F6F6F6")))
 
-    widths = [7 * mm, 38 * mm, 30 * mm, 36 * mm, 36 * mm, 20 * mm, 26 * mm, 34 * mm, 46 * mm]
+    widths = [7 * mm, 34 * mm, 38 * mm, 42 * mm, 36 * mm, 24 * mm, 20 * mm, 30 * mm, 46 * mm]
     t = Table(data, colWidths=widths, repeatRows=1)
     t.setStyle(TableStyle(style))
 
-    summary = (f"{cov['rows']} rows. {cov['researched']} researched, {cov['unresearched']} not yet researched. "
-               f"{cov['with_named_contact']} have a named decision maker with a source, and "
-               f"{cov['with_linkedin']} of those have a verified LinkedIn profile. "
-               f"{cov['with_verified_email']} have a verified published email. "
-               f"{cov['unmatched']} could not be matched to a real business, {cov['duplicate']} are duplicates, "
-               f"{cov['not_nigerian']} are not Nigerian.")
-    legend = ("Only sourced data is shown. Blank means unconfirmed. Red in/ links open the person's own LinkedIn "
-              "profile; Search runs a LinkedIn people search where no profile was confirmed. "
-              "Rows tinted red could not be matched, have closed, or are not Nigerian. Grey rows are duplicates "
-              "or not yet researched. The Personal email boxes can be typed into: add an address only after Hunter or "
-              "Apollo marks it verified.")
+    summary = (f"{cov['with_named_contact']} of {cov['rows']} companies have a named decision maker. "
+               f"{cov['with_linkedin']} have that person's own LinkedIn profile linked. "
+               "Emails: only published addresses are printed, marked 'general inbox'. Personal emails are not "
+               "published anywhere, so each decision maker has a box to type one in once Apollo or Hunter "
+               "confirms it. Handles are cleaned of the stray text in the old file but are unverified.")
 
     def on_page(canvas, d):
         canvas.saveState()
@@ -456,13 +466,13 @@ def render_pdf(folder, title, table_rows, cov):
         canvas.rect(0, h - 4 * mm, w, 4 * mm, stroke=0, fill=1)
         canvas.setFont("Helvetica-Bold", 7)
         canvas.setFillColor(INK)
-        canvas.drawString(12 * mm, 7 * mm, "VISIOMINDS")
+        canvas.drawRightString(w - 10 * mm, 7 * mm, "VISIOMINDS")
         canvas.setFont("Helvetica", 7)
         canvas.setFillColor(GREY)
-        canvas.drawRightString(w - 12 * mm, 7 * mm, f"{title}  |  Page {d.page}")
+        canvas.drawString(10 * mm, 7 * mm, f"Page {d.page}")
         canvas.restoreState()
 
-    story = [p(f"{title} prospects", h1), Spacer(1, 2 * mm), p(summary, sub), p(legend, sub), Spacer(1, 4 * mm), t]
+    story = [p(f"{title} - 50 Prospects", h1), Spacer(1, 1.5 * mm), p(summary, sub), Spacer(1, 3 * mm), t]
     doc.build(story, onFirstPage=on_page, onLaterPages=on_page)
 
 
