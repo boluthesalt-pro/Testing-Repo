@@ -1,10 +1,10 @@
 // YANU logo ident: 8 s, 120 BPM, four bars of 2 s (see tools/score.py).
 //
-// Two colours only: Peach Glow on Chocolate Melange. One continuous camera
+// Two colours only: Chocolate Melange on Peach Glow. One continuous camera
 // move over the logo itself.
 //
 //   0-2 s    Macro. We open extremely close, so the logo's curves fill the
-//            frame as abstract peach shapes. The camera drifts slowly from
+//            frame as abstract chocolate shapes. The camera drifts slowly from
 //            the curve of the "y" into the round bowl of the "a".
 //   2.0 s    The drop. One smooth pull-back reveals the whole wordmark,
 //            landing softly at 3.3 s.
@@ -18,7 +18,7 @@
 
 (function () {
 const DURATION = 8, FPS = 30, BPM = 120;
-const C = { choc: "#2F0F03", peach: "#FFDDAC" };
+const C = { ground: "#FFDDAC", logo: "#2F0F03", sheen: "#FFDDAC" };  // peach, chocolate
 
 // Logo geometry, in the logo's SVG units (viewBox 438.72 × 139.01).
 const LOGO_W = 438.72;
@@ -96,16 +96,16 @@ function build(root, W, H, markup) {
   const logoPx = Math.min(0.62 * W, 0.62 * H);
   const svg = el("svg", { xmlns: NS, viewBox: `0 0 ${W} ${H}`, width: W, height: H }, root);
   const defs = el("defs", {}, svg);
-  el("rect", { width: W, height: H, fill: C.choc }, svg);
+  el("rect", { width: W, height: H, fill: C.ground }, svg);
 
   const sheenG = el("linearGradient", { id: "sheen", gradientUnits: "userSpaceOnUse" }, defs);
   for (const [o, a] of [[0, 0], [0.5, 1], [1, 0]])
-    el("stop", { offset: o, "stop-color": "#FFF4E4", "stop-opacity": a }, sheenG);
+    el("stop", { offset: o, "stop-color": C.sheen, "stop-opacity": a }, sheenG);
 
-  const logo = el("g", { fill: C.peach }, svg);
+  const logo = el("g", { fill: C.logo }, svg);
   for (const d of parts.letters) el("path", { d }, logo);
   const ring = el("circle", { cx: parts.ring.cx, cy: parts.ring.cy, r: parts.ring.r, fill: "none",
-    stroke: C.peach, "stroke-width": parts.ring.w }, logo);
+    stroke: C.logo, "stroke-width": parts.ring.w }, logo);
   const mark = el("path", { d: parts.mark }, logo);
   const markBlur = el("feGaussianBlur", { stdDeviation: 0 });
   el("filter", { id: "bm", x: "-50%", y: "-50%", width: "200%", height: "200%" }, defs).append(markBlur);
@@ -152,7 +152,7 @@ function render(R, t) {
     R.sheen.style.display = "";
     const c = -90 + 620 * easeInOut(ps), w = 70;
     set(R.sheenG, { x1: c - w, y1: 95, x2: c + w, y2: 25 });
-    R.sheen.style.opacity = 0.5 * Math.sin(Math.PI * ps);
+    R.sheen.style.opacity = 0.32 * Math.sin(Math.PI * ps);
   }
 }
 
